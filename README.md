@@ -1,4 +1,4 @@
-Sheets
+Sheetz
 ======
 
 An app to rent out college dorms.
