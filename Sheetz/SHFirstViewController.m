@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "SHCustomCell.h"
 #import "SHAppDelegate.h"
 #import "SHLaunchController.h"
 #import "SHFirstViewController.h"
@@ -46,15 +47,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"CellId";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    SHCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    /*
+    cell.postImageView.image = [tableData objectAtIndex:indexPath.row];
+    cell.postTitleLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.postDescLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.postPriceLabel.text = [tableData objectAtIndex:indexPath.row];
+     */
+    
+    cell.postTitleLabel.text = @"Room for rent!";
+    cell.postDescLabel.text = @"Got som bad bitches here lol sup";
+    cell.postPriceLabel.text = @"$500/d";
+    
     return cell;
 }
 

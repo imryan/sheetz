@@ -36,6 +36,7 @@
 		94DCC59E180CAE2A007236E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC59D180CAE2A007236E4 /* MobileCoreServices.framework */; };
 		94DCC5A0180CAE2F007236E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC59F180CAE2F007236E4 /* SystemConfiguration.framework */; };
 		94DCC5A2180CAE34007236E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC5A1180CAE34007236E4 /* Security.framework */; };
+		94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ECDDA1180CD56400615018 /* SHCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		94DCC59D180CAE2A007236E4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		94DCC59F180CAE2F007236E4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		94DCC5A1180CAE34007236E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		94ECDDA0180CD56400615018 /* SHCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomCell.h; path = cell/SHCustomCell.h; sourceTree = "<group>"; };
+		94ECDDA1180CD56400615018 /* SHCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomCell.m; path = cell/SHCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94DCC588180CADA9007236E4 /* Login */,
 				94DCC587180CADA4007236E4 /* Register */,
+				94ECDD9F180CD54D00615018 /* Cell */,
 				94DCC57F180CAB4E007236E4 /* First View */,
 				94DCC580180CAB55007236E4 /* Second View */,
 				94DCC558180CAB3F007236E4 /* Main.storyboard */,
@@ -259,6 +263,15 @@
 				94DCC590180CADC5007236E4 /* SHLoginController.xib */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		94ECDD9F180CD54D00615018 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				94ECDDA0180CD56400615018 /* SHCustomCell.h */,
+				94ECDDA1180CD56400615018 /* SHCustomCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +382,7 @@
 				94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */,
 				94DCC553180CAB3F007236E4 /* main.m in Sources */,
 				94DCC557180CAB3F007236E4 /* SHAppDelegate.m in Sources */,
+				94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
