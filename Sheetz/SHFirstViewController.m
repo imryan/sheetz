@@ -37,6 +37,23 @@
     [self presentViewController:launchController animated:true completion:nil];
 }
 
+#pragma mark - Load Database Data
+
+- (void)loadDatabaseData
+{
+    PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
+    [listingQuery whereKey:@"member" equalTo:@"ryan"];
+    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (!error)
+         {
+             tableData = objects;
+             [self.tableView reloadData];
+         }
+         
+     }];
+}
+
 #pragma mark - Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -55,15 +72,19 @@
     }
     
     /*
-    cell.postImageView.image = [tableData objectAtIndex:indexPath.row];
-    cell.postTitleLabel.text = [tableData objectAtIndex:indexPath.row];
-    cell.postDescLabel.text = [tableData objectAtIndex:indexPath.row];
-    cell.postPriceLabel.text = [tableData objectAtIndex:indexPath.row];
-     */
-    
     cell.postTitleLabel.text = @"Room for rent!";
-    cell.postDescLabel.text = @"Got som bad bitches here lol sup";
+    cell.postDescLabel.text = @"Got some bad bitches here lol sup";
     cell.postPriceLabel.text = @"$500/d";
+    */
+    
+    PFObject *listing = [tableData objectAtIndex:indexPath.row];
+    [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
+    [cell.postDescLabel setText:[listing objectForKey:@"description"]];
+    
+    NSString *priceString = [listing objectForKey:@"price"];
+    priceString = [NSString stringWithFormat:@"$%@", priceString];
+    
+    [cell.postPriceLabel setText:priceString];
     
     return cell;
 }
@@ -80,7 +101,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	tableData = [NSMutableArray arrayWithObjects:@"Room for rent", @"Dorm for rent", nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self loadDatabaseData];
 }
 
 - (void)didReceiveMemoryWarning

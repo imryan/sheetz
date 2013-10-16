@@ -10,9 +10,12 @@
 
 @interface SHFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    NSMutableArray *tableData;
+    NSArray *tableData;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+- (void)loadDatabaseData;
 - (void)returnToLaunchWithStyle:(UIModalTransitionStyle)style;
 - (IBAction)logoutUser:(id)sender;
 

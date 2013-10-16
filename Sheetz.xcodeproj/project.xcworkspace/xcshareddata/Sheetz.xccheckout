@@ -5,13 +5,15 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B6FCF601-ACB1-48CE-8DCE-86284BD9082D</string>
+	<string>58F81C11-BF5B-4F40-AB69-5D789490C1DC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sheetz</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A4EF47BA-F649-47A7-9C72-58EFC313AB52</key>
 		<string>https://ec2-23-20-44-180.compute-1.amazonaws.com/svn/lunchbuddy</string>
+		<key>C0CD5C3E-1A4D-4F5A-8741-AD9D2C3336F0</key>
+		<string>https://github.com/imryan/sheetz.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Objective-C/Sheetz/Sheetz.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>A4EF47BA-F649-47A7-9C72-58EFC313AB52</key>
 		<string>../../../..</string>
+		<key>C0CD5C3E-1A4D-4F5A-8741-AD9D2C3336F0</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
@@ -26,7 +30,7 @@
 		<string>https://ec2-23-20-44-180.compute-1.amazonaws.com/svn/lunchbuddy</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://ec2-23-20-44-180.compute-1.amazonaws.com/svn/lunchbuddy/Objective-C/Sheetz/Sheetz.xcodeproj</string>
+	<string>https://github.com/imryan/sheetz.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -46,6 +50,14 @@
 			<string>A4EF47BA-F649-47A7-9C72-58EFC313AB52</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Projects</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C0CD5C3E-1A4D-4F5A-8741-AD9D2C3336F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Sheetz</string>
 		</dict>
 	</array>
 </dict>
