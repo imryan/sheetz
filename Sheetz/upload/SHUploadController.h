@@ -12,4 +12,6 @@
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
+- (IBAction)uploadListing:(id)sender;
+
 @end

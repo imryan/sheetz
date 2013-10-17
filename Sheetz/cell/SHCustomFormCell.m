@@ -10,6 +10,21 @@
 
 @implementation SHCustomFormCell
 
+- (NSString *)getTitleText
+{
+    return self.titleTextView.text;
+}
+
+- (NSString *)getDescText
+{
+    return self.descTextView.text;
+}
+
+- (NSString *)getPriceText
+{
+    return self.priceTextView.text;
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
