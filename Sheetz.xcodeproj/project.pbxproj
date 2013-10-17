@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F3359180F5A9F006D9DD3 /* SHUploadController.m */; };
+		940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
 		94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC54A180CAB3F007236E4 /* UIKit.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940F3358180F5A9F006D9DD3 /* SHUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHUploadController.h; path = upload/SHUploadController.h; sourceTree = "<group>"; };
+		940F3359180F5A9F006D9DD3 /* SHUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHUploadController.m; path = upload/SHUploadController.m; sourceTree = "<group>"; };
+		940F335E180F5CA4006D9DD3 /* SHCustomFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomFormCell.h; path = cell/SHCustomFormCell.h; sourceTree = "<group>"; };
+		940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomFormCell.m; path = cell/SHCustomFormCell.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCC546180CAB3F007236E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DCC548180CAB3F007236E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +130,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940F3357180F5A81006D9DD3 /* Upload Listing */ = {
+			isa = PBXGroup;
+			children = (
+				940F3358180F5A9F006D9DD3 /* SHUploadController.h */,
+				940F3359180F5A9F006D9DD3 /* SHUploadController.m */,
+			);
+			name = "Upload Listing";
+			sourceTree = "<group>";
+		};
+		940F335D180F5C82006D9DD3 /* Form Cell */ = {
+			isa = PBXGroup;
+			children = (
+				940F335E180F5CA4006D9DD3 /* SHCustomFormCell.h */,
+				940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */,
+			);
+			name = "Form Cell";
+			sourceTree = "<group>";
+		};
 		94DCC53A180CAB3F007236E4 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				94DCC57E180CAB46007236E4 /* Delegates */,
+				940F335D180F5C82006D9DD3 /* Form Cell */,
+				940F3357180F5A81006D9DD3 /* Upload Listing */,
 				94DCC581180CAB67007236E4 /* Pre View */,
 				94DCC588180CADA9007236E4 /* Login */,
 				94DCC587180CADA4007236E4 /* Register */,
@@ -377,6 +403,8 @@
 			files = (
 				94DCC55D180CAB3F007236E4 /* SHFirstViewController.m in Sources */,
 				94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */,
+				940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */,
+				940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				94DCC560180CAB3F007236E4 /* SHSecondViewController.m in Sources */,
 				94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */,

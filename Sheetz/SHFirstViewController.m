@@ -11,6 +11,7 @@
 #import "SHAppDelegate.h"
 #import "SHLaunchController.h"
 #import "SHFirstViewController.h"
+#import "SHUploadController.h"
 
 @implementation SHFirstViewController
 
@@ -42,7 +43,7 @@
 - (void)loadDatabaseData
 {
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
-    [listingQuery whereKey:@"member" equalTo:@"ryan"];
+    [listingQuery whereKeyExists:@"title"];
     [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (!error)
@@ -71,20 +72,10 @@
         cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    /*
-    cell.postTitleLabel.text = @"Room for rent!";
-    cell.postDescLabel.text = @"Got some bad bitches here lol sup";
-    cell.postPriceLabel.text = @"$500/d";
-    */
-    
     PFObject *listing = [tableData objectAtIndex:indexPath.row];
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
-    
-    NSString *priceString = [listing objectForKey:@"price"];
-    priceString = [NSString stringWithFormat:@"$%@", priceString];
-    
-    [cell.postPriceLabel setText:priceString];
+    [cell.postPriceLabel setText:[NSString stringWithFormat:@"$%@", [listing objectForKey:@"price"]]];
     
     return cell;
 }
@@ -93,7 +84,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    // Push to detail view after deselect
+    // Push to detail view after select
 }
 
 #pragma mark - ViewDidLoad & Friends
