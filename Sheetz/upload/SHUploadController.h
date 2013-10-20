@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHUploadController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SHUploadController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 

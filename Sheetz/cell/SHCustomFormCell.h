@@ -10,12 +10,8 @@
 
 @interface SHCustomFormCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UITextView *titleTextView;
-@property (nonatomic, retain) IBOutlet UITextView *descTextView;
-@property (nonatomic, retain) IBOutlet UITextView *priceTextView;
-
-- (NSString *)getTitleText;
-- (NSString *)getDescText;
-- (NSString *)getPriceText;
+@property (nonatomic, retain) IBOutlet UITextField *titleTextField;
+@property (nonatomic, retain) IBOutlet UITextField *descTextField;
+@property (nonatomic, retain) IBOutlet UITextField *priceTextField;
 
 @end

@@ -10,21 +10,6 @@
 
 @implementation SHCustomFormCell
 
-- (NSString *)getTitleText
-{
-    return self.titleTextView.text;
-}
-
-- (NSString *)getDescText
-{
-    return self.descTextView.text;
-}
-
-- (NSString *)getPriceText
-{
-    return self.priceTextView.text;
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -32,6 +17,22 @@
         // Some init
     }
     return self;
+}
+
+#pragma mark - UITextField Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    NSInteger nextTag = textField.tag + 1;
+    UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
+    
+    if (nextResponder) {
+        [nextResponder becomeFirstResponder];
+        
+    } else {
+        [textField resignFirstResponder];
+    }
+    return false;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
