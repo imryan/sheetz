@@ -7,6 +7,7 @@
 //
 
 #import "SHCustomFormCell.h"
+#import "SHAppDelegate.h"
 
 @implementation SHCustomFormCell
 
@@ -35,11 +36,32 @@
     return false;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    self.title = self.titleTextField.text;
+    self.desc  = self.descTextField.text;
+    self.price = self.priceTextField.text;
+    
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.title = self.title;
+    delegate.desc  = self.desc;
+    delegate.price = self.price;
+    
+    NSLog(@"TITLE: %@", self.title);
+}
+
+- (void)layoutSubviews
+{
+    self.titleTextField.delegate = self;
+    self.descTextField.delegate  = self;
+    self.priceTextField.delegate = self;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 @end

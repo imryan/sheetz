@@ -11,5 +11,8 @@
 @interface SHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *desc;
+@property (nonatomic, retain) NSString *price;
 
 @end

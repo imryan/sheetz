@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "SHCustomFormCell.h"
 #import "SHUploadController.h"
+#import "SHAppDelegate.h"
 
 @implementation SHUploadController
 
@@ -23,7 +24,8 @@
 
 - (IBAction)uploadListing:(id)sender
 {
-    
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"\nTitle: %@\nDesc: %@\nPrice: %@", delegate.title, delegate.desc, delegate.price);
 }
 
 #pragma mark - Table View Methods
@@ -56,7 +58,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
