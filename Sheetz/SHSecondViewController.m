@@ -57,14 +57,14 @@
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
     
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"M/yyyy"];
+    NSDate *date = user.createdAt;
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateStyle:NSDateFormatterShortStyle];
     
-    NSString *dateJoined = [formatter stringFromDate:user.createdAt];
+    NSString *dateString = [df stringFromDate:date];
+    dateString = [NSString stringWithFormat:@"Joined on %@", dateString];
     
-    NSDate *date = [formatter dateFromString:dateJoined];
-    
-    self.memberSinceLabel.text = dateJoined;
+    self.memberSinceLabel.text = dateString;
 }
 
 - (void)didReceiveMemoryWarning
