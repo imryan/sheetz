@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHCustomFormCell : UITableViewCell <UITextFieldDelegate>
+@interface SHCustomFormCell : UITableViewCell <UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *titleTextField;
-@property (nonatomic, retain) IBOutlet UITextField *descTextField;
+@property (nonatomic, retain) IBOutlet UITextView  *descTextView;
 @property (nonatomic, retain) IBOutlet UITextField *priceTextField;
 
 @property (nonatomic, retain) NSString *title;

@@ -20,11 +20,11 @@
     return self;
 }
 
-#pragma mark - UITextField Methods
+#pragma mark - UITextField/TextView Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    NSInteger nextTag = textField.tag + 1;
+    NSInteger nextTag = textField.tag++;
     UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
     
     if (nextResponder) {
@@ -41,21 +41,31 @@
     [textField resignFirstResponder];
     
     self.title = self.titleTextField.text;
-    self.desc  = self.descTextField.text;
+    self.desc  = self.descTextView.text;
     self.price = self.priceTextField.text;
     
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.title = self.title;
     delegate.desc  = self.desc;
     delegate.price = self.price;
-    
-    NSLog(@"TITLE: %@", self.title);
 }
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([textView.text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        return false;
+    }
+    return true;
+}
+
+#pragma mark - LayoutSubviews & Friends
 
 - (void)layoutSubviews
 {
     self.titleTextField.delegate = self;
-    self.descTextField.delegate  = self;
+    self.descTextView.delegate  = self;
     self.priceTextField.delegate = self;
 }
 

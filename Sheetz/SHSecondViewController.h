@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHSecondViewController : UIViewController
+@interface SHSecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray *userListings;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *memberSinceLabel;
 
 @end
