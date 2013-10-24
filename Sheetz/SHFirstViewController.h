@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SHFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>
 {
     NSArray *tableData;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
+- (void)submitListing;
 - (void)loadDatabaseData;
-- (void)returnToLaunchWithStyle:(UIModalTransitionStyle)style;
-- (IBAction)logoutUser:(id)sender;
+- (void)logoutUser;
+- (IBAction)displayMenu:(id)sender;
+- (IBAction)refresh:(id)sender;
 
 @end

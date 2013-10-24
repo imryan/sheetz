@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
+
 #import <Parse/Parse.h>
+#import "MHNatGeoViewControllerTransition.h"
 #import "SHCustomCell.h"
 #import "SHAppDelegate.h"
 #import "SHLaunchController.h"
@@ -15,27 +17,59 @@
 
 @implementation SHFirstViewController
 
+#pragma mark - Display Menu & Actions
+
+- (IBAction)displayMenu:(id)sender
+{
+    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"Menu"
+                                                      delegate:self
+                                             cancelButtonTitle:@"Dismiss"
+                                        destructiveButtonTitle:nil
+                                             otherButtonTitles:@"Submit Listing", @"Logout", nil];
+    
+    [menu showInView:self.view];
+}
+
+- (IBAction)refresh:(id)sender
+{
+    [self loadDatabaseData];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+            [self submitListing];
+            break;
+        case 1:
+            [self logoutUser];
+            break;
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     PFUser *user = [PFUser currentUser];
     
     if (!user)
     {
-        [self returnToLaunchWithStyle:UIModalTransitionStyleCrossDissolve];
+        [self dismissViewControllerAnimated:true completion:nil];
     }
 }
 
-- (IBAction)logoutUser:(id)sender
+- (void)submitListing
 {
-    [PFUser logOut];
-    [self returnToLaunchWithStyle:UIModalTransitionStyleCoverVertical];
+    SHUploadController *uploadController = [SHUploadController new];
+    [self presentNatGeoViewController:uploadController];
 }
 
-- (void)returnToLaunchWithStyle:(UIModalTransitionStyle)style
+- (void)logoutUser
 {
+    [PFUser logOut];
+    
     SHLaunchController *launchController = [SHLaunchController new];
-    self.modalTransitionStyle = style;
-    [self presentViewController:launchController animated:true completion:nil];
+    [self presentNatGeoViewController:launchController];
 }
 
 #pragma mark - Load Database Data
@@ -92,10 +126,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
     [self loadDatabaseData];
 }
 

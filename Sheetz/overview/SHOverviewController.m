@@ -9,6 +9,7 @@
 #import "SHOverviewController.h"
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
+#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHOverviewController
 
@@ -23,19 +24,7 @@
 
 - (IBAction)editListing:(id)sender
 {
-    SHUploadController *uploadController = [SHUploadController new];
-    
-    [self.view addSubview:uploadController.view];
-    [uploadController.view setFrame:self.view.window.frame];
-    [uploadController.view setTransform:CGAffineTransformMakeScale(0.5,0.5)];
-    [uploadController.view setAlpha:1.0];
-    
-    /*
-     
-     UIView
-     Animation
-     
-     */
+    [self dismissNatGeoViewController];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -54,7 +43,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

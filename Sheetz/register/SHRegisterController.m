@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "SHRegisterController.h"
 #import "SHFirstViewController.h"
+#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHRegisterController
 
@@ -83,8 +84,8 @@
 
 - (void)pushView
 {
-    [self dismissViewControllerAnimated:true completion:nil];
-    [self.presentingViewController dismissViewControllerAnimated:true completion:nil];
+    [self dismissNatGeoViewController];
+    [self.presentingViewController dismissNatGeoViewController];
 }
 
 #pragma mark - Error codes

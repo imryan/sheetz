@@ -7,6 +7,8 @@
 //
 
 #import <Parse/Parse.h>
+#import "MHNatGeoViewControllerTransition.h"
+
 #import "SHCustomFormCell.h"
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"

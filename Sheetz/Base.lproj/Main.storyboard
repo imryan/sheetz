@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Upload Controller-->
@@ -91,7 +91,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="FAw-Tq-P1P">
                                             <connections>
                                                 <action selector="uploadListing:" destination="v4D-oj-oRR" id="uDZ-IG-Wi4"/>
-                                                <segue destination="VHd-Fp-VIL" kind="modal" id="fkL-xG-qJ9"/>
+                                                <segue destination="VHd-Fp-VIL" kind="custom" identifier="" customClass="MHNatGeoSegue" id="fkL-xG-qJ9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A29-2T-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="-172"/>
+            <point key="canvasLocation" x="1020" y="-172"/>
         </scene>
         <!--Overview Controller-->
         <scene sceneID="i0g-kE-Dlf">
@@ -258,14 +258,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Home" prompt=" " id="ueH-YA-CGf">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="P0m-Kx-LZQ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="P0m-Kx-LZQ">
                                             <connections>
-                                                <action selector="logoutUser:" destination="CZ4-MO-1fc" id="dxm-Pb-Yvl"/>
+                                                <action selector="refresh:" destination="CZ4-MO-1fc" id="Izf-As-Fp8"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ARc-TT-qxg">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ARc-TT-qxg">
                                             <connections>
-                                                <segue destination="v4D-oj-oRR" kind="modal" id="tt3-q7-YYK"/>
+                                                <action selector="displayMenu:" destination="CZ4-MO-1fc" id="waG-tz-08W"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

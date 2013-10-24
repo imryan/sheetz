@@ -9,6 +9,7 @@
 #import "SHLaunchController.h"
 #import "SHRegisterController.h"
 #import "SHLoginController.h"
+#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHLaunchController
 
@@ -17,8 +18,7 @@
 - (IBAction)pushRegisterView:(id)sender
 {
     SHRegisterController *registerView = [SHRegisterController new];
-    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:registerView animated:true completion:nil];
+    [self presentNatGeoViewController:registerView];
     
     self.didRegister = true;
 }
@@ -28,8 +28,7 @@
 - (IBAction)pushLoginView:(id)sender
 {
     SHLoginController *loginView = [SHLoginController new];
-    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:loginView animated:true completion:nil];
+    [self presentNatGeoViewController:loginView];
     
     self.didLogin = true;
 }
@@ -45,7 +44,7 @@
 {
     if (self.didLogin || self.didRegister)
     {
-        [self dismissViewControllerAnimated:true completion:nil];
+        [self dismissNatGeoViewController];
     }
 }
 

@@ -10,6 +10,7 @@
 #import "SHLoginController.h"
 #import "SHFirstViewController.h"
 #import "SHLaunchController.h"
+#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHLoginController
 
@@ -65,7 +66,8 @@
 
 - (void)pushView
 {
-    [self dismissViewControllerAnimated:true completion:nil];
+    [self dismissNatGeoViewController];
+    [self.presentingViewController dismissNatGeoViewController];
 }
 
 #pragma mark - Error codes

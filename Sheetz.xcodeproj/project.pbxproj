@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F3359180F5A9F006D9DD3 /* SHUploadController.m */; };
 		940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */; };
+		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
+		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
 		94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC54A180CAB3F007236E4 /* UIKit.framework */; };
@@ -57,6 +59,10 @@
 		940F3359180F5A9F006D9DD3 /* SHUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHUploadController.m; path = upload/SHUploadController.m; sourceTree = "<group>"; };
 		940F335E180F5CA4006D9DD3 /* SHCustomFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomFormCell.h; path = cell/SHCustomFormCell.h; sourceTree = "<group>"; };
 		940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomFormCell.m; path = cell/SHCustomFormCell.m; sourceTree = "<group>"; };
+		9453A5801818B5E000130630 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoSegue.h; path = referenced/MHNatGeoSegue.h; sourceTree = "<group>"; };
+		9453A5811818B5E000130630 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoSegue.m; path = referenced/MHNatGeoSegue.m; sourceTree = "<group>"; };
+		9453A5821818B5E000130630 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoViewControllerTransition.h; path = referenced/MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
+		9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoViewControllerTransition.m; path = referenced/MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCC546180CAB3F007236E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DCC548180CAB3F007236E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,6 +157,17 @@
 			name = "Form Cell";
 			sourceTree = "<group>";
 		};
+		9453A57F1818B5D800130630 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				9453A5801818B5E000130630 /* MHNatGeoSegue.h */,
+				9453A5811818B5E000130630 /* MHNatGeoSegue.m */,
+				9453A5821818B5E000130630 /* MHNatGeoViewControllerTransition.h */,
+				9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		94DCC53A180CAB3F007236E4 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +209,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				9453A57F1818B5D800130630 /* Transitions */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				940F335D180F5C82006D9DD3 /* Form Cell */,
 				940F3357180F5A81006D9DD3 /* Upload Listing */,
@@ -416,9 +434,11 @@
 			files = (
 				94DCC55D180CAB3F007236E4 /* SHFirstViewController.m in Sources */,
 				94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */,
+				9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */,
 				940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */,
 				940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
+				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
 				94DCC560180CAB3F007236E4 /* SHSecondViewController.m in Sources */,
 				94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */,
 				94DCC553180CAB3F007236E4 /* main.m in Sources */,
