@@ -11,14 +11,13 @@
 #import "SHFirstViewController.h"
 
 @implementation SHRegisterController
-@synthesize activityIndicator, emailField, usernameField, passwordField;
 
 #pragma mark - Register user
 
 - (IBAction)registerUser:(id)sender
 {
     // Make sure the username is < 15 chars
-    if (usernameField.text.length > 15)
+    if (self.usernameField.text.length > 15)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                         message:@"Your username must be 15 characters or less." delegate:self
@@ -27,10 +26,11 @@
         [alert show];
         
         // Check if all the fields are filled
-        if ([emailField.text isEqualToString:@""] || [usernameField.text isEqualToString:@""] || [passwordField.text isEqualToString:@""])
+        if ([self.emailField.text isEqualToString:@""] || [self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
-                                                            message:@"Please fill in the missing fields." delegate:self
+                                                            message:@"Please fill in the missing fields."
+                                                           delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
@@ -38,19 +38,23 @@
         
     } else {
         
-        [activityIndicator startAnimating];
+        [self.activityIndicator startAnimating];
+        
+        self.email    = self.emailField.text;
+        self.username = self.usernameField.text;
+        self.password = self.passwordField.text;
         
         PFUser *user = [PFUser user];
-        user.email = emailField.text;
-        user.username = usernameField.text;
-        user.password = passwordField.text;
+        user.email    = self.email;
+        user.username = self.username;
+        user.password = self.password;
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
          {
              if (!error)
              {
                  // Move to next view for welcome/tutorial
-                 [activityIndicator stopAnimating];
+                 [self.activityIndicator stopAnimating];
                  [self pushView];
                  
                  // Development
@@ -65,7 +69,7 @@
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
                  [alert show];
-                 [activityIndicator stopAnimating];
+                 [self.activityIndicator stopAnimating];
                  
                  // Development
                  NSLog(@"User [%@] failed to register.", user.username);
@@ -104,7 +108,7 @@
 #pragma mark - UITextField methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSInteger nextTag = textField.tag + 1;
+    NSInteger nextTag = textField.tag++;
     UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
     
     if (nextResponder) {
@@ -131,9 +135,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [activityIndicator setHidden:true];
-    [activityIndicator setHidesWhenStopped:true];
-    [emailField becomeFirstResponder];
+    [self.activityIndicator setHidden:true];
+    [self.activityIndicator setHidesWhenStopped:true];
+    [self.emailField becomeFirstResponder];
     
     self.emailField.delegate = self;
     self.usernameField.delegate = self;

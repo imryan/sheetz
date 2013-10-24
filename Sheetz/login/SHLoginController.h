@@ -14,6 +14,9 @@
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordField;
 
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+
 - (IBAction)loginUser:(id)sender;
 - (NSString *)translateErrorCode:(NSError *)error;
 - (void)pushView;

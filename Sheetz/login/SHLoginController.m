@@ -12,13 +12,12 @@
 #import "SHLaunchController.h"
 
 @implementation SHLoginController
-@synthesize activityIndicator, usernameField, passwordField;
 
 #pragma mark - Login user
 
 - (IBAction)loginUser:(id)sender
 {
-    if ([usernameField.text isEqualToString:@""] || [passwordField.text isEqualToString:@""])
+    if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                         message:@"Please enter in all fields." delegate:self
@@ -28,17 +27,21 @@
         
     } else {
         
-        [activityIndicator startAnimating];
-        [PFUser logInWithUsernameInBackground:usernameField.text password:passwordField.text block:^(PFUser *user, NSError *error)
+        [self.activityIndicator startAnimating];
+        
+        self.username = self.usernameField.text;
+        self.password = self.passwordField.text;
+        
+        [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error)
          {
              if (user)
              {
                  // Change view
-                 [activityIndicator stopAnimating];
+                 [self.activityIndicator stopAnimating];
                  [self pushView];
                  
                  // Development
-                 NSLog(@"User [%@] successfully logged in.", usernameField.text);
+                 NSLog(@"User [%@] successfully logged in.", self.usernameField.text);
                  
              } else {
                  
@@ -48,11 +51,11 @@
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
                  [alert show];
-                 [activityIndicator stopAnimating];
+                 [self.activityIndicator stopAnimating];
                  
                  // Development
-                 NSLog(@"User [%@] failed to log in.", usernameField.text);
-                 NSLog(@"%d", [error code]);
+                 NSLog(@"User [%@] failed to log in.", self.username);
+                 NSLog(@"%ld", (long)[error code]);
              }
          }];
     }
@@ -83,7 +86,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    NSInteger nextTag = textField.tag + 1;
+    NSInteger nextTag = textField.tag++;
     UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
     
     if (nextResponder) {
@@ -101,7 +104,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Something I guess
+        // Some init
     }
     return self;
 }
@@ -111,9 +114,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [activityIndicator setHidden:true];
-    [activityIndicator setHidesWhenStopped:true];
-    [usernameField becomeFirstResponder];
+    [self.activityIndicator setHidden:true];
+    [self.activityIndicator setHidesWhenStopped:true];
+    [self.usernameField becomeFirstResponder];
     
     self.usernameField.delegate = self;
     self.passwordField.delegate = self;

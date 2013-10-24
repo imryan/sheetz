@@ -14,4 +14,6 @@
 @property (nonatomic, retain) IBOutlet UITextView *descTextView;
 @property (nonatomic, retain) IBOutlet UILabel *priceLabel;
 
+- (IBAction)editListing:(id)sender;
+
 @end

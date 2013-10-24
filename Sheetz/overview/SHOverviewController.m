@@ -7,6 +7,7 @@
 //
 
 #import "SHOverviewController.h"
+#import "SHUploadController.h"
 #import "SHAppDelegate.h"
 
 @implementation SHOverviewController
@@ -18,6 +19,23 @@
         // Custom initialization
     }
     return self;
+}
+
+- (IBAction)editListing:(id)sender
+{
+    SHUploadController *uploadController = [SHUploadController new];
+    
+    [self.view addSubview:uploadController.view];
+    [uploadController.view setFrame:self.view.window.frame];
+    [uploadController.view setTransform:CGAffineTransformMakeScale(0.5,0.5)];
+    [uploadController.view setAlpha:1.0];
+    
+    /*
+     
+     UIView
+     Animation
+     
+     */
 }
 
 - (void)viewWillAppear:(BOOL)animated
