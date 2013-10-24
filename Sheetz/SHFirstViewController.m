@@ -48,16 +48,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    PFUser *user = [PFUser currentUser];
-    
-    if (!user)
-    {
-        [self dismissViewControllerAnimated:true completion:nil];
-    }
-}
-
 - (void)submitListing
 {
     SHUploadController *uploadController = [SHUploadController new];
@@ -127,6 +117,16 @@
 {
     [super viewDidLoad];
     [self loadDatabaseData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user)
+    {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning
