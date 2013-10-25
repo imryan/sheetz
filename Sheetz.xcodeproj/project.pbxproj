@@ -11,6 +11,7 @@
 		940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F335F180F5CA4006D9DD3 /* SHCustomFormCell.m */; };
 		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
 		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
+		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
 		94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC54A180CAB3F007236E4 /* UIKit.framework */; };
@@ -27,11 +28,8 @@
 		94DCC573180CAB3F007236E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DCC571180CAB3F007236E4 /* InfoPlist.strings */; };
 		94DCC575180CAB3F007236E4 /* SheetzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC574180CAB3F007236E4 /* SheetzTests.m */; };
 		94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC583180CAB78007236E4 /* SHLaunchController.m */; };
-		94DCC586180CAB78007236E4 /* SHLaunchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DCC584180CAB78007236E4 /* SHLaunchController.xib */; };
 		94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58A180CADB9007236E4 /* SHRegisterController.m */; };
-		94DCC58D180CADB9007236E4 /* SHRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DCC58B180CADB9007236E4 /* SHRegisterController.xib */; };
 		94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58F180CADC5007236E4 /* SHLoginController.m */; };
-		94DCC592180CADC5007236E4 /* SHLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DCC590180CADC5007236E4 /* SHLoginController.xib */; };
 		94DCC594180CADFA007236E4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC593180CADFA007236E4 /* Parse.framework */; };
 		94DCC596180CAE12007236E4 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */; };
 		94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC597180CAE17007236E4 /* AudioToolbox.framework */; };
@@ -63,6 +61,8 @@
 		9453A5811818B5E000130630 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoSegue.m; path = referenced/MHNatGeoSegue.m; sourceTree = "<group>"; };
 		9453A5821818B5E000130630 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoViewControllerTransition.h; path = referenced/MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
 		9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoViewControllerTransition.m; path = referenced/MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
+		94C708351819E76600319610 /* SHDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDetailController.h; path = detail/SHDetailController.h; sourceTree = "<group>"; };
+		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCC546180CAB3F007236E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DCC548180CAB3F007236E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,13 +86,10 @@
 		94DCC574180CAB3F007236E4 /* SheetzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetzTests.m; sourceTree = "<group>"; };
 		94DCC582180CAB78007236E4 /* SHLaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHLaunchController.h; path = launch/SHLaunchController.h; sourceTree = "<group>"; };
 		94DCC583180CAB78007236E4 /* SHLaunchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHLaunchController.m; path = launch/SHLaunchController.m; sourceTree = "<group>"; };
-		94DCC584180CAB78007236E4 /* SHLaunchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SHLaunchController.xib; path = launch/SHLaunchController.xib; sourceTree = "<group>"; };
 		94DCC589180CADB9007236E4 /* SHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHRegisterController.h; path = register/SHRegisterController.h; sourceTree = "<group>"; };
 		94DCC58A180CADB9007236E4 /* SHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHRegisterController.m; path = register/SHRegisterController.m; sourceTree = "<group>"; };
-		94DCC58B180CADB9007236E4 /* SHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SHRegisterController.xib; path = register/SHRegisterController.xib; sourceTree = "<group>"; };
 		94DCC58E180CADC5007236E4 /* SHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHLoginController.h; path = login/SHLoginController.h; sourceTree = "<group>"; };
 		94DCC58F180CADC5007236E4 /* SHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHLoginController.m; path = login/SHLoginController.m; sourceTree = "<group>"; };
-		94DCC590180CADC5007236E4 /* SHLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SHLoginController.xib; path = login/SHLoginController.xib; sourceTree = "<group>"; };
 		94DCC593180CADFA007236E4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
 		94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		94DCC597180CAE17007236E4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -168,6 +165,15 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
+		94C708341819E75300319610 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				94C708351819E76600319610 /* SHDetailController.h */,
+				94C708361819E76600319610 /* SHDetailController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		94DCC53A180CAB3F007236E4 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +215,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				94C708341819E75300319610 /* Detail */,
 				9453A57F1818B5D800130630 /* Transitions */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				940F335D180F5C82006D9DD3 /* Form Cell */,
@@ -288,7 +295,6 @@
 			children = (
 				94DCC582180CAB78007236E4 /* SHLaunchController.h */,
 				94DCC583180CAB78007236E4 /* SHLaunchController.m */,
-				94DCC584180CAB78007236E4 /* SHLaunchController.xib */,
 			);
 			name = "Pre View";
 			sourceTree = "<group>";
@@ -298,7 +304,6 @@
 			children = (
 				94DCC589180CADB9007236E4 /* SHRegisterController.h */,
 				94DCC58A180CADB9007236E4 /* SHRegisterController.m */,
-				94DCC58B180CADB9007236E4 /* SHRegisterController.xib */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -308,7 +313,6 @@
 			children = (
 				94DCC58E180CADC5007236E4 /* SHLoginController.h */,
 				94DCC58F180CADC5007236E4 /* SHLoginController.m */,
-				94DCC590180CADC5007236E4 /* SHLoginController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -409,9 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DCC562180CAB3F007236E4 /* Images.xcassets in Resources */,
-				94DCC58D180CADB9007236E4 /* SHRegisterController.xib in Resources */,
-				94DCC592180CADC5007236E4 /* SHLoginController.xib in Resources */,
-				94DCC586180CAB78007236E4 /* SHLaunchController.xib in Resources */,
 				94DCC551180CAB3F007236E4 /* InfoPlist.strings in Resources */,
 				94DCC55A180CAB3F007236E4 /* Main.storyboard in Resources */,
 			);
@@ -439,6 +440,7 @@
 				940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
+				94C708371819E76600319610 /* SHDetailController.m in Sources */,
 				94DCC560180CAB3F007236E4 /* SHSecondViewController.m in Sources */,
 				94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */,
 				94DCC553180CAB3F007236E4 /* main.m in Sources */,

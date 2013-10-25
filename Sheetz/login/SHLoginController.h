@@ -19,6 +19,5 @@
 
 - (IBAction)loginUser:(id)sender;
 - (NSString *)translateErrorCode:(NSError *)error;
-- (void)pushView;
 
 @end

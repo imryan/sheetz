@@ -39,7 +39,7 @@
              {
                  // Change view
                  [self.activityIndicator stopAnimating];
-                 [self pushView];
+                 [self performSegueWithIdentifier:@"login" sender:self];
                  
                  // Development
                  NSLog(@"User [%@] successfully logged in.", self.usernameField.text);
@@ -60,14 +60,6 @@
              }
          }];
     }
-}
-
-#pragma mark - Push view
-
-- (void)pushView
-{
-    [self dismissNatGeoViewController];
-    [self.presentingViewController dismissNatGeoViewController];
 }
 
 #pragma mark - Error codes

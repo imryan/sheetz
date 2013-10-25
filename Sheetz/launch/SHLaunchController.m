@@ -6,32 +6,11 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
-#import "SHLaunchController.h"
-#import "SHRegisterController.h"
-#import "SHLoginController.h"
+#import <Parse/Parse.h>
 #import "MHNatGeoViewControllerTransition.h"
+#import "SHLaunchController.h"
 
 @implementation SHLaunchController
-
-#pragma mark - Push to register view
-
-- (IBAction)pushRegisterView:(id)sender
-{
-    SHRegisterController *registerView = [SHRegisterController new];
-    [self presentNatGeoViewController:registerView];
-    
-    self.didRegister = true;
-}
-
-#pragma mark - Push to login view
-
-- (IBAction)pushLoginView:(id)sender
-{
-    SHLoginController *loginView = [SHLoginController new];
-    [self presentNatGeoViewController:loginView];
-    
-    self.didLogin = true;
-}
 
 #pragma mark - ViewDidLoad & Friends
 
@@ -40,11 +19,11 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    if (self.didLogin || self.didRegister)
+    if ([PFUser currentUser])
     {
-        [self dismissNatGeoViewController];
+        [self performSegueWithIdentifier:@"skipLaunch" sender:self];
     }
 }
 

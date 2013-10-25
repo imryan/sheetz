@@ -57,9 +57,7 @@
 - (void)logoutUser
 {
     [PFUser logOut];
-    
-    SHLaunchController *launchController = [SHLaunchController new];
-    [self presentNatGeoViewController:launchController];
+    [self performSegueWithIdentifier:@"logout" sender:self];
 }
 
 #pragma mark - Load Database Data

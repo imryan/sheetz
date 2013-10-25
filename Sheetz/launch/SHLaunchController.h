@@ -10,10 +10,4 @@
 
 @interface SHLaunchController : UIViewController
 
-@property (assign, nonatomic) BOOL didLogin;
-@property (assign, nonatomic) BOOL didRegister;
-
-- (IBAction)pushRegisterView:(id)sender;
-- (IBAction)pushLoginView:(id)sender;
-
 @end
