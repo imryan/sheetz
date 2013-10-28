@@ -175,8 +175,9 @@ double radianFromDegree(float degrees) {
     [[[[UIApplication sharedApplication]delegate]window]addSubview:sourceView];
     MHNatGeoViewControllerTransition * natGeoTransition = [[MHNatGeoViewControllerTransition alloc]initWithSourceView:sourceView destinationView:[viewController view] duration:duration];
     [natGeoTransition setDismissing:YES];
-    [natGeoTransition perform:^(BOOL finished) {
-        if(finished){
+    [natGeoTransition perform:^(BOOL finished)
+     {
+        if (finished) {
             [viewController setPresentedFromViewController:nil];
             [viewController dismissViewControllerAnimated:NO completion:^{
                 if (completion)

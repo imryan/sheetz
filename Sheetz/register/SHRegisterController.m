@@ -51,6 +51,7 @@
         user.password = self.password;
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+         
          {
              if (!error)
              {
@@ -126,7 +127,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.emailField.delegate = self;
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
     }
     return self;
 }
@@ -139,10 +142,11 @@
     [self.activityIndicator setHidden:true];
     [self.activityIndicator setHidesWhenStopped:true];
     [self.emailField becomeFirstResponder];
-    
-    self.emailField.delegate = self;
-    self.usernameField.delegate = self;
-    self.passwordField.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.emailField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

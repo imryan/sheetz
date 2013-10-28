@@ -30,7 +30,6 @@
 		94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC583180CAB78007236E4 /* SHLaunchController.m */; };
 		94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58A180CADB9007236E4 /* SHRegisterController.m */; };
 		94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58F180CADC5007236E4 /* SHLoginController.m */; };
-		94DCC594180CADFA007236E4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC593180CADFA007236E4 /* Parse.framework */; };
 		94DCC596180CAE12007236E4 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */; };
 		94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC597180CAE17007236E4 /* AudioToolbox.framework */; };
 		94DCC59A180CAE1F007236E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC599180CAE1F007236E4 /* CoreLocation.framework */; };
@@ -40,6 +39,7 @@
 		94DCC5A2180CAE34007236E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC5A1180CAE34007236E4 /* Security.framework */; };
 		94E2E6741815F4BB002342DF /* SHOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2E6731815F4BB002342DF /* SHOverviewController.m */; };
 		94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ECDDA1180CD56400615018 /* SHCustomCell.m */; };
+		94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F688B5181EF3E900476B32 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		94DCC58A180CADB9007236E4 /* SHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHRegisterController.m; path = register/SHRegisterController.m; sourceTree = "<group>"; };
 		94DCC58E180CADC5007236E4 /* SHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHLoginController.h; path = login/SHLoginController.h; sourceTree = "<group>"; };
 		94DCC58F180CADC5007236E4 /* SHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHLoginController.m; path = login/SHLoginController.m; sourceTree = "<group>"; };
-		94DCC593180CADFA007236E4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
 		94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		94DCC597180CAE17007236E4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		94DCC599180CAE1F007236E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -102,6 +101,7 @@
 		94E2E6731815F4BB002342DF /* SHOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHOverviewController.m; path = overview/SHOverviewController.m; sourceTree = "<group>"; };
 		94ECDDA0180CD56400615018 /* SHCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomCell.h; path = cell/SHCustomCell.h; sourceTree = "<group>"; };
 		94ECDDA1180CD56400615018 /* SHCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomCell.m; path = cell/SHCustomCell.m; sourceTree = "<group>"; };
+		94F688B5181EF3E900476B32 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 				94DCC59E180CAE2A007236E4 /* MobileCoreServices.framework in Frameworks */,
 				94DCC59C180CAE25007236E4 /* CFNetwork.framework in Frameworks */,
 				94DCC59A180CAE1F007236E4 /* CoreLocation.framework in Frameworks */,
+				94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */,
 				94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */,
-				94DCC594180CADFA007236E4 /* Parse.framework in Frameworks */,
 				94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */,
 				94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */,
 				94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */,
@@ -197,13 +197,13 @@
 			isa = PBXGroup;
 			children = (
 				94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */,
+				94F688B5181EF3E900476B32 /* Parse.framework */,
 				94DCC5A1180CAE34007236E4 /* Security.framework */,
 				94DCC59F180CAE2F007236E4 /* SystemConfiguration.framework */,
 				94DCC59D180CAE2A007236E4 /* MobileCoreServices.framework */,
 				94DCC59B180CAE25007236E4 /* CFNetwork.framework */,
 				94DCC599180CAE1F007236E4 /* CoreLocation.framework */,
 				94DCC597180CAE17007236E4 /* AudioToolbox.framework */,
-				94DCC593180CADFA007236E4 /* Parse.framework */,
 				94DCC54A180CAB3F007236E4 /* UIKit.framework */,
 				94DCC546180CAB3F007236E4 /* Foundation.framework */,
 				94DCC548180CAB3F007236E4 /* CoreGraphics.framework */,
@@ -383,6 +383,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ryan Cohen";
 				TargetAttributes = {
+					94DCC542180CAB3F007236E4 = {
+						DevelopmentTeam = 7V9G5R9AT4;
+					};
 					94DCC566180CAB3F007236E4 = {
 						TestTargetID = 94DCC542180CAB3F007236E4;
 					};
@@ -573,14 +576,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ryan/Desktop/Programming/Projects/Objective-C/Sheetz/frameworks",
+					/Users/ryan/Desktop/sheetz/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
 				INFOPLIST_FILE = "Sheetz/Sheetz-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -590,14 +597,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ryan/Desktop/Programming/Projects/Objective-C/Sheetz/frameworks",
+					/Users/ryan/Desktop/sheetz/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
 				INFOPLIST_FILE = "Sheetz/Sheetz-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

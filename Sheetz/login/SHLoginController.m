@@ -89,6 +89,7 @@
     } else {
         [textField resignFirstResponder];
     }
+    
     return false;
 }
 
@@ -98,7 +99,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Some init
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
     }
     return self;
 }
@@ -110,10 +112,11 @@
     [super viewDidLoad];
     [self.activityIndicator setHidden:true];
     [self.activityIndicator setHidesWhenStopped:true];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self.usernameField becomeFirstResponder];
-    
-    self.usernameField.delegate = self;
-    self.passwordField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
