@@ -10,6 +10,7 @@
 #import "SHLoginController.h"
 #import "SHFirstViewController.h"
 #import "SHLaunchController.h"
+#import "SHCustomField.h"
 #import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHLoginController
@@ -78,19 +79,19 @@
 
 #pragma mark - UITextField Methods
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL didResign = [textField resignFirstResponder];
+    if (!didResign) return false;
     
-    NSInteger nextTag = textField.tag++;
-    UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
+    if ([textField isKindOfClass:[SHCustomField class]])
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[(SHCustomField *)textField nextField] becomeFirstResponder];
+            
+        });
     
-    if (nextResponder) {
-        [nextResponder becomeFirstResponder];
-        
-    } else {
-        [textField resignFirstResponder];
-    }
-    
-    return false;
+    return true;
 }
 
 #pragma mark - Initialization
@@ -99,8 +100,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.usernameField.delegate = self;
-        self.passwordField.delegate = self;
+        // Some init
     }
     return self;
 }
@@ -117,6 +117,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.usernameField becomeFirstResponder];
+    
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

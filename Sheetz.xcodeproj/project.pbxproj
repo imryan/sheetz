@@ -40,6 +40,7 @@
 		94E2E6741815F4BB002342DF /* SHOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2E6731815F4BB002342DF /* SHOverviewController.m */; };
 		94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ECDDA1180CD56400615018 /* SHCustomCell.m */; };
 		94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F688B5181EF3E900476B32 /* Parse.framework */; };
+		94F688BA181EF96400476B32 /* SHCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F688B9181EF96400476B32 /* SHCustomField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		94ECDDA0180CD56400615018 /* SHCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomCell.h; path = cell/SHCustomCell.h; sourceTree = "<group>"; };
 		94ECDDA1180CD56400615018 /* SHCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomCell.m; path = cell/SHCustomCell.m; sourceTree = "<group>"; };
 		94F688B5181EF3E900476B32 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
+		94F688B8181EF96400476B32 /* SHCustomField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomField.h; path = field/SHCustomField.h; sourceTree = "<group>"; };
+		94F688B9181EF96400476B32 /* SHCustomField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomField.m; path = field/SHCustomField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				94F688B7181EF93D00476B32 /* Custom Field */,
 				94C708341819E75300319610 /* Detail */,
 				9453A57F1818B5D800130630 /* Transitions */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
@@ -335,6 +339,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		94F688B7181EF93D00476B32 /* Custom Field */ = {
+			isa = PBXGroup;
+			children = (
+				94F688B8181EF96400476B32 /* SHCustomField.h */,
+				94F688B9181EF96400476B32 /* SHCustomField.m */,
+			);
+			name = "Custom Field";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +453,7 @@
 				94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */,
 				9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */,
 				940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */,
+				94F688BA181EF96400476B32 /* SHCustomField.m in Sources */,
 				940F3360180F5CA4006D9DD3 /* SHCustomFormCell.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
