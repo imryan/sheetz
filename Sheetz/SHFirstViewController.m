@@ -50,8 +50,7 @@
 
 - (void)submitListing
 {
-    SHUploadController *uploadController = [SHUploadController new];
-    [self presentNatGeoViewController:uploadController];
+    [self performSegueWithIdentifier:@"upload" sender:self];
 }
 
 - (void)logoutUser
@@ -115,16 +114,6 @@
 {
     [super viewDidLoad];
     [self loadDatabaseData];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    PFUser *user = [PFUser currentUser];
-    
-    if (!user)
-    {
-        [self dismissViewControllerAnimated:true completion:nil];
-    }
 }
 
 - (void)didReceiveMemoryWarning

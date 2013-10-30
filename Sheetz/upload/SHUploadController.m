@@ -30,6 +30,11 @@
     NSLog(@"\nTitle: %@\nDesc: %@\nPrice: %@", delegate.title, delegate.desc, delegate.price);
 }
 
+- (IBAction)cancelUpload:(id)sender
+{
+    [self dismissNatGeoViewController];
+}
+
 #pragma mark - Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

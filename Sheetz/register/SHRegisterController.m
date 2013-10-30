@@ -7,10 +7,11 @@
 //
 
 #import <Parse/Parse.h>
+#import "MHNatGeoViewControllerTransition.h"
+
 #import "SHRegisterController.h"
 #import "SHFirstViewController.h"
 #import "SHCustomField.h"
-#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHRegisterController
 
@@ -28,7 +29,9 @@
         [alert show];
         
         // Check if all the fields are filled
-        if ([self.emailField.text isEqualToString:@""] || [self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
+        if ([self.emailField.text isEqualToString:@""]
+            || [self.usernameField.text isEqualToString:@""]
+            || [self.passwordField.text isEqualToString:@""])
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                             message:@"Please fill in the missing fields."

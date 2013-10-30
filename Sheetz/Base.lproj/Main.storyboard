@@ -61,7 +61,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="A nice description." translatesAutoresizingMaskIntoConstraints="NO" id="BUO-14-2nS">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUO-14-2nS">
                                                     <rect key="frame" x="10" y="98" width="290" height="157"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,8 +87,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Upload Listing" prompt=" " id="dg8-2e-Ha8">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OHj-bV-pJF"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FAw-Tq-P1P">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OHj-bV-pJF">
+                                            <connections>
+                                                <action selector="cancelUpload:" destination="v4D-oj-oRR" id="QJb-XO-3hX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="FAw-Tq-P1P">
                                             <connections>
                                                 <action selector="uploadListing:" destination="v4D-oj-oRR" id="uDZ-IG-Wi4"/>
                                                 <segue destination="VHd-Fp-VIL" kind="custom" identifier="" customClass="MHNatGeoSegue" id="fkL-xG-qJ9"/>
@@ -280,6 +284,7 @@
                     <connections>
                         <outlet property="tableView" destination="2dC-OA-XPZ" id="rpS-Ox-ARN"/>
                         <segue destination="XZB-bE-kqs" kind="custom" identifier="logout" customClass="MHNatGeoSegue" id="XeB-RC-Xek"/>
+                        <segue destination="v4D-oj-oRR" kind="custom" identifier="upload" customClass="MHNatGeoSegue" id="oTF-Yg-g5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -591,6 +596,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PR7-Ac-doL"/>
+        <segue reference="bZt-hJ-OIk"/>
     </inferredMetricsTieBreakers>
 </document>
