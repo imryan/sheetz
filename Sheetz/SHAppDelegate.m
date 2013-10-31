@@ -13,6 +13,7 @@
 #import "SHLaunchController.h"
 
 @implementation SHAppDelegate
+@synthesize title, desc, price;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

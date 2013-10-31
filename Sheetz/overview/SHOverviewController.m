@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
+#import "MHNatGeoViewControllerTransition.h"
 #import "SHOverviewController.h"
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
-#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHOverviewController
 
@@ -24,6 +24,13 @@
 
 - (IBAction)editListing:(id)sender
 {
+    /* Erase the data previously stored and make way for new data
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.title = @"";
+    delegate.desc  = @"";
+    delegate.price = @"";
+     */
+    
     [self dismissNatGeoViewController];
 }
 
@@ -33,6 +40,8 @@
     self.titleLabel.text   = delegate.title;
     self.descTextView.text = delegate.desc;
     self.priceLabel.text   = delegate.price;
+    
+    NSLog(@"Delegate title: %@", delegate.title);
 }
 
 - (void)viewDidLoad

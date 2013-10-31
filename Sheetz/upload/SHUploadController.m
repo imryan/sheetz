@@ -26,8 +26,7 @@
 
 - (IBAction)uploadListing:(id)sender
 {
-    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"\nTitle: %@\nDesc: %@\nPrice: %@", delegate.title, delegate.desc, delegate.price);
+    //SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (IBAction)cancelUpload:(id)sender

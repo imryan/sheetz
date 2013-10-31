@@ -8,10 +8,6 @@
 
 #import "SHDetailController.h"
 
-@interface SHDetailController ()
-
-@end
-
 @implementation SHDetailController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

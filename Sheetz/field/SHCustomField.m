@@ -9,7 +9,6 @@
 #import "SHCustomField.h"
 
 @implementation SHCustomField
-
 @synthesize nextField;
 
 @end

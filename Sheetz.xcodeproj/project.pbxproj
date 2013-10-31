@@ -218,10 +218,10 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
 				94C708341819E75300319610 /* Detail */,
 				9453A57F1818B5D800130630 /* Transitions */,
-				94DCC57E180CAB46007236E4 /* Delegates */,
 				940F335D180F5C82006D9DD3 /* Form Cell */,
 				940F3357180F5A81006D9DD3 /* Upload Listing */,
 				94E2E6711815F496002342DF /* Listing Overview */,

@@ -35,7 +35,7 @@
     }
     return false;
 }
-
+    
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -44,20 +44,14 @@
     self.desc  = self.descTextView.text;
     self.price = self.priceTextField.text;
     
+    /*
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.title = self.title;
     delegate.desc  = self.desc;
     delegate.price = self.price;
-}
-
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if ([textView.text isEqualToString:@"\n"])
-    {
-        [textView resignFirstResponder];
-        return false;
-    }
-    return true;
+    
+    NSLog(@"Title on ending: %@", delegate.title);
+     */
 }
 
 #pragma mark - LayoutSubviews & Friends
