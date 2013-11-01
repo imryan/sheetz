@@ -8,6 +8,7 @@
 
 #import "SHCustomFormCell.h"
 #import "SHAppDelegate.h"
+#import "SHCustomField.h"
 
 @implementation SHCustomFormCell
 
@@ -22,18 +23,19 @@
 
 #pragma mark - UITextField/TextView Methods
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL didResign = [textField resignFirstResponder];
+    if (!didResign) return false;
     
-    NSInteger nextTag = textField.tag++;
-    UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
+    if ([textField isKindOfClass:[SHCustomField class]])
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[(SHCustomField *)textField nextField] becomeFirstResponder];
+            
+        });
     
-    if (nextResponder) {
-        [nextResponder becomeFirstResponder];
-        
-    } else {
-        [textField resignFirstResponder];
-    }
-    return false;
+    return true;
 }
     
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -44,14 +46,12 @@
     self.desc  = self.descTextView.text;
     self.price = self.priceTextField.text;
     
-    /*
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.title = self.title;
     delegate.desc  = self.desc;
     delegate.price = self.price;
     
     NSLog(@"Title on ending: %@", delegate.title);
-     */
 }
 
 #pragma mark - LayoutSubviews & Friends
