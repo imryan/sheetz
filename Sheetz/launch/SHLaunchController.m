@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "Reachability.h"
 #import "MHNatGeoViewControllerTransition.h"
 #import "SHLaunchController.h"
 
@@ -21,6 +22,24 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    Reachability *reach = [Reachability reachabilityWithHostname:@"http://google.com"];
+    
+    reach.reachableBlock = ^(Reachability *reach)
+    {
+        NSLog(@"[Reachability] connected.");
+    };
+    
+    reach.unreachableBlock = ^(Reachability *reach)
+    {
+        NSLog(@"[Reachability] not connected.");
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Internet Connectivity"
+                                                       message:@"Please connect to the internet to continie."
+                                                      delegate:self
+                                              cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+    };
+    
     if ([PFUser currentUser])
     {
         [self performSegueWithIdentifier:@"skipLaunch" sender:self];

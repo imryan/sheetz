@@ -10,4 +10,6 @@
 
 @interface SHDetailController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UILabel *listingTitle;
+
 @end

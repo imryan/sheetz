@@ -16,6 +16,7 @@
 #import "SHUploadController.h"
 
 @implementation SHFirstViewController
+@synthesize tableData;
 
 #pragma mark - Display Menu & Actions
 

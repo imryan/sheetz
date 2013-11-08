@@ -9,7 +9,6 @@
 #import <Parse/Parse.h>
 #import "MHNatGeoViewControllerTransition.h"
 
-#import "SHCustomFormCell.h"
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
 
@@ -24,39 +23,24 @@
     return self;
 }
 
-- (IBAction)uploadListing:(id)sender
+- (IBAction)uploadListing:(id)sende
 {
-    //SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.title = self.title;
+    delegate.desc  = self.desc;
+    delegate.price = self.price;
+    
+    [self performSegueWithIdentifier:@"next1" sender:self];
+}
+
+- (IBAction)uploadListing2:(id)sender
+{
+    [self performSegueWithIdentifier:@"next2" sender:self];
 }
 
 - (IBAction)cancelUpload:(id)sender
 {
     [self dismissNatGeoViewController];
-}
-
-#pragma mark - Table View Methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellId = @"CellId";
-    SHCustomFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (!cell)
-    {
-        cell = [[SHCustomFormCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
 #pragma mark ViewDidLoad & Friends

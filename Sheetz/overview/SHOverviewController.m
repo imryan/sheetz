@@ -24,12 +24,11 @@
 
 - (IBAction)editListing:(id)sender
 {
-    /* Erase the data previously stored and make way for new data
+    // Erase the data previously stored and make way for new data
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.title = @"";
     delegate.desc  = @"";
     delegate.price = @"";
-     */
     
     [self dismissNatGeoViewController];
 }
@@ -40,8 +39,6 @@
     self.titleLabel.text   = delegate.title;
     self.descTextView.text = delegate.desc;
     self.priceLabel.text   = delegate.price;
-    
-    NSLog(@"Delegate title: %@", delegate.title);
 }
 
 - (void)viewDidLoad

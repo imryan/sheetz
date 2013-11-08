@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SHFirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>
-{
-    NSArray *tableData;
-}
 
+@property (nonatomic, retain) NSArray *tableData;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (void)submitListing;

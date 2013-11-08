@@ -7,6 +7,7 @@
 //
 
 #import "SHDetailController.h"
+#import "SHFirstViewController.h"
 
 @implementation SHDetailController
 
@@ -23,6 +24,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Load data from table cell index
+    SHFirstViewController *firstController = [SHFirstViewController new];
+    NSString *title = [firstController.tableData objectAtIndex:0];
+    
+    self.listingTitle.text = title;
 }
 
 - (void)didReceiveMemoryWarning
