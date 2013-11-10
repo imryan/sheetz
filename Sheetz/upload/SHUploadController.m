@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
-#import <Parse/Parse.h>
 #import "MHNatGeoViewControllerTransition.h"
 
 #import "SHUploadController.h"
@@ -23,19 +22,16 @@
     return self;
 }
 
-- (IBAction)uploadListing:(id)sende
+- (IBAction)nextView:(id)sender
 {
+    self.title = self.titleTextField.text;
+    self.desc  = self.descTextView.text;
+    
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.title = self.title;
     delegate.desc  = self.desc;
-    delegate.price = self.price;
     
-    [self performSegueWithIdentifier:@"next1" sender:self];
-}
-
-- (IBAction)uploadListing2:(id)sender
-{
-    [self performSegueWithIdentifier:@"next2" sender:self];
+    [self performSegueWithIdentifier:@"nextListing" sender:self];
 }
 
 - (IBAction)cancelUpload:(id)sender

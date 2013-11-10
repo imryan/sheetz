@@ -23,13 +23,7 @@
 }
 
 - (IBAction)editListing:(id)sender
-{
-    // Erase the data previously stored and make way for new data
-    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.title = @"";
-    delegate.desc  = @"";
-    delegate.price = @"";
-    
+{    
     [self dismissNatGeoViewController];
 }
 

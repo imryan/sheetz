@@ -28,7 +28,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="FAw-Tq-P1P">
                                             <connections>
-                                                <action selector="uploadListing:" destination="v4D-oj-oRR" id="Mzm-cr-j8g"/>
+                                                <action selector="nextView:" destination="v4D-oj-oRR" id="0SN-pD-TZ9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -67,16 +67,17 @@
                     <connections>
                         <outlet property="descTextView" destination="USe-f2-e9n" id="tZ1-7P-Jfl"/>
                         <outlet property="titleTextField" destination="h5H-2O-4VY" id="eep-ew-A9Z"/>
+                        <segue destination="Q7z-HL-COY" kind="custom" identifier="nextListing" customClass="MHNatGeoSegue" id="NBj-F7-6G3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A29-2T-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120" y="180"/>
         </scene>
-        <!--Upload Controller-->
+        <!--Second Upload Controller-->
         <scene sceneID="tid-J3-Ong">
             <objects>
-                <viewController id="Q7z-HL-COY" customClass="SHUploadController" sceneMemberID="viewController">
+                <viewController id="Q7z-HL-COY" customClass="SHSecondUploadController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aNQ-ui-Kah"/>
                         <viewControllerLayoutGuide type="bottom" id="yCF-Kz-n4q"/>
@@ -90,8 +91,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Listing Details" prompt=" " id="faw-c5-aeU">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="zJE-j5-bvL"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="gOZ-k5-paJ"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="zJE-j5-bvL">
+                                            <connections>
+                                                <action selector="previousView:" destination="Q7z-HL-COY" id="tYa-PY-5Um"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="gOZ-k5-paJ">
+                                            <connections>
+                                                <action selector="uploadListing:" destination="Q7z-HL-COY" id="bAy-7N-CB6"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -102,20 +111,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADA-lv-70K">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Campus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADA-lv-70K">
                                 <rect key="frame" x="8" y="130" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhr-az-Ako">
-                                <rect key="frame" x="8" y="159" width="304" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-gp-lUd">
                                 <rect key="frame" x="8" y="91" width="304" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -125,6 +127,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTextField" destination="aVN-gp-lUd" id="O8B-0M-4gM"/>
+                        <segue destination="VHd-Fp-VIL" kind="custom" identifier="uploadListing" customClass="MHNatGeoSegue" id="Jji-HN-riW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIX-dV-8kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
