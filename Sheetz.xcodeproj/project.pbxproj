@@ -39,7 +39,6 @@
 		94DCC5A2180CAE34007236E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC5A1180CAE34007236E4 /* Security.framework */; };
 		94E2E6741815F4BB002342DF /* SHOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2E6731815F4BB002342DF /* SHOverviewController.m */; };
 		94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ECDDA1180CD56400615018 /* SHCustomCell.m */; };
-		94F2D5CD182FD89900F01A45 /* SHSecondUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F2D5CC182FD89900F01A45 /* SHSecondUploadController.m */; };
 		94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F688B5181EF3E900476B32 /* Parse.framework */; };
 		94F688BA181EF96400476B32 /* SHCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F688B9181EF96400476B32 /* SHCustomField.m */; };
 /* End PBXBuildFile section */
@@ -103,8 +102,6 @@
 		94E2E6731815F4BB002342DF /* SHOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHOverviewController.m; path = overview/SHOverviewController.m; sourceTree = "<group>"; };
 		94ECDDA0180CD56400615018 /* SHCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomCell.h; path = cell/SHCustomCell.h; sourceTree = "<group>"; };
 		94ECDDA1180CD56400615018 /* SHCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomCell.m; path = cell/SHCustomCell.m; sourceTree = "<group>"; };
-		94F2D5CB182FD89900F01A45 /* SHSecondUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHSecondUploadController.h; path = upload/SHSecondUploadController.h; sourceTree = "<group>"; };
-		94F2D5CC182FD89900F01A45 /* SHSecondUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHSecondUploadController.m; path = upload/SHSecondUploadController.m; sourceTree = "<group>"; };
 		94F688B5181EF3E900476B32 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
 		94F688B8181EF96400476B32 /* SHCustomField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomField.h; path = field/SHCustomField.h; sourceTree = "<group>"; };
 		94F688B9181EF96400476B32 /* SHCustomField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomField.m; path = field/SHCustomField.m; sourceTree = "<group>"; };
@@ -147,8 +144,6 @@
 			children = (
 				940F3358180F5A9F006D9DD3 /* SHUploadController.h */,
 				940F3359180F5A9F006D9DD3 /* SHUploadController.m */,
-				94F2D5CB182FD89900F01A45 /* SHSecondUploadController.h */,
-				94F2D5CC182FD89900F01A45 /* SHSecondUploadController.m */,
 			);
 			name = "Upload Listing";
 			sourceTree = "<group>";
@@ -459,7 +454,6 @@
 				9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */,
 				940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */,
 				94F688BA181EF96400476B32 /* SHCustomField.m in Sources */,
-				94F2D5CD182FD89900F01A45 /* SHSecondUploadController.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
 				94C708371819E76600319610 /* SHDetailController.m in Sources */,

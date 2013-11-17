@@ -34,12 +34,16 @@
 
 - (IBAction)nextView:(id)sender
 {
-    self.title = self.titleTextField.text;
-    self.desc  = self.descTextView.text;
+    self.title  = self.titleTextField.text;
+    self.desc   = self.descTextView.text;
+    self.price  = self.priceTextField.text;
+    self.campus = self.campusTextField.text;
     
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.title = self.title;
-    delegate.desc  = self.desc;
+    delegate.title  = self.title;
+    delegate.desc   = self.desc;
+    delegate.price  = self.price;
+    delegate.campus = self.campus;
     
     [self performSegueWithIdentifier:@"nextListing" sender:self];
 }
@@ -54,6 +58,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.scrollView setScrollEnabled:true];
+    [self.scrollView setContentSize:CGSizeMake(320, 1000)];
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning
