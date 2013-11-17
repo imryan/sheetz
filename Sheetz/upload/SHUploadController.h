@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHUploadController : UIViewController <UITextFieldDelegate>
+@interface SHUploadController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *titleTextField;
 @property (nonatomic, retain) IBOutlet UITextView  *descTextView;

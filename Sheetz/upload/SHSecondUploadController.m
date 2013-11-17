@@ -19,10 +19,12 @@
 
 - (IBAction)uploadListing:(id)sender
 {
-    self.price = self.priceTextField.text;
+    self.price  = self.priceTextField.text;
+    self.campus = self.campusTextField.text;
     
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.price = self.price;
+    delegate.price  = self.price;
+    delegate.campus = self.campus;
     
     [self performSegueWithIdentifier:@"uploadListing" sender:self];
 }

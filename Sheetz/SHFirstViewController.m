@@ -97,7 +97,7 @@
     PFObject *listing = [tableData objectAtIndex:indexPath.row];
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
-    [cell.postPriceLabel setText:[NSString stringWithFormat:@"$%@", [listing objectForKey:@"price"]]];
+    [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
     
     return cell;
 }

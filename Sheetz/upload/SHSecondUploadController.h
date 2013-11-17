@@ -15,7 +15,9 @@
 - (IBAction)uploadListing:(id)sender;
 
 @property (nonatomic, retain) IBOutlet UITextField *priceTextField;
+@property (nonatomic, retain) IBOutlet UITextField *campusTextField;
 
 @property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *campus;
 
 @end

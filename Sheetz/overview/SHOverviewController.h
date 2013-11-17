@@ -13,7 +13,9 @@
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UITextView *descTextView;
 @property (nonatomic, retain) IBOutlet UILabel *priceLabel;
+@property (nonatomic, retain) IBOutlet UILabel *campusLabel;
 
 - (IBAction)editListing:(id)sender;
+- (IBAction)uploadListing:(id)sender;
 
 @end
