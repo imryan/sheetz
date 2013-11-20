@@ -10,6 +10,7 @@
 
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
+#import "SHCustomFormCell.h"
 
 @implementation SHUploadController
 
@@ -22,30 +23,54 @@
     return self;
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    
-    if([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-        return NO;
-    }
-    
-    return YES;
-}
-
+// Might remove this
 - (IBAction)nextView:(id)sender
 {
-    self.title  = self.titleTextField.text;
-    self.desc   = self.descTextView.text;
-    self.price  = self.priceTextField.text;
-    self.campus = self.campusTextField.text;
     
-    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.title  = self.title;
-    delegate.desc   = self.desc;
-    delegate.price  = self.price;
-    delegate.campus = self.campus;
+}
+
+#pragma mark - UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellId = @"CellId";
     
-    [self performSegueWithIdentifier:@"nextListing" sender:self];
+    switch (indexPath.row) {
+        case 0:
+            cellId = @"CellId";
+            break;
+        case 1:
+            cellId = @"CellId2";
+            break;
+        case 2:
+            cellId = @"CellId3";
+            break;
+        case 3:
+            cellId = @"CellId4";
+            break;
+    }
+    
+    SHCustomFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    //[tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+
+    if (!cell)
+    {
+        cell = [[SHCustomFormCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
 - (IBAction)cancelUpload:(id)sender
@@ -58,9 +83,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.scrollView setScrollEnabled:true];
-    [self.scrollView setContentSize:CGSizeMake(320, 1000)];
-    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning

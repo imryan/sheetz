@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHUploadController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface SHUploadController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UITextField *titleTextField;
-@property (nonatomic, retain) IBOutlet UITextView  *descTextView;
-@property (nonatomic, retain) IBOutlet UITextField *priceTextField;
-@property (nonatomic, retain) IBOutlet UITextField *campusTextField;
-
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *desc;
-@property (nonatomic, copy) NSString *price;
-@property (nonatomic, copy) NSString *campus;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (IBAction)cancelUpload:(id)sender;
 - (IBAction)nextView:(id)sender;

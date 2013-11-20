@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F3359180F5A9F006D9DD3 /* SHUploadController.m */; };
+		94130234183C27EB00DD40A3 /* SHCustomFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94130233183C27EB00DD40A3 /* SHCustomFormCell.m */; };
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
 		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
 		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
@@ -56,6 +57,8 @@
 /* Begin PBXFileReference section */
 		940F3358180F5A9F006D9DD3 /* SHUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHUploadController.h; path = upload/SHUploadController.h; sourceTree = "<group>"; };
 		940F3359180F5A9F006D9DD3 /* SHUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHUploadController.m; path = upload/SHUploadController.m; sourceTree = "<group>"; };
+		94130232183C27EB00DD40A3 /* SHCustomFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomFormCell.h; path = cell/SHCustomFormCell.h; sourceTree = "<group>"; };
+		94130233183C27EB00DD40A3 /* SHCustomFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomFormCell.m; path = cell/SHCustomFormCell.m; sourceTree = "<group>"; };
 		942DEF45182462BD006E32FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = referenced/Reachability.h; sourceTree = "<group>"; };
 		942DEF46182462BD006E32FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = referenced/Reachability.m; sourceTree = "<group>"; };
 		9453A5801818B5E000130630 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoSegue.h; path = referenced/MHNatGeoSegue.h; sourceTree = "<group>"; };
@@ -148,6 +151,15 @@
 			name = "Upload Listing";
 			sourceTree = "<group>";
 		};
+		94130231183C27DF00DD40A3 /* Form Cells */ = {
+			isa = PBXGroup;
+			children = (
+				94130232183C27EB00DD40A3 /* SHCustomFormCell.h */,
+				94130233183C27EB00DD40A3 /* SHCustomFormCell.m */,
+			);
+			name = "Form Cells";
+			sourceTree = "<group>";
+		};
 		942DEF44182462AE006E32FC /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				94130231183C27DF00DD40A3 /* Form Cells */,
 				942DEF44182462AE006E32FC /* Reachability */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
@@ -456,6 +469,7 @@
 				94F688BA181EF96400476B32 /* SHCustomField.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
+				94130234183C27EB00DD40A3 /* SHCustomFormCell.m in Sources */,
 				94C708371819E76600319610 /* SHDetailController.m in Sources */,
 				94DCC560180CAB3F007236E4 /* SHSecondViewController.m in Sources */,
 				942DEF47182462BD006E32FC /* Reachability.m in Sources */,
