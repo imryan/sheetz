@@ -62,7 +62,6 @@
     if (!cell)
     {
         cell = [[SHCustomFormCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        
     }
     
     return cell;

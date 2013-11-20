@@ -26,14 +26,13 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     switch (textField.tag) {
-        case 0:
-            [self.descTextField canBecomeFirstResponder];
+        case 1:
             [self.descTextField becomeFirstResponder];
             break;
-        case 1:
+        case 2:
             [self.priceTextField becomeFirstResponder];
             break;
-        case 2:
+        case 3:
             [self.campusTextField becomeFirstResponder];
             break;
     }
@@ -47,6 +46,40 @@
     self.desc   = self.descTextField.text;
     self.price  = self.priceTextField.text;
     self.campus = self.campusTextField.text;
+    
+    if (![self.title isEqualToString:@""]) {
+        [self updateDataObjectWithTag:self.titleTextField.tag andString:self.title];
+    }
+    else if (![self.desc isEqualToString:@""]) {
+        [self updateDataObjectWithTag:self.descTextField.tag andString:self.desc];
+    }
+    else if (![self.price isEqualToString:@""]) {
+        [self updateDataObjectWithTag:self.priceTextField.tag andString:self.price];
+    }
+}
+
+- (void)updateDataObjectWithTag:(NSInteger)tag andString:(NSString *)string
+{
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    switch ((int)tag) {
+        case 1:
+            delegate.title = string;
+            break;
+        case 2:
+            delegate.desc = string;
+            break;
+        case 3:
+            delegate.price = string;
+            break;
+        case 4:
+            delegate.campus = string;
+            break;
+        default:
+            break;
+    }
+    
+    NSLog(@"\nDelegate values: %@ %@ %@ %@", delegate.title, delegate.desc, delegate.price, delegate.campus);
 }
 
 - (BOOL)allFieldsEntered {
