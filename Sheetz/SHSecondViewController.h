@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SHSecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    NSArray *userListings;
-}
 
+@property (nonatomic, retain) NSArray *tableData;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *memberSinceLabel;
+
+- (IBAction)refresh:(id)sender;
 
 @end

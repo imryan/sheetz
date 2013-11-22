@@ -8,8 +8,14 @@
 
 #import "SHDetailController.h"
 #import "SHFirstViewController.h"
+#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHDetailController
+
+- (IBAction)done:(id)sender
+{
+    [self performSegueWithIdentifier:@"detailDone" sender:self];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

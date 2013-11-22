@@ -12,4 +12,6 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *listingTitle;
 
+- (IBAction)done:(id)sender;
+
 @end

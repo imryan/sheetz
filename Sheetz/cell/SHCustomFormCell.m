@@ -42,41 +42,27 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     self.title  = self.titleTextField.text;
     self.desc   = self.descTextField.text;
     self.price  = self.priceTextField.text;
     self.campus = self.campusTextField.text;
     
     if (![self.title isEqualToString:@""]) {
-        [self updateDataObjectWithTag:self.titleTextField.tag andString:self.title];
+        delegate.title = self.title;
     }
     else if (![self.desc isEqualToString:@""]) {
-        [self updateDataObjectWithTag:self.descTextField.tag andString:self.desc];
+        delegate.desc = self.desc;
     }
     else if (![self.price isEqualToString:@""]) {
-        [self updateDataObjectWithTag:self.priceTextField.tag andString:self.price];
+        delegate.price = self.price;
     }
-}
-
-- (void)updateDataObjectWithTag:(NSInteger)tag andString:(NSString *)string
-{
-    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    switch ((int)tag) {
-        case 1:
-            delegate.title = string;
-            break;
-        case 2:
-            delegate.desc = string;
-            break;
-        case 3:
-            delegate.price = string;
-            break;
-        case 4:
-            delegate.campus = string;
-            break;
-        default:
-            break;
+    else if (![self.campus isEqualToString:@""]) {
+        delegate.campus = self.campus;
+        
+    } else {
+        
     }
     
     NSLog(@"\nDelegate values: %@ %@ %@ %@", delegate.title, delegate.desc, delegate.price, delegate.campus);

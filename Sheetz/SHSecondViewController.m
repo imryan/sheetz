@@ -11,12 +11,18 @@
 #import <Parse/Parse.h>
 
 @implementation SHSecondViewController
+@synthesize tableData;
+
+- (IBAction)refresh:(id)sender
+{
+    [self loadDatabaseData];
+}
 
 #pragma mark - TableView Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [userListings count];
+    return [tableData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -29,20 +35,37 @@
         cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    /*
     PFQuery *query = [PFQuery queryWithClassName:@"Listings"];
-    [query whereKey:@"user" equalTo:user];
-    userListings = [query findObjects];
-     
+    PFUser *user = [PFUser currentUser];
+    
+    [query whereKey:@"member" equalTo:user.username];
+    
+    tableData = [query findObjects];
+    
     PFObject *listing = [tableData objectAtIndex:indexPath.row];
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
-    [cell.postPriceLabel setText:[NSString stringWithFormat:@"$%@", [listing objectForKey:@"price"]]];
+    [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
     
     return cell;
-    */
-    
-    return cell;
+}
+
+#pragma mark - Load Database Data
+
+- (void)loadDatabaseData
+{
+    PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
+    [listingQuery whereKeyExists:@"title"];
+    [listingQuery whereKey:@"member" equalTo:[PFUser currentUser].username];
+    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (!error)
+         {
+             tableData = objects;
+             [self.tableView reloadData];
+         }
+         
+     }];
 }
 
 #pragma mark - ViewDidLoad & Friends
@@ -50,6 +73,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadDatabaseData];
 }
 
 - (void)viewWillAppear:(BOOL)animated

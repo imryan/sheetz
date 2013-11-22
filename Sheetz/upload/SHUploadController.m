@@ -42,15 +42,19 @@
     
     switch (indexPath.row) {
         case 0:
+            NSLog(@"CellId");
             cellId = @"CellId";
             break;
         case 1:
+            NSLog(@"CellId2");
             cellId = @"CellId2";
             break;
         case 2:
+            NSLog(@"CellId3");
             cellId = @"CellId3";
             break;
         case 3:
+            NSLog(@"CellId4");
             cellId = @"CellId4";
             break;
     }
@@ -65,11 +69,6 @@
     }
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
 - (IBAction)cancelUpload:(id)sender
