@@ -29,15 +29,97 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="FAw-Tq-P1P">
                                             <connections>
-                                                <action selector="nextView:" destination="v4D-oj-oRR" id="0SN-pD-TZ9"/>
+                                                <action selector="overview:" destination="v4D-oj-oRR" id="U0f-Bw-Lif"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-v8-rmt">
+                                <rect key="frame" x="20" y="65" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Information"/>
+                                    <segment title="Description"/>
+                                    <segment title="Photos"/>
+                                </segments>
+                                <connections>
+                                    <action selector="nextView:" destination="v4D-oj-oRR" eventType="valueChanged" id="Ywv-5H-xHA"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Listing title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVf-8U-pIb" customClass="SHCustomField">
+                                <rect key="frame" x="20" y="107" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="nextField" destination="7DQ-D3-4Ys" id="Aib-Go-mfm"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fz8-20-k1u" customClass="SHCustomField">
+                                <rect key="frame" x="20" y="183" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="nextField" destination="pgr-in-ZV2" id="KAn-05-Y28"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nearby Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-in-ZV2" customClass="SHCustomField">
+                                <rect key="frame" x="20" y="221" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Campus" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DQ-D3-4Ys" customClass="SHCustomField">
+                                <rect key="frame" x="20" y="145" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="nextField" destination="Fz8-20-k1u" id="4dt-gj-bnL"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riw-Ne-SWm">
+                                <rect key="frame" x="0.0" y="101" width="320" height="379"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-g3-NJW">
+                                        <rect key="frame" x="20" y="5" width="280" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zG-Q1-tad">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Third" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-zZ-gfZ">
+                                                <rect key="frame" x="141" y="70" width="39" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="campusField" destination="7DQ-D3-4Ys" id="Ac8-id-5HP"/>
+                        <outlet property="descriptionField" destination="vTE-g3-NJW" id="dFN-DU-ucH"/>
+                        <outlet property="priceField" destination="Fz8-20-k1u" id="2Q6-86-Q5P"/>
+                        <outlet property="secondView" destination="riw-Ne-SWm" id="e2V-c9-71d"/>
+                        <outlet property="streetField" destination="pgr-in-ZV2" id="jUI-Yk-p55"/>
+                        <outlet property="thirdView" destination="2zG-Q1-tad" id="Yb6-GW-KWi"/>
+                        <outlet property="titleField" destination="nVf-8U-pIb" id="eCR-7I-gXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A29-2T-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
