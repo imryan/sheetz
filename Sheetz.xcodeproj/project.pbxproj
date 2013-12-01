@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F3359180F5A9F006D9DD3 /* SHUploadController.m */; };
-		94130234183C27EB00DD40A3 /* SHCustomFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94130233183C27EB00DD40A3 /* SHCustomFormCell.m */; };
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
 		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
 		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
@@ -31,7 +30,6 @@
 		94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC583180CAB78007236E4 /* SHLaunchController.m */; };
 		94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58A180CADB9007236E4 /* SHRegisterController.m */; };
 		94DCC591180CADC5007236E4 /* SHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCC58F180CADC5007236E4 /* SHLoginController.m */; };
-		94DCC596180CAE12007236E4 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */; };
 		94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC597180CAE17007236E4 /* AudioToolbox.framework */; };
 		94DCC59A180CAE1F007236E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC599180CAE1F007236E4 /* CoreLocation.framework */; };
 		94DCC59C180CAE25007236E4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC59B180CAE25007236E4 /* CFNetwork.framework */; };
@@ -57,8 +55,6 @@
 /* Begin PBXFileReference section */
 		940F3358180F5A9F006D9DD3 /* SHUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHUploadController.h; path = upload/SHUploadController.h; sourceTree = "<group>"; };
 		940F3359180F5A9F006D9DD3 /* SHUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHUploadController.m; path = upload/SHUploadController.m; sourceTree = "<group>"; };
-		94130232183C27EB00DD40A3 /* SHCustomFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCustomFormCell.h; path = cell/SHCustomFormCell.h; sourceTree = "<group>"; };
-		94130233183C27EB00DD40A3 /* SHCustomFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCustomFormCell.m; path = cell/SHCustomFormCell.m; sourceTree = "<group>"; };
 		942DEF45182462BD006E32FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = referenced/Reachability.h; sourceTree = "<group>"; };
 		942DEF46182462BD006E32FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = referenced/Reachability.m; sourceTree = "<group>"; };
 		9453A5801818B5E000130630 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoSegue.h; path = referenced/MHNatGeoSegue.h; sourceTree = "<group>"; };
@@ -115,13 +111,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DCC596180CAE12007236E4 /* libz.1.1.3.dylib in Frameworks */,
+				94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */,
 				94DCC5A2180CAE34007236E4 /* Security.framework in Frameworks */,
 				94DCC5A0180CAE2F007236E4 /* SystemConfiguration.framework in Frameworks */,
 				94DCC59E180CAE2A007236E4 /* MobileCoreServices.framework in Frameworks */,
 				94DCC59C180CAE25007236E4 /* CFNetwork.framework in Frameworks */,
 				94DCC59A180CAE1F007236E4 /* CoreLocation.framework in Frameworks */,
-				94F688B6181EF3E900476B32 /* Parse.framework in Frameworks */,
 				94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */,
 				94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */,
 				94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */,
@@ -149,15 +144,6 @@
 				940F3359180F5A9F006D9DD3 /* SHUploadController.m */,
 			);
 			name = "Upload Listing";
-			sourceTree = "<group>";
-		};
-		94130231183C27DF00DD40A3 /* Form Cells */ = {
-			isa = PBXGroup;
-			children = (
-				94130232183C27EB00DD40A3 /* SHCustomFormCell.h */,
-				94130233183C27EB00DD40A3 /* SHCustomFormCell.m */,
-			);
-			name = "Form Cells";
 			sourceTree = "<group>";
 		};
 		942DEF44182462AE006E32FC /* Reachability */ = {
@@ -230,7 +216,6 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
-				94130231183C27DF00DD40A3 /* Form Cells */,
 				942DEF44182462AE006E32FC /* Reachability */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
@@ -469,7 +454,6 @@
 				94F688BA181EF96400476B32 /* SHCustomField.m in Sources */,
 				94DCC585180CAB78007236E4 /* SHLaunchController.m in Sources */,
 				9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */,
-				94130234183C27EB00DD40A3 /* SHCustomFormCell.m in Sources */,
 				94C708371819E76600319610 /* SHDetailController.m in Sources */,
 				94DCC560180CAB3F007236E4 /* SHSecondViewController.m in Sources */,
 				942DEF47182462BD006E32FC /* Reachability.m in Sources */,
@@ -530,7 +514,7 @@
 		94DCC576180CAB3F007236E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -562,14 +546,16 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 			};
 			name = Debug;
 		};
 		94DCC577180CAB3F007236E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -594,7 +580,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -610,10 +598,12 @@
 					"$(inherited)",
 					"/Users/ryan/Desktop/Programming/Projects/Objective-C/Sheetz/frameworks",
 					/Users/ryan/Desktop/sheetz/frameworks,
+					"/Users/ryan/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
 				INFOPLIST_FILE = "Sheetz/Sheetz-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -631,10 +621,12 @@
 					"$(inherited)",
 					"/Users/ryan/Desktop/Programming/Projects/Objective-C/Sheetz/frameworks",
 					/Users/ryan/Desktop/sheetz/frameworks,
+					"/Users/ryan/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
 				INFOPLIST_FILE = "Sheetz/Sheetz-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

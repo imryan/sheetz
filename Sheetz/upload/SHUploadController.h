@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHUploadController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@interface SHUploadController : UIViewController
 
 - (IBAction)cancelUpload:(id)sender;
 - (IBAction)nextView:(id)sender;

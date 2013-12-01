@@ -10,7 +10,6 @@
 
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
-#import "SHCustomFormCell.h"
 
 @implementation SHUploadController
 
@@ -27,48 +26,6 @@
 - (IBAction)nextView:(id)sender
 {
     
-}
-
-#pragma mark - UITableView
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellId = @"CellId";
-    
-    switch (indexPath.row) {
-        case 0:
-            NSLog(@"CellId");
-            cellId = @"CellId";
-            break;
-        case 1:
-            NSLog(@"CellId2");
-            cellId = @"CellId2";
-            break;
-        case 2:
-            NSLog(@"CellId3");
-            cellId = @"CellId3";
-            break;
-        case 3:
-            NSLog(@"CellId4");
-            cellId = @"CellId4";
-            break;
-    }
-    
-    SHCustomFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    //[tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-
-    if (!cell)
-    {
-        cell = [[SHCustomFormCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    
-    return cell;
 }
 
 - (IBAction)cancelUpload:(id)sender
