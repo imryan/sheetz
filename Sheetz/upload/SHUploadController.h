@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FDTakeController.h"
 
-@interface SHUploadController : UIViewController <UITextFieldDelegate> {
+@interface SHUploadController : UIViewController <UITextFieldDelegate,
+                                                  UIImagePickerControllerDelegate,
+                                                  UINavigationControllerDelegate,
+                                                  UIActionSheetDelegate> {
     
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
 }
-@property FDTakeController *takeController;
+@property (nonatomic) UIImagePickerController *imagePickerController;
 
 @property (nonatomic, retain) IBOutlet UITextField *titleField;
 @property (nonatomic, retain) IBOutlet UITextField *campusField;

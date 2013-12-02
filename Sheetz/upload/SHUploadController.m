@@ -7,15 +7,10 @@
 //
 
 #import "MHNatGeoViewControllerTransition.h"
-#import "FDTakeController.h"
 
 #import "SHUploadController.h"
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
-
-@interface SHUploadController () <FDTakeDelegate>
-
-@end
 
 @implementation SHUploadController
 
@@ -52,14 +47,49 @@
     }
 }
 
-- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
 {
-    [self.photo1 setImage:photo];
+    UIImagePickerController *picker = [UIImagePickerController new];
+    picker.modalPresentationStyle = UIModalPresentationFullScreen;
+    picker.sourceType = sourceType;
+    picker.delegate = self;
+    
+    if (sourceType == UIImagePickerControllerSourceTypeCamera) {
+        picker.showsCameraControls = false;
+    }
+    
+    self.imagePickerController = picker;
+    [self presentViewController:self.imagePickerController animated:true completion:nil];
 }
 
 - (IBAction)selectImage:(id)sender
 {
-    [self.takeController takePhotoOrChooseFromLibrary];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Menu"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Dismiss"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"Take Photo", @"Choose from library", nil];
+    [sheet showInView:thirdView];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+            if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                                                message:@"This device does not have a camera. Please select a photo from your photo library instead."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Dismiss"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            break;
+        case 1:
+            [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            break;
+    }
 }
 
 - (IBAction)overview:(id)sender
@@ -97,9 +127,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.takeController = [FDTakeController new];
-    self.takeController.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
