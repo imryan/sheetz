@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import "MHNatGeoViewControllerTransition.h"
+#import "MBProgressHUD.h"
 #import "SHOverviewController.h"
 #import "SHUploadController.h"
 #import "SHAppDelegate.h"
@@ -35,14 +36,20 @@
     
     [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
+         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [MBProgressHUD hideHUDForView:self.view animated:true];
+             });
+         });
+         
          if (succeeded) {
-             NSLog(@"Successfully posted!");
+             // Succeeded
              [self performSegueWithIdentifier:@"backHome" sender:self];
              
          } else {
-             NSLog(@"Error posting!");
+             // Error with upload
          }
-         
      }];
 }
 
