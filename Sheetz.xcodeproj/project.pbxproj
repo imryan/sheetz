@@ -11,6 +11,7 @@
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
 		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
 		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
+		949E92BD184D3277003BE604 /* FDTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E92BC184D3277003BE604 /* FDTakeController.m */; };
 		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		9453A5811818B5E000130630 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoSegue.m; path = referenced/MHNatGeoSegue.m; sourceTree = "<group>"; };
 		9453A5821818B5E000130630 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoViewControllerTransition.h; path = referenced/MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
 		9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoViewControllerTransition.m; path = referenced/MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
+		949E92BB184D3277003BE604 /* FDTakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDTakeController.h; path = referenced/FDTakeController.h; sourceTree = "<group>"; };
+		949E92BC184D3277003BE604 /* FDTakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDTakeController.m; path = referenced/FDTakeController.m; sourceTree = "<group>"; };
 		94C708351819E76600319610 /* SHDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDetailController.h; path = detail/SHDetailController.h; sourceTree = "<group>"; };
 		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +169,15 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
+		949E92BA184D326F003BE604 /* FDTake */ = {
+			isa = PBXGroup;
+			children = (
+				949E92BB184D3277003BE604 /* FDTakeController.h */,
+				949E92BC184D3277003BE604 /* FDTakeController.m */,
+			);
+			name = FDTake;
+			sourceTree = "<group>";
+		};
 		94C708341819E75300319610 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +228,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				949E92BA184D326F003BE604 /* FDTake */,
 				942DEF44182462AE006E32FC /* Reachability */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
@@ -447,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949E92BD184D3277003BE604 /* FDTakeController.m in Sources */,
 				94DCC55D180CAB3F007236E4 /* SHFirstViewController.m in Sources */,
 				94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */,
 				9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */,

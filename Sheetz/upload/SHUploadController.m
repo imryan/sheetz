@@ -7,10 +7,15 @@
 //
 
 #import "MHNatGeoViewControllerTransition.h"
+#import "FDTakeController.h"
 
 #import "SHUploadController.h"
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
+
+@interface SHUploadController () <FDTakeDelegate>
+
+@end
 
 @implementation SHUploadController
 
@@ -30,23 +35,31 @@
     
     switch (selectedSegment) {
         case 0:
+            [self.titleField becomeFirstResponder];
             [secondView setHidden:true];
             [thirdView setHidden:true];
             break;
         case 1:
+            [self.descriptionField becomeFirstResponder];
             [secondView setHidden:false];
             [thirdView setHidden:true];
             break;
         case 2:
             [secondView setHidden:true];
+            [self.view endEditing:true];
             [thirdView setHidden:false];
             break;
     }
 }
 
+- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info
+{
+    [self.photo1 setImage:photo];
+}
+
 - (IBAction)selectImage:(id)sender
 {
-    
+    [self.takeController takePhotoOrChooseFromLibrary];
 }
 
 - (IBAction)overview:(id)sender
@@ -84,6 +97,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.takeController = [FDTakeController new];
+    self.takeController.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
