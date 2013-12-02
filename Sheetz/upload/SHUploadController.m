@@ -121,6 +121,7 @@
                                                       cancelButtonTitle:@"Dismiss"
                                                       otherButtonTitles:nil];
                 [alert show];
+                [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
             }
             break;
         case 1:
