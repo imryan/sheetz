@@ -29,7 +29,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="FAw-Tq-P1P">
                                             <connections>
-                                                <action selector="overview:" destination="v4D-oj-oRR" id="U0f-Bw-Lif"/>
+                                                <action selector="overview:" destination="v4D-oj-oRR" id="4lZ-77-Doj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -148,6 +148,7 @@
                         <outlet property="streetField" destination="pgr-in-ZV2" id="jUI-Yk-p55"/>
                         <outlet property="thirdView" destination="2zG-Q1-tad" id="Yb6-GW-KWi"/>
                         <outlet property="titleField" destination="nVf-8U-pIb" id="eCR-7I-gXe"/>
+                        <segue destination="VHd-Fp-VIL" kind="custom" identifier="overview" customClass="MHNatGeoSegue" id="wRe-3z-rj4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A29-2T-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +248,7 @@
                         <outlet property="descTextView" destination="TVu-aO-728" id="SYe-cl-Pft"/>
                         <outlet property="priceLabel" destination="fpU-mu-LF7" id="wAh-AI-W9s"/>
                         <outlet property="titleLabel" destination="jJt-W2-DVM" id="YKX-Te-qEX"/>
-                        <segue destination="CZ4-MO-1fc" kind="custom" identifier="backHome" customClass="MHNatGeoSegue" id="4cp-jQ-oW4"/>
+                        <segue destination="8YX-ce-x5E" kind="custom" identifier="backHome" customClass="MHNatGeoSegue" id="3aW-bM-rPe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26j-e6-Dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -736,7 +737,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4cp-jQ-oW4"/>
-        <segue reference="LTX-HM-Vvx"/>
+        <segue reference="3aW-bM-rPe"/>
     </inferredMetricsTieBreakers>
 </document>

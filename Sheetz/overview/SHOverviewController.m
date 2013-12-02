@@ -30,6 +30,7 @@
     listing[@"description"]   = self.descTextView.text;
     listing[@"price"]  = self.priceLabel.text;
     listing[@"campus"] = self.campusLabel.text;
+  //listing[@"street"] = self.streetLabel.text;
     listing[@"member"] = [PFUser currentUser].username;
     
     [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)

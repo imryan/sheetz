@@ -133,9 +133,30 @@
 - (IBAction)overview:(id)sender
 {
     self.title  = self.titleField.text;
+    self.desc   = self.descriptionField.text;
     self.campus = self.campusField.text;
     self.price  = self.priceField.text;
     self.street = self.streetField.text;
+    
+    if ([self.title isEqualToString:@""]  ||
+        [self.campus isEqualToString:@""] ||
+        [self.price isEqualToString:@""]  ||
+        [self.desc isEqualToString:@""]   ||
+        [self.street isEqualToString:@""]) {
+        
+        NSLog(@"Incompleted form!");
+        
+    } else {
+        
+        SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+        delegate.title  = self.title;
+        delegate.desc   = self.desc;
+        delegate.price  = self.price;
+        delegate.campus = self.campus;
+        delegate.street = self.street;
+        
+        [self performSegueWithIdentifier:@"overview" sender:self];
+    }
 }
 
 - (IBAction)cancelUpload:(id)sender

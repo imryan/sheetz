@@ -27,6 +27,7 @@
 @property (nonatomic, strong) IBOutlet UIImageView *photo1;
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *campus;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *street;

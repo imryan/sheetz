@@ -11,6 +11,7 @@
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
 		9453A5841818B5E000130630 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5811818B5E000130630 /* MHNatGeoSegue.m */; };
 		9453A5851818B5E000130630 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */; };
+		949E92C1184D40C4003BE604 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E92C0184D40C4003BE604 /* MBProgressHUD.m */; };
 		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		9453A5811818B5E000130630 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoSegue.m; path = referenced/MHNatGeoSegue.m; sourceTree = "<group>"; };
 		9453A5821818B5E000130630 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHNatGeoViewControllerTransition.h; path = referenced/MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
 		9453A5831818B5E000130630 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHNatGeoViewControllerTransition.m; path = referenced/MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
+		949E92BF184D40C4003BE604 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = referenced/MBProgressHUD.h; sourceTree = "<group>"; };
+		949E92C0184D40C4003BE604 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = referenced/MBProgressHUD.m; sourceTree = "<group>"; };
 		94C708351819E76600319610 /* SHDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDetailController.h; path = detail/SHDetailController.h; sourceTree = "<group>"; };
 		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +169,15 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
+		949E92BE184D40BC003BE604 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				949E92BF184D40C4003BE604 /* MBProgressHUD.h */,
+				949E92C0184D40C4003BE604 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		94C708341819E75300319610 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +228,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				949E92BE184D40BC003BE604 /* MBProgressHUD */,
 				942DEF44182462AE006E32FC /* Reachability */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
@@ -462,6 +475,7 @@
 				94E2E6741815F4BB002342DF /* SHOverviewController.m in Sources */,
 				94DCC557180CAB3F007236E4 /* SHAppDelegate.m in Sources */,
 				94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */,
+				949E92C1184D40C4003BE604 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
