@@ -30,21 +30,43 @@
     
     switch (selectedSegment) {
         case 0:
+            [self enableFields];
             [self.titleField becomeFirstResponder];
+            [self.descriptionField setEditable:false];
             [secondView setHidden:true];
             [thirdView setHidden:true];
             break;
         case 1:
+            [self disableFields];
+            [self.descriptionField setEditable:true];
             [self.descriptionField becomeFirstResponder];
             [secondView setHidden:false];
             [thirdView setHidden:true];
             break;
         case 2:
+            [self disableFields];
             [secondView setHidden:true];
+            [self.descriptionField setEditable:false];
             [self.view endEditing:true];
             [thirdView setHidden:false];
             break;
     }
+}
+
+- (void)disableFields
+{
+    [self.titleField setEnabled:false];
+    [self.campusField setEnabled:false];
+    [self.priceField setEnabled:false];
+    [self.streetField setEnabled:false];
+}
+
+- (void)enableFields
+{
+    [self.titleField setEnabled:true];
+    [self.campusField setEnabled:true];
+    [self.priceField setEnabled:true];
+    [self.streetField setEnabled:true];
 }
 
 - (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
@@ -60,6 +82,21 @@
     
     self.imagePickerController = picker;
     [self presentViewController:self.imagePickerController animated:true completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    [self.photo1 setImage:image];
+    
+    [self dismissViewControllerAnimated:true completion:nil];
+    [thirdView setHidden:false];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:true completion:nil];
+    [thirdView setHidden:false];
 }
 
 - (IBAction)selectImage:(id)sender
