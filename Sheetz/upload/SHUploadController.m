@@ -77,7 +77,7 @@
     picker.delegate = self;
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera) {
-        picker.showsCameraControls = false;
+        picker.showsCameraControls = true;
     }
     
     self.imagePickerController = picker;
@@ -122,6 +122,8 @@
                                                       otherButtonTitles:nil];
                 [alert show];
                 [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            } else {
+                [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
             }
             break;
         case 1:
