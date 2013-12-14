@@ -8,7 +8,6 @@
 
 #import "SHDetailController.h"
 #import "SHFirstViewController.h"
-#import "MHNatGeoViewControllerTransition.h"
 
 @implementation SHDetailController
 

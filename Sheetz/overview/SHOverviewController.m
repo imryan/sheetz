@@ -7,7 +7,6 @@
 //
 
 #import <Parse/Parse.h>
-#import "MHNatGeoViewControllerTransition.h"
 #import "MBProgressHUD.h"
 #import "SHOverviewController.h"
 #import "SHUploadController.h"
@@ -24,6 +23,24 @@
     return self;
 }
 
+- (IBAction)nextView:(id)sender
+{
+    UISegmentedControl *control = (UISegmentedControl *)sender;
+    NSInteger selectedSegment = control.selectedSegmentIndex;
+    
+    switch (selectedSegment) {
+        case 0:
+            [secondView setHidden:true];
+            break;
+        case 1:
+            [secondView setHidden:false];
+            break;
+        case 2:
+            break;
+            
+    }
+}
+
 - (IBAction)uploadListing:(id)sender
 {
     PFObject *listing = [PFObject objectWithClassName:@"Listings"];
@@ -34,14 +51,11 @@
   //listing[@"street"] = self.streetLabel.text;
     listing[@"member"] = [PFUser currentUser].username;
     
+    /*
     [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
-         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 [MBProgressHUD hideHUDForView:self.view animated:true];
-             });
-         });
+         // Upload image
+         PFFile *image = [PFFile fileWithName:@"" data:nil]
          
          if (succeeded) {
              // Succeeded
@@ -51,11 +65,12 @@
              // Error with upload
          }
      }];
+     */
 }
 
 - (IBAction)editListing:(id)sender
 {
-    [self dismissNatGeoViewController];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,6 +85,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [secondView setHidden:true];
 }
 
 - (void)didReceiveMemoryWarning

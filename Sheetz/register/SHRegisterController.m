@@ -7,8 +7,6 @@
 //
 
 #import <Parse/Parse.h>
-#import "MHNatGeoViewControllerTransition.h"
-
 #import "SHRegisterController.h"
 #import "SHFirstViewController.h"
 #import "SHCustomField.h"
@@ -19,7 +17,6 @@
 
 - (IBAction)registerUser:(id)sender
 {
-    // Make sure the username is < 15 chars
     if (self.usernameField.text.length > 15)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
@@ -28,7 +25,6 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-        // Check if all the fields are filled
         if ([self.emailField.text isEqualToString:@""]
             || [self.usernameField.text isEqualToString:@""]
             || [self.passwordField.text isEqualToString:@""])
@@ -44,12 +40,11 @@
     } else {
         
         [self.activityIndicator startAnimating];
-        
         self.email    = self.emailField.text;
         self.username = self.usernameField.text;
         self.password = self.passwordField.text;
         
-        PFUser *user = [PFUser user];
+        PFUser *user  = [PFUser user];
         user.email    = self.email;
         user.username = self.username;
         user.password = self.password;
@@ -59,12 +54,8 @@
          {
              if (!error)
              {
-                 // Move to next view for welcome/tutorial
                  [self.activityIndicator stopAnimating];
                  [self pushView];
-                 
-                 // Development
-                 NSLog(@"User [%@] successfully registered.", user.username);
                  
              } else {
                  
@@ -76,9 +67,6 @@
                                                        otherButtonTitles:nil];
                  [alert show];
                  [self.activityIndicator stopAnimating];
-                 
-                 // Development
-                 NSLog(@"User [%@] failed to register.", user.username);
              }
              
          }];
@@ -89,8 +77,8 @@
 
 - (void)pushView
 {
-    [self dismissNatGeoViewController];
-    [self.presentingViewController dismissNatGeoViewController];
+    [self dismissViewControllerAnimated:true completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:true completion:nil];
 }
 
 #pragma mark - Error codes

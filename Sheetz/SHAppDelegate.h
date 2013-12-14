@@ -11,11 +11,11 @@
 @interface SHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *campus;
 @property (nonatomic, copy) NSString *street;
+@property (nonatomic, retain) NSMutableArray *photos;
 
 @end

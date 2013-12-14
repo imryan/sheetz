@@ -7,8 +7,6 @@
 //
 
 #import <Parse/Parse.h>
-#import "MHNatGeoViewControllerTransition.h"
-
 #import "SHLoginController.h"
 #import "SHFirstViewController.h"
 #import "SHLaunchController.h"
@@ -31,7 +29,6 @@
     } else {
         
         [self.activityIndicator startAnimating];
-        
         self.username = self.usernameField.text;
         self.password = self.passwordField.text;
         
@@ -39,12 +36,8 @@
          {
              if (user)
              {
-                 // Change view
                  [self.activityIndicator stopAnimating];
                  [self performSegueWithIdentifier:@"login" sender:self];
-                 
-                 // Development
-                 NSLog(@"User [%@] successfully logged in.", self.usernameField.text);
                  
              } else {
                  
@@ -55,10 +48,6 @@
                                                        otherButtonTitles:nil];
                  [alert show];
                  [self.activityIndicator stopAnimating];
-                 
-                 // Development
-                 NSLog(@"User [%@] failed to log in.", self.username);
-                 NSLog(@"%ld", (long)[error code]);
              }
          }];
     }

@@ -9,12 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface SHOverviewController : UIViewController
+{
+    IBOutlet UIView *secondView;
+    IBOutlet UIView *thirdView;
+}
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UITextView *descTextView;
 @property (nonatomic, retain) IBOutlet UILabel *priceLabel;
 @property (nonatomic, retain) IBOutlet UILabel *campusLabel;
 
+- (IBAction)nextView:(id)sender;
 - (IBAction)editListing:(id)sender;
 - (IBAction)uploadListing:(id)sender;
 

@@ -8,7 +8,6 @@
 
 
 #import <Parse/Parse.h>
-#import "MHNatGeoViewControllerTransition.h"
 #import "SHCustomCell.h"
 #import "SHAppDelegate.h"
 #import "SHLaunchController.h"
@@ -18,8 +17,6 @@
 @implementation SHFirstViewController
 @synthesize tableData;
 
-#pragma mark - Display Menu & Actions
-
 - (IBAction)displayMenu:(id)sender
 {
     UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"Menu"
@@ -27,7 +24,6 @@
                                              cancelButtonTitle:@"Dismiss"
                                         destructiveButtonTitle:nil
                                              otherButtonTitles:@"Submit Listing", @"Logout", nil];
-    
     [menu showInView:self.view];
 }
 
@@ -60,8 +56,6 @@
     [self performSegueWithIdentifier:@"logout" sender:self];
 }
 
-#pragma mark - Load Database Data
-
 - (void)loadDatabaseData
 {
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
@@ -76,8 +70,6 @@
          
      }];
 }
-
-#pragma mark - Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -108,8 +100,6 @@
     
     // Push to detail view after select
 }
-
-#pragma mark - ViewDidLoad & Friends
 
 - (void)viewDidLoad
 {

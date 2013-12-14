@@ -8,7 +8,6 @@
 
 #import <Parse/Parse.h>
 #import "Reachability.h"
-#import "MHNatGeoViewControllerTransition.h"
 #import "SHLaunchController.h"
 
 @implementation SHLaunchController
@@ -20,7 +19,7 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     Reachability *reach = [Reachability reachabilityWithHostname:@"http://google.com"];
     

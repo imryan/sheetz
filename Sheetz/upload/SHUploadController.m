@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
-#import "MHNatGeoViewControllerTransition.h"
-
 #import "SHUploadController.h"
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
@@ -74,6 +72,7 @@
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.modalPresentationStyle = UIModalPresentationFullScreen;
     picker.sourceType = sourceType;
+    picker.allowsEditing = true;
     picker.delegate = self;
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera) {
@@ -87,10 +86,31 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    [self.photo1 setImage:image];
+    [images addObject:image];
     
     [self dismissViewControllerAnimated:true completion:nil];
     [thirdView setHidden:false];
+    
+    switch (tag) {
+        case 1:
+            image1.imageView.image = image;
+            break;
+        case 2:
+            image2.imageView.image = image;
+            break;
+        case 3:
+            image3.imageView.image = image;
+            break;
+        case 4:
+            image4.imageView.image = image;
+            break;
+        case 5:
+            image5.imageView.image = image;
+            break;
+        case 6:
+            image6.imageView.image = image;
+            break;
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -101,6 +121,8 @@
 
 - (IBAction)selectImage:(id)sender
 {
+    tag = [sender tag];
+    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Menu"
                                                        delegate:self
                                               cancelButtonTitle:@"Dismiss"
@@ -139,6 +161,7 @@
     self.campus = self.campusField.text;
     self.price  = self.priceField.text;
     self.street = self.streetField.text;
+    self.photos = images;
     
     if ([self.title isEqualToString:@""]  ||
         [self.campus isEqualToString:@""] ||
@@ -146,6 +169,7 @@
         [self.desc isEqualToString:@""]   ||
         [self.street isEqualToString:@""]) {
         
+        // Warn user
         NSLog(@"Incompleted form!");
         
     } else {
@@ -156,6 +180,7 @@
         delegate.price  = self.price;
         delegate.campus = self.campus;
         delegate.street = self.street;
+        delegate.photos = self.photos;
         
         [self performSegueWithIdentifier:@"overview" sender:self];
     }
@@ -163,7 +188,7 @@
 
 - (IBAction)cancelUpload:(id)sender
 {
-    [self dismissNatGeoViewController];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 #pragma mark - UITextField methods
@@ -188,6 +213,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    images = [NSMutableArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated
