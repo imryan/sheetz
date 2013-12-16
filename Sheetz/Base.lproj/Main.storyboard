@@ -41,7 +41,7 @@
                                 <segments>
                                     <segment title="Information"/>
                                     <segment title="Description"/>
-                                    <segment title="Photos"/>
+                                    <segment title="Cover Photo"/>
                                 </segments>
                                 <connections>
                                     <action selector="nextView:" destination="v4D-oj-oRR" eventType="valueChanged" id="Ywv-5H-xHA"/>
@@ -85,7 +85,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pds-Ws-W2V">
-                                        <rect key="frame" x="46" y="14" width="71" height="86"/>
+                                        <rect key="frame" x="125" y="104" width="71" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="first">
@@ -93,61 +93,6 @@
                                         </state>
                                         <connections>
                                             <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="oq7-w3-cxp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H5-49-ooU">
-                                        <rect key="frame" x="125" y="14" width="71" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="first">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="zri-my-0bX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8a-hV-FKM">
-                                        <rect key="frame" x="204" y="14" width="71" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="first">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="JaM-0A-hse"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT6-Tr-3MA">
-                                        <rect key="frame" x="46" y="108" width="71" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="first">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="0B7-8e-ihI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-4T-J0j">
-                                        <rect key="frame" x="125" y="108" width="71" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="first">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="V5K-bR-gOF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-lm-0cy">
-                                        <rect key="frame" x="204" y="108" width="71" height="86"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="first">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectImage:" destination="v4D-oj-oRR" eventType="touchUpInside" id="TDc-bz-vid"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -174,12 +119,7 @@
                     <connections>
                         <outlet property="campusField" destination="7DQ-D3-4Ys" id="Ac8-id-5HP"/>
                         <outlet property="descriptionField" destination="vTE-g3-NJW" id="dFN-DU-ucH"/>
-                        <outlet property="image1" destination="pds-Ws-W2V" id="hLp-mE-8NI"/>
-                        <outlet property="image2" destination="6H5-49-ooU" id="d0o-CV-qJt"/>
-                        <outlet property="image3" destination="Z8a-hV-FKM" id="nV1-U8-nmI"/>
-                        <outlet property="image4" destination="MT6-Tr-3MA" id="o3p-H4-W3h"/>
-                        <outlet property="image5" destination="RaE-4T-J0j" id="qqZ-36-WGa"/>
-                        <outlet property="image6" destination="W8f-lm-0cy" id="8qn-5m-UmU"/>
+                        <outlet property="imageButton" destination="pds-Ws-W2V" id="caM-eA-xhY"/>
                         <outlet property="priceField" destination="Fz8-20-k1u" id="2Q6-86-Q5P"/>
                         <outlet property="secondView" destination="riw-Ne-SWm" id="e2V-c9-71d"/>
                         <outlet property="segmentControl" destination="Z1C-v8-rmt" id="F4d-Og-KiJ"/>
@@ -229,7 +169,7 @@
                                 <segments>
                                     <segment title="Information"/>
                                     <segment title="Description"/>
-                                    <segment title="Photos"/>
+                                    <segment title="Cover Photo"/>
                                 </segments>
                                 <connections>
                                     <action selector="nextView:" destination="VHd-Fp-VIL" eventType="valueChanged" id="9cV-K8-B8D"/>

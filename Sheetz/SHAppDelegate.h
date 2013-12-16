@@ -16,6 +16,6 @@
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *campus;
 @property (nonatomic, copy) NSString *street;
-@property (nonatomic, retain) NSMutableArray *photos;
+@property (nonatomic, retain) UIImage *photo;
 
 @end

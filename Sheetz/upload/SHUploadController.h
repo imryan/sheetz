@@ -10,12 +10,10 @@
 
 @interface SHUploadController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate> {
     
+    IBOutlet UISegmentedControl *segmentControl;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
-    IBOutlet UIButton *image1, *image2, *image3, *image4, *image5, *image6;
-    IBOutlet UISegmentedControl *segmentControl;
-    
-    NSMutableArray *images;
+    IBOutlet UIButton *imageButton;
     NSInteger tag;
 }
 
@@ -24,7 +22,7 @@
 @property (nonatomic, copy) NSString *campus;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *street;
-@property (nonatomic, retain) NSMutableArray *photos;
+@property (nonatomic, retain) UIImage *photo;
 
 @property (nonatomic) UIImagePickerController *imagePickerController;
 

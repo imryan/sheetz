@@ -43,29 +43,38 @@
 
 - (IBAction)uploadListing:(id)sender
 {
-    PFObject *listing = [PFObject objectWithClassName:@"Listings"];
-    listing[@"title"]  = self.titleLabel.text;
-    listing[@"description"]   = self.descTextView.text;
-    listing[@"price"]  = self.priceLabel.text;
-    listing[@"campus"] = self.campusLabel.text;
-  //listing[@"street"] = self.streetLabel.text;
-    listing[@"member"] = [PFUser currentUser].username;
+    PFFile *image = [PFFile fileWithData:data];
     
-    /*
-    [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-     {
-         // Upload image
-         PFFile *image = [PFFile fileWithName:@"" data:nil]
-         
-         if (succeeded) {
-             // Succeeded
-             [self performSegueWithIdentifier:@"backHome" sender:self];
-             
-         } else {
-             // Error with upload
-         }
-     }];
-     */
+    if (image == nil) {
+        NSLog(@"NIL IMAGE");
+    }
+    
+    PFObject *listing = [PFObject objectWithClassName:@"Listings"];
+    listing[@"title"]         = self.titleLabel.text;
+    listing[@"description"]   = self.descTextView.text;
+    listing[@"price"]         = self.priceLabel.text;
+    listing[@"campus"]        = self.campusLabel.text;
+    listing[@"street"]        = self.streetLabel.text;
+    listing[@"member"]        = [PFUser currentUser].username;
+    
+    [image saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            [listing setObject:image forKey:@"image"];
+            
+            [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    NSLog(@"Listing added successfully.");
+                } else {
+                    NSLog(@"Error uploading listing.");
+                }
+            }];
+            
+            NSLog(@"Uploaded image successfully.");
+            
+        } else {
+            NSLog(@"Error uploading image.");
+        }
+    }];
 }
 
 - (IBAction)editListing:(id)sender
@@ -80,6 +89,9 @@
     self.descTextView.text = delegate.desc;
     self.priceLabel.text   = [NSString stringWithFormat:@"$%@", delegate.price];
     self.campusLabel.text  = delegate.campus;
+    self.coverImage.image  = delegate.photo;
+    
+    data = UIImagePNGRepresentation(delegate.photo);
 }
 
 - (void)viewDidLoad

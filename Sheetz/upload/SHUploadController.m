@@ -86,31 +86,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    [images addObject:image];
     
     [self dismissViewControllerAnimated:true completion:nil];
     [thirdView setHidden:false];
-    
-    switch (tag) {
-        case 1:
-            image1.imageView.image = image;
-            break;
-        case 2:
-            image2.imageView.image = image;
-            break;
-        case 3:
-            image3.imageView.image = image;
-            break;
-        case 4:
-            image4.imageView.image = image;
-            break;
-        case 5:
-            image5.imageView.image = image;
-            break;
-        case 6:
-            image6.imageView.image = image;
-            break;
-    }
+
+    self.photo = image;
+    imageButton.imageView.image = image;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -161,7 +142,6 @@
     self.campus = self.campusField.text;
     self.price  = self.priceField.text;
     self.street = self.streetField.text;
-    self.photos = images;
     
     if ([self.title isEqualToString:@""]  ||
         [self.campus isEqualToString:@""] ||
@@ -180,7 +160,7 @@
         delegate.price  = self.price;
         delegate.campus = self.campus;
         delegate.street = self.street;
-        delegate.photos = self.photos;
+        delegate.photo = self.photo;
         
         [self performSegueWithIdentifier:@"overview" sender:self];
     }
@@ -213,7 +193,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    images = [NSMutableArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated
