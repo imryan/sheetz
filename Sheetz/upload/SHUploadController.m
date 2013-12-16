@@ -218,6 +218,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [segmentControl setSelectedSegmentIndex:0];
+    [self enableFields];
+    [self.titleField becomeFirstResponder];
+    
+    
     [secondView setHidden:true];
     [thirdView setHidden:true];
     [self.titleField becomeFirstResponder];

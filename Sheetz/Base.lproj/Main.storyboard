@@ -182,6 +182,7 @@
                         <outlet property="image6" destination="W8f-lm-0cy" id="8qn-5m-UmU"/>
                         <outlet property="priceField" destination="Fz8-20-k1u" id="2Q6-86-Q5P"/>
                         <outlet property="secondView" destination="riw-Ne-SWm" id="e2V-c9-71d"/>
+                        <outlet property="segmentControl" destination="Z1C-v8-rmt" id="F4d-Og-KiJ"/>
                         <outlet property="streetField" destination="pgr-in-ZV2" id="jUI-Yk-p55"/>
                         <outlet property="thirdView" destination="2zG-Q1-tad" id="Yb6-GW-KWi"/>
                         <outlet property="titleField" destination="nVf-8U-pIb" id="eCR-7I-gXe"/>
@@ -801,6 +802,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3aW-bM-rPe"/>
+        <segue reference="LTX-HM-Vvx"/>
     </inferredMetricsTieBreakers>
 </document>
