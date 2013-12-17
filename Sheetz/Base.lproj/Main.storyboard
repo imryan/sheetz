@@ -35,7 +35,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-v8-rmt">
+                            <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-v8-rmt">
                                 <rect key="frame" x="20" y="65" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -163,13 +163,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oVM-rp-OaF">
+                            <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oVM-rp-OaF">
                                 <rect key="frame" x="20" y="65" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Information"/>
                                     <segment title="Description"/>
-                                    <segment title="Cover Photo"/>
+                                    <segment title="Cover Image"/>
                                 </segments>
                                 <connections>
                                     <action selector="nextView:" destination="VHd-Fp-VIL" eventType="valueChanged" id="9cV-K8-B8D"/>
@@ -232,18 +232,28 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-o8-veG">
-                                <rect key="frame" x="0.0" y="108" width="320" height="372"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXR-Oh-s3I">
+                                <rect key="frame" x="0.0" y="101" width="320" height="379"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="null" translatesAutoresizingMaskIntoConstraints="NO" id="D1d-fg-614">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="null" translatesAutoresizingMaskIntoConstraints="NO" id="BJb-qs-xF1">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                     </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3k-CM-diM">
+                                <rect key="frame" x="0.0" y="101" width="320" height="379"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5Y-xc-P4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -251,8 +261,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="descTextView" destination="D1d-fg-614" id="Ual-ZU-eoD"/>
-                        <outlet property="secondView" destination="D1d-fg-614" id="dsS-Rm-2s0"/>
+                        <outlet property="campusLabel" destination="bWv-db-utK" id="rD9-Hc-ZOW"/>
+                        <outlet property="coverImage" destination="X5Y-xc-P4W" id="HJq-Lr-X6m"/>
+                        <outlet property="descTextView" destination="BJb-qs-xF1" id="OFn-iz-7sF"/>
+                        <outlet property="priceLabel" destination="mMb-iQ-Eoq" id="NUf-tP-Gyl"/>
+                        <outlet property="secondView" destination="MXR-Oh-s3I" id="Q49-kx-Rws"/>
+                        <outlet property="streetLabel" destination="FBw-Jp-v9C" id="eVR-xH-nZD"/>
+                        <outlet property="thirdView" destination="Z3k-CM-diM" id="dz3-nX-Mft"/>
+                        <outlet property="titleLabel" destination="MR1-lk-vNq" id="6rc-bi-xMM"/>
                         <segue destination="8YX-ce-x5E" kind="custom" identifier="backHome" customClass="SHBackSegue" id="3aW-bM-rPe"/>
                     </connections>
                 </viewController>
@@ -742,6 +758,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTX-HM-Vvx"/>
+        <segue reference="3aW-bM-rPe"/>
     </inferredMetricsTieBreakers>
 </document>

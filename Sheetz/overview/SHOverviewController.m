@@ -31,24 +31,26 @@
     switch (selectedSegment) {
         case 0:
             [secondView setHidden:true];
+            [thirdView setHidden:true];
             break;
         case 1:
             [secondView setHidden:false];
+            [thirdView setHidden:true];
             break;
         case 2:
+            [secondView setHidden:true];
+            [thirdView setHidden:false];
             break;
-            
     }
 }
 
 - (IBAction)uploadListing:(id)sender
 {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Uploading";
+    
     PFFile *image = [PFFile fileWithData:data];
-    
-    if (image == nil) {
-        NSLog(@"NIL IMAGE");
-    }
-    
     PFObject *listing = [PFObject objectWithClassName:@"Listings"];
     listing[@"title"]         = self.titleLabel.text;
     listing[@"description"]   = self.descTextView.text;
@@ -56,7 +58,7 @@
     listing[@"campus"]        = self.campusLabel.text;
     listing[@"street"]        = self.streetLabel.text;
     listing[@"member"]        = [PFUser currentUser].username;
-    
+
     [image saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             [listing setObject:image forKey:@"image"];
@@ -64,6 +66,8 @@
             [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
                     NSLog(@"Listing added successfully.");
+                    [self performSegueWithIdentifier:@"backHome" sender:self];
+                    
                 } else {
                     NSLog(@"Error uploading listing.");
                 }
@@ -90,8 +94,13 @@
     self.priceLabel.text   = [NSString stringWithFormat:@"$%@", delegate.price];
     self.campusLabel.text  = delegate.campus;
     self.coverImage.image  = delegate.photo;
+    self.streetLabel.text  = delegate.street;
     
     data = UIImagePNGRepresentation(delegate.photo);
+    
+    [secondView setHidden:true];
+    [thirdView setHidden:true];
+    [self.descTextView setEditable:false];
 }
 
 - (void)viewDidLoad
