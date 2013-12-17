@@ -13,6 +13,7 @@
 #import "SHLaunchController.h"
 #import "SHFirstViewController.h"
 #import "SHUploadController.h"
+#import "SHDetailController.h"
 
 @implementation SHFirstViewController
 @synthesize tableData;
@@ -67,7 +68,6 @@
              tableData = objects;
              [self.tableView reloadData];
          }
-         
      }];
 }
 
@@ -91,14 +91,33 @@
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
     [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
     
+    PFImageView *imageView = [PFImageView new];
+    imageView.image = [UIImage imageNamed:@"first@2x.png"];
+    imageView.file = (PFFile *)listing[@"image"];
+    
+    [imageView loadInBackground:^(UIImage *image, NSError *error) {
+        // Display loading image
+        
+        if (!error) {
+            [cell.postImageView setImage:imageView.image];
+        } else {
+            NSLog(@"Error loading image.");
+        }
+    }];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    SHDetailController *detail = [SHDetailController new];
+    detail.title  = [tableData objectAtIndex:indexPath.row];
+    detail.campus = [tableData objectAtIndex:indexPath.row];
+    detail.price  = [tableData objectAtIndex:indexPath.row];
+    detail.street = [tableData objectAtIndex:indexPath.row];
+    //detail.photo  = [tableData objectAtIndex:indexPath.row];
     
-    // Push to detail view after select
+    [self performSegueWithIdentifier:@"pushDetail" sender:self];
 }
 
 - (void)viewDidLoad

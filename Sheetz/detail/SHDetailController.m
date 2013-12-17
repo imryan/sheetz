@@ -28,16 +28,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.listingTitle.text  = self.title;
+    self.listingCampus.text = self.campus;
+    self.listingPrice.text  = self.price;
+    self.listingStreet.text = self.street;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // Load data from table cell index
-    SHFirstViewController *firstController = [SHFirstViewController new];
-    NSString *title = [firstController.tableData objectAtIndex:0];
     
-    self.listingTitle.text = title;
 }
 
 - (void)didReceiveMemoryWarning
