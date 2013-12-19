@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *postTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postDescLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postCampusLabel;
 
 @end

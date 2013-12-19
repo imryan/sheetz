@@ -42,6 +42,11 @@
     self.listingStreet.text = [self.information objectForKey:@"street"];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

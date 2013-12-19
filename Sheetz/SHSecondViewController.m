@@ -7,6 +7,7 @@
 //
 
 #import "SHSecondViewController.h"
+#import "SHDetailController.h"
 #import "SHCustomCell.h"
 #import <Parse/Parse.h>
 
@@ -40,19 +41,28 @@
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
     [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
     
+    PFImageView *imageView = [PFImageView new];
+    imageView.file = (PFFile *)listing[@"image"];
+    
+    [imageView loadInBackground:^(UIImage *image, NSError *error) {
+        if (!error) {
+            cell.postImageView.image = image;
+            
+        } else {
+            return;
+        }
+    }];
+    
+    
     return cell;
 }
 
-#pragma mark - Load Database Data
-
 - (void)loadDatabaseData
 {
-    NSLog(@"Loading data");
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
     [listingQuery whereKeyExists:@"title"];
     [listingQuery whereKey:@"member" equalTo:[PFUser currentUser].username];
-    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
+    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
          if (!error) {
              tableData = objects;
              [self.tableView reloadData];
@@ -61,7 +71,16 @@
      }];
 }
 
-#pragma mark - ViewDidLoad & Friends
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
+    PFObject *object = [tableData objectAtIndex:indexPath.row];
+    PFFile *file = [object objectForKey:@"image"];
+    
+    detailView.information = [tableData objectAtIndex:indexPath.row];
+    detailView.file = file;
+}
 
 - (void)viewDidLoad
 {
@@ -82,6 +101,11 @@
     dateString = [NSString stringWithFormat:@"Joined on %@", dateString];
     
     self.memberSinceLabel.text = dateString;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning
