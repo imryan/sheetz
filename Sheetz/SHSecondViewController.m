@@ -35,13 +35,6 @@
         cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Listings"];
-    PFUser *user = [PFUser currentUser];
-    
-    [query whereKey:@"member" equalTo:user.username];
-    
-    tableData = [query findObjects];
-    
     PFObject *listing = [tableData objectAtIndex:indexPath.row];
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
@@ -54,13 +47,13 @@
 
 - (void)loadDatabaseData
 {
+    NSLog(@"Loading data");
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
     [listingQuery whereKeyExists:@"title"];
     [listingQuery whereKey:@"member" equalTo:[PFUser currentUser].username];
     [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         if (!error)
-         {
+         if (!error) {
              tableData = objects;
              [self.tableView reloadData];
          }
