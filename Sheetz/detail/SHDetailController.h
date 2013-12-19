@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface SHDetailController : UIViewController
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *desc;
-@property (nonatomic, copy) NSString *campus;
-@property (nonatomic, copy) NSString *price;
-@property (nonatomic, copy) NSString *street;
-@property (nonatomic, retain) UIImage *photo;
+@property (nonatomic, strong) NSDictionary *information;
+@property (nonatomic, strong) PFFile *file;
 
 @property (nonatomic, retain) IBOutlet UILabel *listingTitle;
 @property (nonatomic, retain) IBOutlet UILabel *listingCampus;

@@ -11,11 +11,6 @@
 
 @implementation SHDetailController
 
-- (IBAction)done:(id)sender
-{
-    [self performSegueWithIdentifier:@"detailDone" sender:self];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,19 +20,26 @@
     return self;
 }
 
+- (IBAction)done:(id)sender
+{
+    [self performSegueWithIdentifier:@"detailDone" sender:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    self.listingTitle.text  = self.title;
-    self.listingCampus.text = self.campus;
-    self.listingPrice.text  = self.price;
-    self.listingStreet.text = self.street;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    PFImageView *imageView = [PFImageView new];
+    imageView.file = self.file;
     
+    self.listingImage.image = imageView.image;
+    self.listingTitle.text = [self.information objectForKey:@"title"];
+    self.listingPrice.text = [self.information objectForKey:@"price"];
+    self.listingCampus.text = [self.information objectForKey:@"campus"];
+    self.listingStreet.text = [self.information objectForKey:@"street"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -61,10 +61,8 @@
 {
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
     [listingQuery whereKeyExists:@"title"];
-    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         if (!error)
-         {
+    [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+         if (!error) {
              tableData = objects;
              [self.tableView reloadData];
          }
@@ -81,8 +79,7 @@
     static NSString *cellId = @"CellId";
     SHCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
-    if (!cell)
-    {
+    if (!cell) {
         cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
@@ -92,12 +89,9 @@
     [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
     
     PFImageView *imageView = [PFImageView new];
-    imageView.image = [UIImage imageNamed:@"first@2x.png"];
     imageView.file = (PFFile *)listing[@"image"];
     
-    [imageView loadInBackground:^(UIImage *image, NSError *error) {
-        // Display loading image
-        
+    [imageView loadInBackground:^(UIImage *image, NSError *error) {        
         if (!error) {
             [cell.postImageView setImage:imageView.image];
         } else {
@@ -108,16 +102,15 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SHDetailController *detail = [SHDetailController new];
-    detail.title  = [tableData objectAtIndex:indexPath.row];
-    detail.campus = [tableData objectAtIndex:indexPath.row];
-    detail.price  = [tableData objectAtIndex:indexPath.row];
-    detail.street = [tableData objectAtIndex:indexPath.row];
-    //detail.photo  = [tableData objectAtIndex:indexPath.row];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
+    PFObject *object = [tableData objectAtIndex:indexPath.row];
+    PFFile *file = [object objectForKey:@"image"];
     
-    [self performSegueWithIdentifier:@"pushDetail" sender:self];
+    detailView.information = [tableData objectAtIndex:indexPath.row];
+    detailView.file = file;
 }
 
 - (void)viewDidLoad
