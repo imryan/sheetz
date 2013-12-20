@@ -226,7 +226,6 @@
     self.priceField.delegate = self;
     self.streetField.delegate = self;
     
-    
     CGRect titleFrame = self.titleField.frame;
     titleFrame.size.height = 35;
     self.titleField.frame = titleFrame;

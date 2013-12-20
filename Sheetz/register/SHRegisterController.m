@@ -14,8 +14,6 @@
 
 @implementation SHRegisterController
 
-#pragma mark - Register user
-
 - (IBAction)registerUser:(id)sender
 {
     if (self.usernameField.text.length > 15) {
@@ -79,15 +77,11 @@
     }
 }
 
-#pragma mark - Push view
-
 - (void)pushView
 {
     [self dismissViewControllerAnimated:true completion:nil];
     [self.presentingViewController dismissViewControllerAnimated:true completion:nil];
 }
-
-#pragma mark - Error codes
 
 - (NSString *)translateErrorCode:(NSError *)error
 {
@@ -105,8 +99,6 @@
     return @"Uncaught error.";
 }
 
-#pragma mark - UITextField methods
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     BOOL didResign = [textField resignFirstResponder];
@@ -122,7 +114,22 @@
     return true;
 }
 
-#pragma mark Initialization
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.cornerRadius = 5;
+    textField.layer.borderColor = [[UIColor grayColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.borderColor = [[UIColor clearColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -132,8 +139,6 @@
     }
     return self;
 }
-
-#pragma mark - ViewDidLoad & Friends
 
 - (void)viewDidLoad
 {
@@ -148,6 +153,18 @@
     self.emailField.delegate = self;
     self.usernameField.delegate = self;
     self.passwordField.delegate = self;
+    
+    CGRect emailFrame = self.emailField.frame;
+    emailFrame.size.height = 35;
+    self.emailField.frame = emailFrame;
+    
+    CGRect usernameFrame = self.usernameField.frame;
+    usernameFrame.size.height = 35;
+    self.usernameField.frame = usernameFrame;
+    
+    CGRect passwordFrame = self.passwordField.frame;
+    passwordFrame.size.height = 35;
+    self.passwordField.frame = passwordFrame;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

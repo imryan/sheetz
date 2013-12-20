@@ -15,8 +15,6 @@
 
 @implementation SHLoginController
 
-#pragma mark - Login user
-
 - (IBAction)loginUser:(id)sender
 {
     if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
@@ -59,8 +57,6 @@
     }
 }
 
-#pragma mark - Error codes
-
 - (NSString *)translateErrorCode:(NSError *)error
 {
     switch ([error code])
@@ -72,8 +68,6 @@
     
     return @"Uncaught error.";
 }
-
-#pragma mark - UITextField Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -90,8 +84,6 @@
     return true;
 }
 
-#pragma mark - Initialization
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -101,11 +93,26 @@
     return self;
 }
 
-#pragma mark - ViewDidLoad & Friends
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.cornerRadius = 5;
+    textField.layer.borderColor = [[UIColor grayColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.borderColor = [[UIColor clearColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,6 +121,14 @@
     
     self.usernameField.delegate = self;
     self.passwordField.delegate = self;
+    
+    CGRect usernameFrame = self.usernameField.frame;
+    usernameFrame.size.height = 35;
+    self.usernameField.frame = usernameFrame;
+    
+    CGRect passwordFrame = self.passwordField.frame;
+    passwordFrame.size.height = 35;
+    self.passwordField.frame = passwordFrame;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
