@@ -94,7 +94,10 @@
     
     [imageView loadInBackground:^(UIImage *image, NSError *error) {        
         if (!error) {
+            cell.postImageView.layer.cornerRadius = 7;
+            cell.postImageView.clipsToBounds = true;
             [cell.postImageView setImage:imageView.image];
+            
         } else {
             NSLog(@"Error loading image.");
         }

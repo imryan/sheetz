@@ -32,15 +32,14 @@
         [self.usernameField setEnabled:false];
         [self.passwordField setEnabled:false];
         
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-        hud.mode = MBProgressHUDAnimationFade;
-        hud.labelText = @"Logging in";
-        
         self.username = self.usernameField.text;
         self.password = self.passwordField.text;
         
-        [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error)
-         {
+        [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+            hud.mode = MBProgressHUDAnimationFade;
+            hud.labelText = @"Logging in";
+            
              if (user) {
                  [self performSegueWithIdentifier:@"login" sender:self];
                  
@@ -51,6 +50,7 @@
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
                  [alert show];
+                 [MBProgressHUD hideHUDForView:self.view animated:true];
              }
          }];
     }
