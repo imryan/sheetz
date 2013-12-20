@@ -187,7 +187,6 @@
                                 <color key="tintColor" red="0.14901961389999999" green="0.74901962280000001" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <action selector="nextView:" destination="VHd-Fp-VIL" eventType="valueChanged" id="9cV-K8-B8D"/>
-                                    <action selector="nextView:" destination="v4D-oj-oRR" eventType="valueChanged" id="CAt-Jp-cC2"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiW-NT-e2Z">
@@ -865,7 +864,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTX-HM-Vvx"/>
+        <segue reference="3aW-bM-rPe"/>
         <segue reference="G93-nL-PNd"/>
     </inferredMetricsTieBreakers>
 </document>

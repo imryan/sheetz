@@ -105,13 +105,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
-    PFObject *object = [tableData objectAtIndex:indexPath.row];
-    PFFile *file = [object objectForKey:@"image"];
-    
-    detailView.information = [tableData objectAtIndex:indexPath.row];
-    detailView.file = file;
+    if ([[segue identifier] isEqualToString:@"pushDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
+        PFObject *object = [tableData objectAtIndex:indexPath.row];
+        PFFile *file = [object objectForKey:@"image"];
+        
+        detailView.information = [tableData objectAtIndex:indexPath.row];
+        detailView.file = file;
+        
+    } else {
+        return;
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
