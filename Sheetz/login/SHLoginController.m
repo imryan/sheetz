@@ -11,6 +11,7 @@
 #import "SHFirstViewController.h"
 #import "SHLaunchController.h"
 #import "SHCustomField.h"
+#import "MBProgressHUD.h"
 
 @implementation SHLoginController
 
@@ -28,26 +29,28 @@
         
     } else {
         
-        [self.activityIndicator startAnimating];
+        [self.usernameField setEnabled:false];
+        [self.passwordField setEnabled:false];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+        hud.mode = MBProgressHUDAnimationFade;
+        hud.labelText = @"Logging in";
+        
         self.username = self.usernameField.text;
         self.password = self.passwordField.text;
         
         [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error)
          {
-             if (user)
-             {
-                 [self.activityIndicator stopAnimating];
+             if (user) {
                  [self performSegueWithIdentifier:@"login" sender:self];
                  
              } else {
-                 
                  NSString *errorString = [self translateErrorCode:error];
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                                  message:errorString delegate:self
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
                  [alert show];
-                 [self.activityIndicator stopAnimating];
              }
          }];
     }
@@ -100,8 +103,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.activityIndicator setHidden:true];
-    [self.activityIndicator setHidesWhenStopped:true];
 }
 
 - (void)viewWillAppear:(BOOL)animated

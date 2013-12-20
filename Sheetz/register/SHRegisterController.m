@@ -10,6 +10,7 @@
 #import "SHRegisterController.h"
 #import "SHFirstViewController.h"
 #import "SHCustomField.h"
+#import "MBProgressHUD.h"
 
 @implementation SHRegisterController
 
@@ -17,29 +18,30 @@
 
 - (IBAction)registerUser:(id)sender
 {
-    if (self.usernameField.text.length > 15)
-    {
+    if (self.usernameField.text.length > 15) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                         message:@"Your username must be 15 characters or less." delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-        
-        if ([self.emailField.text isEqualToString:@""]
-            || [self.usernameField.text isEqualToString:@""]
-            || [self.passwordField.text isEqualToString:@""])
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
-                                                            message:@"Please fill in the missing fields."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
+    }
+    
+    if ([self.emailField.text isEqualToString:@""]
+        || [self.usernameField.text isEqualToString:@""]
+        || [self.passwordField.text isEqualToString:@""])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
+                                                        message:@"Please fill in the missing fields."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
         
     } else {
+        [self.emailField setEnabled:false];
+        [self.usernameField setEnabled:false];
+        [self.passwordField setEnabled:false];
         
-        [self.activityIndicator startAnimating];
         self.email    = self.emailField.text;
         self.username = self.usernameField.text;
         self.password = self.passwordField.text;
@@ -49,27 +51,31 @@
         user.username = self.username;
         user.password = self.password;
         
-        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-         
-         {
-             if (!error)
-             {
-                 [self.activityIndicator stopAnimating];
-                 [self pushView];
-                 
-             } else {
-                 
-                 NSString *errorString = [self translateErrorCode:error];
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
-                                                                 message:errorString
-                                                                delegate:self
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil];
-                 [alert show];
-                 [self.activityIndicator stopAnimating];
-             }
-             
-         }];
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+            hud.mode = MBProgressHUDAnimationFade;
+            hud.labelText = @"Signing up";
+            
+            if (!error) {
+                [self pushView];
+                
+            } else {
+                NSString *errorString = [self translateErrorCode:error];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
+                                                                message:errorString
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                [MBProgressHUD hideHUDForView:self.view animated:true];
+                
+                [self.emailField setEnabled:true];
+                [self.usernameField setEnabled:true];
+                [self.passwordField setEnabled:true];
+                [self.emailField becomeFirstResponder];
+            }
+            
+        }];
     }
 }
 
@@ -132,8 +138,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.activityIndicator setHidden:true];
-    [self.activityIndicator setHidesWhenStopped:true];
     [self.emailField becomeFirstResponder];
 }
 

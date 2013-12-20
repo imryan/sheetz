@@ -10,11 +10,9 @@
 
 @interface SHRegisterController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) IBOutlet UITextField *emailField;
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordField;
-
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
