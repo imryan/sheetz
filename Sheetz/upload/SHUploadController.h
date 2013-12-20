@@ -11,9 +11,9 @@
 @interface SHUploadController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate> {
     
     IBOutlet UISegmentedControl *segmentControl;
+    IBOutlet UIImageView *imageView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
-    IBOutlet UIButton *imageButton;
     NSInteger tag;
 }
 

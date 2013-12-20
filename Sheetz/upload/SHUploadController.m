@@ -88,10 +88,13 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     [self dismissViewControllerAnimated:true completion:nil];
+    [segmentControl setSelectedSegmentIndex:2];
+    [secondView setHidden:true];
     [thirdView setHidden:false];
+    [self disableFields];
 
     self.photo = image;
-    imageButton.imageView.image = image;
+    imageView.image = image;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -171,8 +174,6 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-#pragma mark - UITextField methods
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     BOOL didResign = [textField resignFirstResponder];
@@ -187,8 +188,6 @@
     
     return true;
 }
-
-#pragma mark ViewDidLoad & Friends
 
 - (void)viewDidLoad
 {
