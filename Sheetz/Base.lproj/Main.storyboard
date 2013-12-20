@@ -637,7 +637,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OzN-66-ALJ">
-                                <rect key="frame" x="175" y="409" width="125" height="51"/>
+                                <rect key="frame" x="175" y="420" width="125" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="login.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -647,7 +647,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jHG-pv-aQK">
-                                <rect key="frame" x="20" y="409" width="125" height="51"/>
+                                <rect key="frame" x="20" y="420" width="125" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="register.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -830,7 +830,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="y78-EO-K9a"/>
-        <segue reference="bZt-hJ-OIk"/>
+        <segue reference="Ap2-Vp-HmU"/>
         <segue reference="G93-nL-PNd"/>
     </inferredMetricsTieBreakers>
 </document>

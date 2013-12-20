@@ -51,6 +51,9 @@
                                                        otherButtonTitles:nil];
                  [alert show];
                  [MBProgressHUD hideHUDForView:self.view animated:true];
+                 
+                 [self.usernameField setEnabled:true];
+                 [self.passwordField setEnabled:true];
              }
          }];
     }
