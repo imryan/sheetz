@@ -189,6 +189,23 @@
     return true;
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.cornerRadius = 5;
+    textField.layer.borderColor = [[UIColor grayColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.borderColor = [[UIColor clearColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -200,7 +217,6 @@
     [self enableFields];
     [self.titleField becomeFirstResponder];
     
-    
     [secondView setHidden:true];
     [thirdView setHidden:true];
     [self.titleField becomeFirstResponder];
@@ -209,6 +225,23 @@
     self.campusField.delegate = self;
     self.priceField.delegate = self;
     self.streetField.delegate = self;
+    
+    
+    CGRect titleFrame = self.titleField.frame;
+    titleFrame.size.height = 35;
+    self.titleField.frame = titleFrame;
+    
+    CGRect campusFrame = self.campusField.frame;
+    campusFrame.size.height = 35;
+    self.campusField.frame = campusFrame;
+    
+    CGRect priceFrame = self.priceField.frame;
+    priceFrame.size.height = 35;
+    self.priceField.frame = priceFrame;
+    
+    CGRect streetFrame = self.streetField.frame;
+    streetFrame.size.height = 35;
+    self.streetField.frame = streetFrame;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

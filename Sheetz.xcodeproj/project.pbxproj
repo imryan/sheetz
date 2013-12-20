@@ -17,6 +17,7 @@
 		94A2B3FE185CBC590091256D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F688B5181EF3E900476B32 /* Parse.framework */; };
 		94A2B401185CBCB80091256D /* SHPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2B400185CBCB80091256D /* SHPushSegue.m */; };
 		94A2B404185CBCC40091256D /* SHBackSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2B403185CBCC40091256D /* SHBackSegue.m */; };
+		94A651741864C5D500CDF277 /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A651731864C5D500CDF277 /* tag@2x.png */; };
 		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
@@ -72,6 +73,7 @@
 		94A2B400185CBCB80091256D /* SHPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHPushSegue.m; path = transition/SHPushSegue.m; sourceTree = "<group>"; };
 		94A2B402185CBCC40091256D /* SHBackSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHBackSegue.h; path = transition/SHBackSegue.h; sourceTree = "<group>"; };
 		94A2B403185CBCC40091256D /* SHBackSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHBackSegue.m; path = transition/SHBackSegue.m; sourceTree = "<group>"; };
+		94A651731864C5D500CDF277 /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tag@2x.png"; path = "resources/tag@2x.png"; sourceTree = SOURCE_ROOT; };
 		94C708351819E76600319610 /* SHDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDetailController.h; path = detail/SHDetailController.h; sourceTree = "<group>"; };
 		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				948153651863EAEE001F66A4 /* background@2x.png */,
 				948153611863E9EB001F66A4 /* login@2x.png */,
 				948153621863E9EB001F66A4 /* register@2x.png */,
+				94A651731864C5D500CDF277 /* tag@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				948153631863E9EB001F66A4 /* login@2x.png in Resources */,
 				948153661863EAEE001F66A4 /* background@2x.png in Resources */,
 				94DCC55A180CAB3F007236E4 /* Main.storyboard in Resources */,
+				94A651741864C5D500CDF277 /* tag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

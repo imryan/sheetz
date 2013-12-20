@@ -83,6 +83,9 @@
         cell = [[SHCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
+    cell.clipsToBounds = true;
+    cell.layer.cornerRadius = 10;
+    
     PFObject *listing = [tableData objectAtIndex:indexPath.row];
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
@@ -96,6 +99,10 @@
         if (!error) {
             cell.postImageView.layer.cornerRadius = 7;
             cell.postImageView.clipsToBounds = true;
+            
+            UIImage *rotatedImage = [UIImage imageWithCGImage:imageView.image.CGImage scale:1.0 orientation:UIImageOrientationRight];
+            imageView.image = rotatedImage;
+            
             [cell.postImageView setImage:imageView.image];
             
         } else {
