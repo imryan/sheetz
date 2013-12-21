@@ -16,13 +16,13 @@
     UIViewController *dest   = [self destinationViewController];
     
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.3;
+    transition.duration = 0.30;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromRight;
     
     [source.view.window.layer addAnimation:transition forKey:nil];
-    [source presentViewController:dest animated:NO completion:nil];
+    [source presentViewController:dest animated:false completion:nil];
 }
 
 @end

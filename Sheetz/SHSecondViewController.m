@@ -19,8 +19,6 @@
     [self loadDatabaseData];
 }
 
-#pragma mark - TableView Methods
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableData count];
