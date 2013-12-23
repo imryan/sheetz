@@ -289,11 +289,11 @@
             <objects>
                 <viewController title="First" id="CZ4-MO-1fc" customClass="SHFirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="82" sectionHeaderHeight="10" sectionFooterHeight="10" id="2dC-OA-XPZ">
-                                <rect key="frame" x="0.0" y="59" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="59" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.95686280729999995" green="0.95686280729999995" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -386,7 +386,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2dC-OA-XPZ" id="rpS-Ox-ARN"/>
@@ -508,7 +508,7 @@
             <objects>
                 <viewController title="Second" id="QUy-BD-bpt" customClass="SHSecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" id="qIx-90-0zQ">
@@ -547,7 +547,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="82" sectionHeaderHeight="10" sectionFooterHeight="10" id="gzQ-8u-2c5">
-                                <rect key="frame" x="0.0" y="123" width="320" height="357"/>
+                                <rect key="frame" x="0.0" y="123" width="320" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.95686280729999995" green="0.95686280729999995" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -615,7 +615,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="Z7h-1E-pvt"/>
                     <connections>
                         <outlet property="memberSinceLabel" destination="M3E-Ie-UQ1" id="59t-WE-d9n"/>
                         <outlet property="tableView" destination="gzQ-8u-2c5" id="gOl-0i-EWd"/>
@@ -814,10 +814,13 @@
             <objects>
                 <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.14901961389999999" green="0.74901962280000001" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
@@ -831,10 +834,10 @@
     </scenes>
     <resources>
         <image name="background.png" width="320" height="480"/>
-        <image name="first" width="30" height="30"/>
+        <image name="home.png" width="25" height="25"/>
         <image name="login.png" width="120" height="43"/>
+        <image name="profile.png" width="24" height="25"/>
         <image name="register.png" width="120" height="43"/>
-        <image name="second" width="30" height="30"/>
         <image name="tag.png" width="49" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -844,7 +847,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="bZt-hJ-OIk"/>
-        <segue reference="y78-EO-K9a"/>
+        <segue reference="XeB-RC-Xek"/>
         <segue reference="G93-nL-PNd"/>
     </inferredMetricsTieBreakers>
 </document>

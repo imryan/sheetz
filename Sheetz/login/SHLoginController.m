@@ -12,6 +12,7 @@
 #import "SHLaunchController.h"
 #import "SHCustomField.h"
 #import "MBProgressHUD.h"
+#import "FDStatusBarNotifierView.h"
 
 @implementation SHLoginController
 
@@ -19,11 +20,17 @@
 {
     if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
     {
+        /*
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
                                                         message:@"Please enter in all fields." delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+         */
+        
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields!"];
+        notifierView.timeOnScreen = 3.0;
+        [notifierView showInWindow:self.view.window];
         
     } else {
         

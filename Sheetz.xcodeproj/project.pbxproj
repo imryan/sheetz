@@ -12,6 +12,12 @@
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
 		942EF6821868820F00656D71 /* SHImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 942EF6811868820F00656D71 /* SHImageUtil.m */; };
 		942EF68D18688DAE00656D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DCC558180CAB3F007236E4 /* Main.storyboard */; };
+		942EF6DA1868A6F200656D71 /* dismiss@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6D71868A6F200656D71 /* dismiss@2x.png */; };
+		942EF6DB1868A6F200656D71 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6D81868A6F200656D71 /* logout@2x.png */; };
+		942EF6DC1868A6F200656D71 /* submit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6D91868A6F200656D71 /* submit@2x.png */; };
+		942EF6DF1868B7B600656D71 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6DD1868B7B600656D71 /* home@2x.png */; };
+		942EF6E01868B7B600656D71 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6DE1868B7B600656D71 /* profile@2x.png */; };
+		942EF6E41868BCF300656D71 /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942EF6E31868BCF300656D71 /* FDStatusBarNotifierView.m */; };
 		948153631863E9EB001F66A4 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153611863E9EB001F66A4 /* login@2x.png */; };
 		948153641863E9EB001F66A4 /* register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153621863E9EB001F66A4 /* register@2x.png */; };
 		948153661863EAEE001F66A4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153651863EAEE001F66A4 /* background@2x.png */; };
@@ -67,6 +73,13 @@
 		942DEF46182462BD006E32FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = referenced/Reachability.m; sourceTree = "<group>"; };
 		942EF6801868820F00656D71 /* SHImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHImageUtil.h; path = util/SHImageUtil.h; sourceTree = "<group>"; };
 		942EF6811868820F00656D71 /* SHImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHImageUtil.m; path = util/SHImageUtil.m; sourceTree = "<group>"; };
+		942EF6D71868A6F200656D71 /* dismiss@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dismiss@2x.png"; path = "resources/dismiss@2x.png"; sourceTree = SOURCE_ROOT; };
+		942EF6D81868A6F200656D71 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout@2x.png"; path = "resources/logout@2x.png"; sourceTree = SOURCE_ROOT; };
+		942EF6D91868A6F200656D71 /* submit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "submit@2x.png"; path = "resources/submit@2x.png"; sourceTree = SOURCE_ROOT; };
+		942EF6DD1868B7B600656D71 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "resources/home@2x.png"; sourceTree = SOURCE_ROOT; };
+		942EF6DE1868B7B600656D71 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "resources/profile@2x.png"; sourceTree = SOURCE_ROOT; };
+		942EF6E21868BCF300656D71 /* FDStatusBarNotifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStatusBarNotifierView.h; sourceTree = "<group>"; };
+		942EF6E31868BCF300656D71 /* FDStatusBarNotifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStatusBarNotifierView.m; sourceTree = "<group>"; };
 		948153611863E9EB001F66A4 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@2x.png"; path = "resources/login@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153621863E9EB001F66A4 /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "register@2x.png"; path = "resources/register@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153651863EAEE001F66A4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "resources/background@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -181,9 +194,24 @@
 			name = "Image Util";
 			sourceTree = "<group>";
 		};
+		942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */ = {
+			isa = PBXGroup;
+			children = (
+				942EF6E21868BCF300656D71 /* FDStatusBarNotifierView.h */,
+				942EF6E31868BCF300656D71 /* FDStatusBarNotifierView.m */,
+			);
+			name = FDStatusBarNotifierView;
+			path = referenced/FDStatusBarNotifierView;
+			sourceTree = "<group>";
+		};
 		948153601863E9DF001F66A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				942EF6DD1868B7B600656D71 /* home@2x.png */,
+				942EF6DE1868B7B600656D71 /* profile@2x.png */,
+				942EF6D71868A6F200656D71 /* dismiss@2x.png */,
+				942EF6D81868A6F200656D71 /* logout@2x.png */,
+				942EF6D91868A6F200656D71 /* submit@2x.png */,
 				948153651863EAEE001F66A4 /* background@2x.png */,
 				948153611863E9EB001F66A4 /* login@2x.png */,
 				948153621863E9EB001F66A4 /* register@2x.png */,
@@ -263,12 +291,13 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
+				94DCC57E180CAB46007236E4 /* Delegates */,
 				942EF67F186881FF00656D71 /* Image Util */,
 				948153601863E9DF001F66A4 /* Resources */,
 				94A04EC0185A8CDF000E2F54 /* Transition */,
 				949E92BE184D40BC003BE604 /* MBProgressHUD */,
 				942DEF44182462AE006E32FC /* Reachability */,
-				94DCC57E180CAB46007236E4 /* Delegates */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
 				94C708341819E75300319610 /* Detail */,
 				940F3357180F5A81006D9DD3 /* Upload Listing */,
@@ -481,8 +510,13 @@
 				94DCC562180CAB3F007236E4 /* Images.xcassets in Resources */,
 				94DCC551180CAB3F007236E4 /* InfoPlist.strings in Resources */,
 				948153631863E9EB001F66A4 /* login@2x.png in Resources */,
+				942EF6DB1868A6F200656D71 /* logout@2x.png in Resources */,
+				942EF6DC1868A6F200656D71 /* submit@2x.png in Resources */,
 				948153661863EAEE001F66A4 /* background@2x.png in Resources */,
+				942EF6E01868B7B600656D71 /* profile@2x.png in Resources */,
 				94A651741864C5D500CDF277 /* tag@2x.png in Resources */,
+				942EF6DA1868A6F200656D71 /* dismiss@2x.png in Resources */,
+				942EF6DF1868B7B600656D71 /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +551,7 @@
 				94A2B401185CBCB80091256D /* SHPushSegue.m in Sources */,
 				94A2B404185CBCC40091256D /* SHBackSegue.m in Sources */,
 				94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */,
+				942EF6E41868BCF300656D71 /* FDStatusBarNotifierView.m in Sources */,
 				949E92C1184D40C4003BE604 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

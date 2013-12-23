@@ -16,11 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Register the app with Parse
     [Parse setApplicationId:@"OX0M2QMRPmd4cxDU3vWwKKicS22OEL5J3h5bgF1y"
                   clientKey:@"1Lhib7ml1GiL06zNrXgAVVFCXeEhPCGf6FopDNrk"];
     
-    // Begin tracking analytics
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
