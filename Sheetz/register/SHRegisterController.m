@@ -17,7 +17,7 @@
 - (IBAction)registerUser:(id)sender
 {
     if (self.usernameField.text.length > 15) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
                                                         message:@"Your username must be 15 characters or less." delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -26,9 +26,9 @@
     
     if ([self.emailField.text isEqualToString:@""]
         || [self.usernameField.text isEqualToString:@""]
-        || [self.passwordField.text isEqualToString:@""])
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
+        || [self.passwordField.text isEqualToString:@""]) {
+
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
                                                         message:@"Please fill in the missing fields."
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
@@ -59,7 +59,7 @@
                 
             } else {
                 NSString *errorString = [self translateErrorCode:error];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
                                                                 message:errorString
                                                                delegate:self
                                                       cancelButtonTitle:@"OK"
@@ -93,6 +93,10 @@
             
         case 202:
             return @"That username is already in use.";
+            break;
+            
+        case 125:
+            return @"Invalid email.";
             break;
     }
     

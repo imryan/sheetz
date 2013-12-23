@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Ryan Cohen. All rights reserved.
 //
 
-
 #import <Parse/Parse.h>
 #import "SHCustomCell.h"
 #import "SHAppDelegate.h"
@@ -15,17 +14,66 @@
 #import "SHUploadController.h"
 #import "SHDetailController.h"
 
+#define TAG 50
+
 @implementation SHFirstViewController
 @synthesize tableData;
 
 - (IBAction)displayMenu:(id)sender
 {
+    /*
     UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"Menu"
                                                       delegate:self
                                              cancelButtonTitle:@"Dismiss"
                                         destructiveButtonTitle:nil
                                              otherButtonTitles:@"Submit Listing", @"Logout", nil];
+    
     [menu showInView:self.view];
+     */
+    
+    [self displayAlert];
+    
+    // Later...
+    //[view removeFromSuperview];
+}
+
+- (void)displayAlert
+{
+    // Begin UIView animation
+    
+    for (UIView *view in [self.view subviews]) {
+        if (view.tag == TAG) {
+            view.userInteractionEnabled = true;
+        } else {
+            view.userInteractionEnabled = false;
+        }
+    }
+    
+    CGRect frame = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2, 170, 200);
+    CGPoint center = CGPointMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.tag = TAG;
+    
+    view.center = center;
+    view.backgroundColor = [UIColor lightGrayColor];
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [cancelButton addTarget:self action:@selector(handleExit) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setFrame:CGRectMake(0, 0, 100, 50)];
+    [cancelButton setTitle:@"Dismiss" forState:UIControlStateNormal];
+    
+    [view addSubview:cancelButton];
+    [self.view addSubview:view];
+}
+
+- (void)handleExit
+{
+    UIView *view = [self.view viewWithTag:TAG];
+    [view removeFromSuperview];
+    
+    for (UIView *view in [self.view subviews]) {
+        view.userInteractionEnabled = true;
+    }
 }
 
 - (IBAction)refresh:(id)sender

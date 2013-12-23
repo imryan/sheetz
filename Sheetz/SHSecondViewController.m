@@ -44,8 +44,8 @@
     
     [imageView loadInBackground:^(UIImage *image, NSError *error) {
         if (!error) {
-            cell.imageView.clipsToBounds = true;
-            cell.imageView.layer.cornerRadius = 7;
+            cell.postImageView.clipsToBounds = true;
+            cell.postImageView.layer.cornerRadius = 7;
             cell.postImageView.image = image;
             
         } else {
