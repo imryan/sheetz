@@ -30,6 +30,7 @@
         
         FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields!"];
         notifierView.timeOnScreen = 3.0;
+        notifierView.alpha = 0.6f;
         [notifierView showInWindow:self.view.window];
         
     } else {

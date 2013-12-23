@@ -11,29 +11,27 @@
 #import "SHFirstViewController.h"
 #import "SHCustomField.h"
 #import "MBProgressHUD.h"
+#import "FDStatusBarNotifierView.h"
 
 @implementation SHRegisterController
 
 - (IBAction)registerUser:(id)sender
 {
     if (self.usernameField.text.length > 15) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
-                                                        message:@"Your username must be 15 characters or less." delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Username must be 15 characters or less!"];
+        notifierView.timeOnScreen = 3.0;
+        notifierView.alpha = 0.6f;
+        [notifierView showInWindow:self.view.window];
     }
     
-    if ([self.emailField.text isEqualToString:@""]
+    else if ([self.emailField.text isEqualToString:@""]
         || [self.usernameField.text isEqualToString:@""]
         || [self.passwordField.text isEqualToString:@""]) {
 
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
-                                                        message:@"Please fill in the missing fields."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields!"];
+        notifierView.timeOnScreen = 3.0;
+        notifierView.alpha = 0.6f;
+        [notifierView showInWindow:self.view.window];
         
     } else {
         [self.emailField setEnabled:false];
@@ -59,12 +57,12 @@
                 
             } else {
                 NSString *errorString = [self translateErrorCode:error];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheetz"
-                                                                message:errorString
-                                                               delegate:self
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                
+                FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:errorString];
+                notifierView.timeOnScreen = 3.0;
+                notifierView.alpha = 0.6f;
+                [notifierView showInWindow:self.view.window];
+                
                 [MBProgressHUD hideHUDForView:self.view animated:true];
                 
                 [self.emailField setEnabled:true];
