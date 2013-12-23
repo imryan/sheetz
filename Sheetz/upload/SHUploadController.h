@@ -14,7 +14,6 @@
     IBOutlet UIImageView *imageView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
-    NSInteger tag;
 }
 
 @property (nonatomic, copy) NSString *title;

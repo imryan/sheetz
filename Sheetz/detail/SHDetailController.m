@@ -35,9 +35,6 @@
     PFImageView *imageView = [PFImageView new];
     imageView.file = self.file;
     
-    UIImage *rotatedImage = [UIImage imageWithCGImage:imageView.image.CGImage scale:1.0 orientation:UIImageOrientationRight];
-    imageView.image = rotatedImage;
-    
     self.listingImage.image = imageView.image;
     self.listingTitle.text = [self.information objectForKey:@"title"];
     self.listingPrice.text = [self.information objectForKey:@"price"];

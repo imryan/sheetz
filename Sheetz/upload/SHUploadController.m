@@ -9,6 +9,7 @@
 #import "SHUploadController.h"
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
+#import "SHImageUtil.h"
 
 @implementation SHUploadController
 
@@ -105,8 +106,6 @@
 
 - (IBAction)selectImage:(id)sender
 {
-    tag = [sender tag];
-    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Menu"
                                                        delegate:self
                                               cancelButtonTitle:@"Dismiss"
@@ -163,6 +162,8 @@
         delegate.price  = self.price;
         delegate.campus = self.campus;
         delegate.street = self.street;
+        
+        self.photo = [SHImageUtil imageWithImage:self.photo scaledToSize:CGSizeMake(320, 285)];
         delegate.photo = self.photo;
         
         [self performSegueWithIdentifier:@"overview" sender:self];
@@ -181,7 +182,7 @@
     
     if ([textField isKindOfClass:[SHCustomField class]])
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+
             [[(SHCustomField *)textField nextField] becomeFirstResponder];
             
         });
@@ -193,7 +194,7 @@
 {
     textField.layer.masksToBounds = true;
     textField.layer.cornerRadius = 5;
-    textField.layer.borderColor = [[UIColor grayColor]CGColor];
+    textField.layer.borderColor = [[UIColor grayColor] CGColor];
     textField.layer.borderWidth = 1.0f;
     return true;
 }

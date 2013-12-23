@@ -88,7 +88,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P90-Km-DtY">
-                                        <rect key="frame" x="7" y="0.0" width="307" height="249"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="285"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zq3-sn-KFk">
@@ -258,8 +258,8 @@
                                 <rect key="frame" x="0.0" y="101" width="320" height="379"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="X5Y-xc-P4W">
-                                        <rect key="frame" x="8" y="10" width="304" height="325"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="X5Y-xc-P4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="285"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -270,7 +270,7 @@
                     </view>
                     <connections>
                         <outlet property="campusLabel" destination="bWv-db-utK" id="rD9-Hc-ZOW"/>
-                        <outlet property="coverImage" destination="X5Y-xc-P4W" id="HJq-Lr-X6m"/>
+                        <outlet property="coverImage" destination="X5Y-xc-P4W" id="MkJ-Dv-yBk"/>
                         <outlet property="descTextView" destination="BJb-qs-xF1" id="OFn-iz-7sF"/>
                         <outlet property="priceLabel" destination="mMb-iQ-Eoq" id="NUf-tP-Gyl"/>
                         <outlet property="secondView" destination="MXR-Oh-s3I" id="Q49-kx-Rws"/>
@@ -841,8 +841,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ap2-Vp-HmU"/>
-        <segue reference="XeB-RC-Xek"/>
+        <segue reference="2lb-HG-Wxv"/>
         <segue reference="HHr-YQ-sJv"/>
+        <segue reference="XeB-RC-Xek"/>
     </inferredMetricsTieBreakers>
 </document>

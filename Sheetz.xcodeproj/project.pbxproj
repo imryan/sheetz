@@ -10,6 +10,7 @@
 		940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 940F3359180F5A9F006D9DD3 /* SHUploadController.m */; };
 		941E7074184ECC9A0048FA3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941E7073184ECC9A0048FA3E /* QuartzCore.framework */; };
 		942DEF47182462BD006E32FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DEF46182462BD006E32FC /* Reachability.m */; };
+		942EF6821868820F00656D71 /* SHImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 942EF6811868820F00656D71 /* SHImageUtil.m */; };
 		948153631863E9EB001F66A4 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153611863E9EB001F66A4 /* login@2x.png */; };
 		948153641863E9EB001F66A4 /* register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153621863E9EB001F66A4 /* register@2x.png */; };
 		948153661863EAEE001F66A4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153651863EAEE001F66A4 /* background@2x.png */; };
@@ -64,6 +65,8 @@
 		941E7073184ECC9A0048FA3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		942DEF45182462BD006E32FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = referenced/Reachability.h; sourceTree = "<group>"; };
 		942DEF46182462BD006E32FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = referenced/Reachability.m; sourceTree = "<group>"; };
+		942EF6801868820F00656D71 /* SHImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHImageUtil.h; path = util/SHImageUtil.h; sourceTree = "<group>"; };
+		942EF6811868820F00656D71 /* SHImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHImageUtil.m; path = util/SHImageUtil.m; sourceTree = "<group>"; };
 		948153611863E9EB001F66A4 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@2x.png"; path = "resources/login@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153621863E9EB001F66A4 /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "register@2x.png"; path = "resources/register@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153651863EAEE001F66A4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "resources/background@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -169,6 +172,15 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		942EF67F186881FF00656D71 /* Image Util */ = {
+			isa = PBXGroup;
+			children = (
+				942EF6801868820F00656D71 /* SHImageUtil.h */,
+				942EF6811868820F00656D71 /* SHImageUtil.m */,
+			);
+			name = "Image Util";
+			sourceTree = "<group>";
+		};
 		948153601863E9DF001F66A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				942EF67F186881FF00656D71 /* Image Util */,
 				948153601863E9DF001F66A4 /* Resources */,
 				94A04EC0185A8CDF000E2F54 /* Transition */,
 				949E92BE184D40BC003BE604 /* MBProgressHUD */,
@@ -489,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DCC55D180CAB3F007236E4 /* SHFirstViewController.m in Sources */,
+				942EF6821868820F00656D71 /* SHImageUtil.m in Sources */,
 				94DCC58C180CADB9007236E4 /* SHRegisterController.m in Sources */,
 				940F335B180F5A9F006D9DD3 /* SHUploadController.m in Sources */,
 				94F688BA181EF96400476B32 /* SHCustomField.m in Sources */,

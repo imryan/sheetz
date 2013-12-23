@@ -66,6 +66,7 @@
             [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
                     NSLog(@"Listing added successfully.");
+                    [MBProgressHUD hideHUDForView:self.view animated:true];
                     [self performSegueWithIdentifier:@"backHome" sender:self];
                     
                 } else {
