@@ -18,17 +18,8 @@
 
 - (IBAction)loginUser:(id)sender
 {
-    if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""])
-    {
-        /*
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
-                                                        message:@"Please enter in all fields." delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-         */
-        
-        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields!"];
+    if ([self.usernameField.text isEqualToString:@""] || [self.passwordField.text isEqualToString:@""]) {
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields."];
         notifierView.timeOnScreen = 3.0;
         notifierView.alpha = 0.6f;
         [notifierView showInWindow:self.view.window];
@@ -51,11 +42,12 @@
                  
              } else {
                  NSString *errorString = [self translateErrorCode:error];
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sheets"
-                                                                 message:errorString delegate:self
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil];
-                 [alert show];
+                 
+                 FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:errorString];
+                 notifierView.timeOnScreen = 3.0;
+                 notifierView.alpha = 0.6f;
+                 [notifierView showInWindow:self.view.window];
+                 
                  [MBProgressHUD hideHUDForView:self.view animated:true];
                  
                  [self.usernameField setEnabled:true];

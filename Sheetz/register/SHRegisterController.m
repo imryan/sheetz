@@ -18,7 +18,7 @@
 - (IBAction)registerUser:(id)sender
 {
     if (self.usernameField.text.length > 15) {
-        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Username must be 15 characters or less!"];
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Username must be 15 characters or less."];
         notifierView.timeOnScreen = 3.0;
         notifierView.alpha = 0.6f;
         [notifierView showInWindow:self.view.window];
@@ -28,7 +28,7 @@
         || [self.usernameField.text isEqualToString:@""]
         || [self.passwordField.text isEqualToString:@""]) {
 
-        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields!"];
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please fill in all fields."];
         notifierView.timeOnScreen = 3.0;
         notifierView.alpha = 0.6f;
         [notifierView showInWindow:self.view.window];
