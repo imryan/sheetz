@@ -102,6 +102,9 @@
 {
     [self dismissViewControllerAnimated:true completion:nil];
     [thirdView setHidden:false];
+    [secondView setHidden:true];
+    [segmentControl setSelectedSegmentIndex:2];
+    [self disableFields];
 }
 
 - (IBAction)selectImage:(id)sender
