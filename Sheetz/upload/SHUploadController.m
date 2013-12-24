@@ -10,6 +10,7 @@
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
 #import "SHImageUtil.h"
+#import "FDStatusBarNotifierView.h"
 
 @implementation SHUploadController
 
@@ -101,9 +102,9 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:true completion:nil];
+    [segmentControl setSelectedSegmentIndex:2];
     [thirdView setHidden:false];
     [secondView setHidden:true];
-    [segmentControl setSelectedSegmentIndex:2];
     [self disableFields];
 }
 
@@ -123,12 +124,6 @@
     {
         case 0:
             if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                                message:@"This device does not have a camera. Please select a photo from your photo library instead."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Dismiss"
-                                                      otherButtonTitles:nil];
-                [alert show];
                 [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
             } else {
                 [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -154,8 +149,10 @@
         [self.desc isEqualToString:@""]   ||
         [self.street isEqualToString:@""]) {
         
-        // Warn user
-        NSLog(@"Incompleted form!");
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please complete the form."];
+        notifierView.timeOnScreen = 3.0;
+        notifierView.alpha = 0.6f;
+        [notifierView showInWindow:self.view.window];
         
     } else {
         
@@ -213,22 +210,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.titleField.text = delegate.title;
+    self.campusField.text = delegate.campus;
+    self.priceField.text = delegate.price;
+    self.streetField.text = delegate.street;
+    self.descriptionField.text = delegate.desc;
+    imageView.image = delegate.photo;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.titleField.delegate = self;
+    self.campusField.delegate = self;
+    self.priceField.delegate = self;
+    self.streetField.delegate = self;
+    
     [segmentControl setSelectedSegmentIndex:0];
     [self enableFields];
     [self.titleField becomeFirstResponder];
     
     [secondView setHidden:true];
     [thirdView setHidden:true];
-    [self.titleField becomeFirstResponder];
-    
-    self.titleField.delegate = self;
-    self.campusField.delegate = self;
-    self.priceField.delegate = self;
-    self.streetField.delegate = self;
     
     CGRect titleFrame = self.titleField.frame;
     titleFrame.size.height = 35;

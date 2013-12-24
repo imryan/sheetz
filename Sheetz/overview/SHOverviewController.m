@@ -84,7 +84,7 @@
 
 - (IBAction)editListing:(id)sender
 {
-    [self dismissViewControllerAnimated:true completion:nil];
+    [self performSegueWithIdentifier:@"editListing" sender:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated

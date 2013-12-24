@@ -278,11 +278,12 @@
                         <outlet property="thirdView" destination="Z3k-CM-diM" id="dz3-nX-Mft"/>
                         <outlet property="titleLabel" destination="MR1-lk-vNq" id="6rc-bi-xMM"/>
                         <segue destination="8YX-ce-x5E" kind="custom" identifier="backHome" customClass="SHBackSegue" id="3aW-bM-rPe"/>
+                        <segue destination="v4D-oj-oRR" kind="custom" identifier="editListing" customClass="SHBackSegue" id="l8D-GO-ADo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26j-e6-Dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1514" y="180"/>
+            <point key="canvasLocation" x="1509" y="180"/>
         </scene>
         <!--First View Controller - First-->
         <scene sceneID="W3I-pn-N6e">
@@ -853,7 +854,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTX-HM-Vvx"/>
+        <segue reference="3aW-bM-rPe"/>
+        <segue reference="l8D-GO-ADo"/>
         <segue reference="HHr-YQ-sJv"/>
         <segue reference="y78-EO-K9a"/>
     </inferredMetricsTieBreakers>
