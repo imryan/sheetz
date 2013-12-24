@@ -291,8 +291,8 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
-				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
+				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
 				942EF67F186881FF00656D71 /* Image Util */,
 				948153601863E9DF001F66A4 /* Resources */,
 				94A04EC0185A8CDF000E2F54 /* Transition */,

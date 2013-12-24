@@ -193,7 +193,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadDatabaseData];
 }
 
 - (void)didReceiveMemoryWarning

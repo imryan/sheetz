@@ -52,6 +52,7 @@
                  
                  [self.usernameField setEnabled:true];
                  [self.passwordField setEnabled:true];
+                 [self.usernameField becomeFirstResponder];
              }
          }];
     }
