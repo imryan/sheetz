@@ -136,6 +136,18 @@
     }
 }
 
+- (BOOL)isStringEmpty:(NSString *)string
+{
+    if ([string length] == 0) {
+        return true;
+    }
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+        return true;
+    }
+    return false;
+}
+
 - (IBAction)overview:(id)sender
 {
     self.title  = self.titleField.text;
@@ -144,11 +156,11 @@
     self.price  = self.priceField.text;
     self.street = self.streetField.text;
     
-    if ([self.title isEqualToString:@""]  ||
-        [self.campus isEqualToString:@""] ||
-        [self.price isEqualToString:@""]  ||
-        [self.desc isEqualToString:@""]   ||
-        [self.street isEqualToString:@""]) {
+    if ([self isStringEmpty:self.title]  ||
+        [self isStringEmpty:self.campus] ||
+        [self isStringEmpty:self.price] ||
+        [self isStringEmpty:self.desc]  ||
+        [self isStringEmpty:self.street]) {
         
         FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please complete the form."];
         notifierView.timeOnScreen = 3.0;

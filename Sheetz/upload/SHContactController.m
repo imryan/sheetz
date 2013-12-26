@@ -26,10 +26,22 @@
     [self performSegueWithIdentifier:@"backToEdit" sender:self];
 }
 
+- (BOOL)isStringEmpty:(NSString *)string
+{
+    if ([string length] == 0) {
+        return true;
+    }
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+        return true;
+    }
+    return false;
+}
+
 - (IBAction)overview:(id)sender
 {
-    if ([self.phoneField.text isEqualToString:@""]) {
-        if ([self.emailField.text isEqualToString:@""]) {
+    if ([self isStringEmpty:self.phoneField.text]) {
+        if ([self isStringEmpty:self.emailField.text]) {
             FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please select a contact option."];
             notifierView.timeOnScreen = 3.0;
             notifierView.alpha = 0.6f;
@@ -41,8 +53,8 @@
         }
     }
     
-    if ([self.emailField.text isEqualToString:@""]) {
-        if ([self.phoneField.text isEqualToString:@""]) {
+    if ([self isStringEmpty:self.emailField.text]) {
+        if ([self isStringEmpty:self.phoneField.text]) {
             FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please select a contact option."];
             notifierView.timeOnScreen = 3.0;
             notifierView.alpha = 0.6f;
