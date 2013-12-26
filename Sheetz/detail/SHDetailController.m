@@ -20,6 +20,38 @@
     return self;
 }
 
+- (IBAction)contact:(id)sender
+{
+    if ([self.contactEmail isEqualToString:@""]) {
+        
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Contact"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Dismiss"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:self.contactPhone, nil];
+        
+        [sheet showInView:self.view];
+        
+    } else if (![self.contactEmail isEqualToString:@""] && ![self.contactPhone isEqualToString:@""]) {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Contact"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Dismiss"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:self.contactPhone, self.contactEmail, nil];
+        
+        [sheet showInView:self.view];
+    
+    } else {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Contact"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Dismiss"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:self.contactEmail, nil];
+        
+        [sheet showInView:self.view];
+    }
+}
+
 - (IBAction)done:(id)sender
 {
     [self performSegueWithIdentifier:@"detailDone" sender:self];
@@ -40,6 +72,9 @@
     self.listingPrice.text = [self.information objectForKey:@"price"];
     self.listingCampus.text = [self.information objectForKey:@"campus"];
     self.listingStreet.text = [self.information objectForKey:@"street"];
+    
+    self.contactEmail = [self.information objectForKey:@"email"];
+    self.contactPhone = [self.information objectForKey:@"phone"];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

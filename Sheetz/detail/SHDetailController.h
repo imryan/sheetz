@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface SHDetailController : UIViewController
+@interface SHDetailController : UIViewController <UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSDictionary *information;
 @property (nonatomic, strong) PFFile *file;
@@ -20,6 +20,10 @@
 @property (nonatomic, retain) IBOutlet UILabel *listingStreet;
 @property (nonatomic, retain) IBOutlet UIImageView *listingImage;
 
+@property (nonatomic, retain) NSString *contactEmail;
+@property (nonatomic, retain) NSString *contactPhone;
+
 - (IBAction)done:(id)sender;
+- (IBAction)contact:(id)sender;
 
 @end

@@ -490,6 +490,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Contact" id="yxf-gc-EQJ">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="contact:" destination="k4C-uB-dor" id="ViW-aq-jjK"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -928,10 +931,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTX-HM-Vvx"/>
-        <segue reference="bAW-5o-Xsy"/>
-        <segue reference="Q6b-Pg-XmI"/>
+        <segue reference="2lb-HG-Wxv"/>
         <segue reference="HHr-YQ-sJv"/>
         <segue reference="y78-EO-K9a"/>
+        <segue reference="Q6b-Pg-XmI"/>
+        <segue reference="bAW-5o-Xsy"/>
     </inferredMetricsTieBreakers>
 </document>
