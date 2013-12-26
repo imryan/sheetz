@@ -679,12 +679,20 @@
                                     <outlet property="delegate" destination="QUy-BD-bpt" id="zhB-wr-dfj"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Listings Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b4T-Ml-7QS">
+                                <rect key="frame" x="89" y="155" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="Z7h-1E-pvt"/>
                     <connections>
                         <outlet property="memberSinceLabel" destination="M3E-Ie-UQ1" id="59t-WE-d9n"/>
+                        <outlet property="noPostsLabel" destination="b4T-Ml-7QS" id="f8d-Fe-7G7"/>
                         <outlet property="tableView" destination="gzQ-8u-2c5" id="gOl-0i-EWd"/>
                         <outlet property="usernameLabel" destination="ARe-HA-KwC" id="XZV-0E-HzM"/>
                     </connections>

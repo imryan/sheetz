@@ -50,6 +50,8 @@
     hud.mode = MBProgressHUDAnimationFade;
     hud.labelText = @"Uploading";
     
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     PFFile *image = [PFFile fileWithData:data];
     PFObject *listing = [PFObject objectWithClassName:@"Listings"];
     listing[@"title"]         = self.titleLabel.text;
@@ -58,6 +60,8 @@
     listing[@"campus"]        = self.campusLabel.text;
     listing[@"street"]        = self.streetLabel.text;
     listing[@"member"]        = [PFUser currentUser].username;
+    listing[@"phone"]         = delegate.contactPhone;
+    listing[@"email"]         = delegate.contactEmail;
 
     [image saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {

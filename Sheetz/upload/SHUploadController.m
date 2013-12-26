@@ -107,6 +107,8 @@
     [thirdView setHidden:false];
     [secondView setHidden:true];
     [self disableFields];
+    
+    [self preferredStatusBarStyle];
 }
 
 - (IBAction)selectImage:(id)sender

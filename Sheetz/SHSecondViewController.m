@@ -21,6 +21,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ([tableData count] == 0) {
+        [self.noPostsLabel setHidden:false];
+    } else {
+        [self.noPostsLabel setHidden:true];
+    }
+    
     return [tableData count];
 }
 

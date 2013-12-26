@@ -48,8 +48,15 @@
             [notifierView showInWindow:self.view.window];
             
         } else {
-            NSLog(@"Contacting by email only");
-            [self sendDataAndContinue];
+            
+            if ([self.emailField.text rangeOfString:@"@"].location == NSNotFound) {
+                FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid email address."];
+                notifierView.timeOnScreen = 3.0;
+                notifierView.alpha = 0.6f;
+                [notifierView showInWindow:self.view.window];
+            } else {
+                [self sendDataAndContinue];
+            }
         }
     }
     
@@ -60,14 +67,28 @@
             notifierView.alpha = 0.6f;
             [notifierView showInWindow:self.view.window];
         } else {
-            NSLog(@"Contacting by phone");
-            [self sendDataAndContinue];
+            
+            if (self.phoneField.text.length < 10) {
+                FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid phone number."];
+                notifierView.timeOnScreen = 3.0;
+                notifierView.alpha = 0.6f;
+                [notifierView showInWindow:self.view.window];
+            } else {
+                [self sendDataAndContinue];
+            }
         }
     }
     
-    if (![self.emailField.text isEqualToString:@""] && ![self.phoneField.text isEqualToString:@""]) {
+    if (![self isStringEmpty:self.emailField.text] && ![self isStringEmpty:self.phoneField.text] &&
+        [self.emailField.text rangeOfString:@"@"].location != NSNotFound && self.phoneField.text.length >= 10) {
+        
         NSLog(@"Contacting @ phone and email");
         [self sendDataAndContinue];
+    } else {
+        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid phone number & email address."];
+        notifierView.timeOnScreen = 3.0;
+        notifierView.alpha = 0.6f;
+        [notifierView showInWindow:self.view.window];
     }
 }
 
