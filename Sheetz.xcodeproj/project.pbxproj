@@ -21,6 +21,7 @@
 		948153631863E9EB001F66A4 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153611863E9EB001F66A4 /* login@2x.png */; };
 		948153641863E9EB001F66A4 /* register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153621863E9EB001F66A4 /* register@2x.png */; };
 		948153661863EAEE001F66A4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153651863EAEE001F66A4 /* background@2x.png */; };
+		94994AEB186CAA5200BA8AA8 /* SHContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94994AEA186CAA5200BA8AA8 /* SHContactController.m */; };
 		949E92C1184D40C4003BE604 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E92C0184D40C4003BE604 /* MBProgressHUD.m */; };
 		94A2B3FE185CBC590091256D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F688B5181EF3E900476B32 /* Parse.framework */; };
 		94A2B401185CBCB80091256D /* SHPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2B400185CBCB80091256D /* SHPushSegue.m */; };
@@ -83,6 +84,8 @@
 		948153611863E9EB001F66A4 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@2x.png"; path = "resources/login@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153621863E9EB001F66A4 /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "register@2x.png"; path = "resources/register@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153651863EAEE001F66A4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "resources/background@2x.png"; sourceTree = SOURCE_ROOT; };
+		94994AE9186CAA5200BA8AA8 /* SHContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHContactController.h; path = upload/SHContactController.h; sourceTree = "<group>"; };
+		94994AEA186CAA5200BA8AA8 /* SHContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHContactController.m; path = upload/SHContactController.m; sourceTree = "<group>"; };
 		949E92BF184D40C4003BE604 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = referenced/MBProgressHUD.h; sourceTree = "<group>"; };
 		949E92C0184D40C4003BE604 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = referenced/MBProgressHUD.m; sourceTree = "<group>"; };
 		94A2B3FF185CBCB80091256D /* SHPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHPushSegue.h; path = transition/SHPushSegue.h; sourceTree = "<group>"; };
@@ -220,6 +223,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		94994AE8186CAA3700BA8AA8 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				94994AE9186CAA5200BA8AA8 /* SHContactController.h */,
+				94994AEA186CAA5200BA8AA8 /* SHContactController.m */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		949E92BE184D40BC003BE604 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				94DCC57E180CAB46007236E4 /* Delegates */,
+				94994AE8186CAA3700BA8AA8 /* Contact */,
 				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
 				942EF67F186881FF00656D71 /* Image Util */,
 				948153601863E9DF001F66A4 /* Resources */,
@@ -549,6 +562,7 @@
 				94E2E6741815F4BB002342DF /* SHOverviewController.m in Sources */,
 				94DCC557180CAB3F007236E4 /* SHAppDelegate.m in Sources */,
 				94A2B401185CBCB80091256D /* SHPushSegue.m in Sources */,
+				94994AEB186CAA5200BA8AA8 /* SHContactController.m in Sources */,
 				94A2B404185CBCC40091256D /* SHBackSegue.m in Sources */,
 				94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */,
 				942EF6E41868BCF300656D71 /* FDStatusBarNotifierView.m in Sources */,

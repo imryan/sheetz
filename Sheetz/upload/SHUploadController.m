@@ -10,6 +10,7 @@
 #import "SHCustomField.h"
 #import "SHAppDelegate.h"
 #import "SHImageUtil.h"
+#import "SHContactController.h"
 #import "FDStatusBarNotifierView.h"
 
 @implementation SHUploadController
@@ -166,12 +167,22 @@
         self.photo = [SHImageUtil imageWithImage:self.photo scaledToSize:CGSizeMake(320, 285)];
         delegate.photo = self.photo;
         
-        [self performSegueWithIdentifier:@"overview" sender:self];
+        [self performSegueWithIdentifier:@"contact" sender:self];
     }
 }
 
 - (IBAction)cancelUpload:(id)sender
 {
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.title  = @"";
+    delegate.desc   = @"";
+    delegate.price  = @"";
+    delegate.campus = @"";
+    delegate.street = @"";
+    delegate.photo = nil;
+    delegate.contactEmail = @"";
+    delegate.contactPhone = @"";
+    
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

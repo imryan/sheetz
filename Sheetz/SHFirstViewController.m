@@ -120,11 +120,11 @@
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
     [listingQuery whereKeyExists:@"title"];
     [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-         if (!error) {
-             tableData = objects;
-             [self.tableView reloadData];
-         }
-     }];
+        if (!error) {
+            tableData = objects;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

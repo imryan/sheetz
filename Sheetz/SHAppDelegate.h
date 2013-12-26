@@ -18,4 +18,7 @@
 @property (nonatomic, copy) NSString *street;
 @property (nonatomic, retain) UIImage *photo;
 
+@property (nonatomic, copy) NSString *contactEmail;
+@property (nonatomic, copy) NSString *contactPhone;
+
 @end

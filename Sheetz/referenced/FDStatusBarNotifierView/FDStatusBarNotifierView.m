@@ -82,13 +82,14 @@ NSTimeInterval const kTimeOnScreen = 2.0;
     [window addSubview:self];
     
     NSDictionary *attributes = @{NSFontAttributeName:self.messageLabel.font};
-    CGFloat textWith = 0;
+    CGFloat textWidth = 0;
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         // Load resources for iOS 6.1 or earlier
-        textWith = [self.message sizeWithFont:self.messageLabel.font
+        textWidth = [self.message sizeWithFont:self.messageLabel.font
                             constrainedToSize:CGSizeMake(MAXFLOAT, 20)
                                 lineBreakMode:self.messageLabel.lineBreakMode].width;
+        
     } else {
         // Load resources for iOS 7 or later
         CGRect textSize = [self.message boundingRectWithSize:CGSizeMake(MAXFLOAT, 20)
@@ -96,10 +97,10 @@ NSTimeInterval const kTimeOnScreen = 2.0;
                                                   attributes:attributes
                                                      context:nil];
         
-        textWith = textSize.size.width;
+        textWidth = textSize.size.width;
     }
     
-    if (textWith < self.messageLabel.frame.size.width) { // the message to display fits in the status bar view
+    if (textWidth < self.messageLabel.frame.size.width) { // the message to display fits in the status bar view
         
         CGRect animationDestinationFrame;
         if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait) {
@@ -136,8 +137,8 @@ NSTimeInterval const kTimeOnScreen = 2.0;
     } else {
         if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait) {
             CGRect frame = self.messageLabel.frame;
-            CGFloat exceed = textWith - frame.size.width;
-            frame.size.width = textWith;
+            CGFloat exceed = textWidth - frame.size.width;
+            frame.size.width = textWidth;
             self.messageLabel.frame = frame;
             NSTimeInterval timeExceed = exceed / 60;
             [UIView animateWithDuration:.4 animations:^{

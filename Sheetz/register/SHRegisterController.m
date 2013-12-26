@@ -51,13 +51,12 @@
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
             hud.mode = MBProgressHUDAnimationFade;
             hud.labelText = @"Signing up";
-            
             if (!error) {
                 [self pushView];
                 
             } else {
-                NSString *errorString = [self translateErrorCode:error];
                 
+                NSString *errorString = [self translateErrorCode:error];
                 FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:errorString];
                 notifierView.timeOnScreen = 3.0;
                 notifierView.alpha = 0.6f;
