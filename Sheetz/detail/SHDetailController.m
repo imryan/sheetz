@@ -8,6 +8,8 @@
 
 #import "SHDetailController.h"
 #import "SHFirstViewController.h"
+#import "FDStatusBarNotifierView.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
 @implementation SHDetailController
 
@@ -55,6 +57,65 @@
 - (IBAction)done:(id)sender
 {
     [self performSegueWithIdentifier:@"detailDone" sender:self];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *option = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if ([option isEqualToString:@"Dismiss"]) {
+        return;
+    }
+    else if ([option rangeOfString:@"@"].location != NSNotFound) {
+        
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:@[self.contactEmail]];
+        [controller setSubject:self.listingTitle.text];
+        [controller setMessageBody:@"" isHTML:NO];
+        
+        [self presentViewController:controller animated:true completion:nil];
+        
+    } else {
+        
+        UIDevice *device = [UIDevice currentDevice];
+        if ([[device model] isEqualToString:@"iPhone"]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.contactPhone]]];
+            
+        } else {
+            FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"This device cannot make calls."];
+            notifierView.timeOnScreen = 3.0;
+            notifierView.alpha = 0.6f;
+            [notifierView showInWindow:self.view.window];
+        }
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    NSString *resultString;
+    switch (result) {
+        case MFMailComposeResultSent:
+            resultString = @"Mail sent.";
+            break;
+        case MFMailComposeResultFailed:
+            resultString = @"Mail not sent.";
+            break;
+        case MFMailComposeResultSaved:
+            resultString = @"Mail saved. Was not sent.";
+            break;
+        case MFMailComposeResultCancelled:
+            resultString = @"Mail not sent.";
+            break;
+    }
+    
+    FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:resultString];
+    notifierView.timeOnScreen = 3.0;
+    notifierView.alpha = 0.6f;
+    [notifierView showInWindow:self.view.window];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:false];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)viewDidLoad

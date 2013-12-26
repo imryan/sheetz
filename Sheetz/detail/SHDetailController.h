@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SHDetailController : UIViewController <UIActionSheetDelegate>
+@interface SHDetailController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NSDictionary *information;
 @property (nonatomic, strong) PFFile *file;
