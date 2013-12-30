@@ -23,25 +23,14 @@
     return self;
 }
 
-- (IBAction)nextView:(id)sender
+- (IBAction)description:(id)sender
 {
-    UISegmentedControl *control = (UISegmentedControl *)sender;
-    NSInteger selectedSegment = control.selectedSegmentIndex;
-    
-    switch (selectedSegment) {
-        case 0:
-            [secondView setHidden:true];
-            [thirdView setHidden:true];
-            break;
-        case 1:
-            [secondView setHidden:false];
-            [thirdView setHidden:true];
-            break;
-        case 2:
-            [secondView setHidden:true];
-            [thirdView setHidden:false];
-            break;
-    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Description"
+                                                    message:self.descriptionString
+                                                   delegate:self
+                                          cancelButtonTitle:@"Dismiss"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (IBAction)uploadListing:(id)sender
@@ -55,7 +44,7 @@
     PFFile *image = [PFFile fileWithData:data];
     PFObject *listing = [PFObject objectWithClassName:@"Listings"];
     listing[@"title"]         = self.titleLabel.text;
-    listing[@"description"]   = self.descTextView.text;
+    listing[@"description"]   = self.descriptionString;
     listing[@"price"]         = self.priceLabel.text;
     listing[@"campus"]        = self.campusLabel.text;
     listing[@"street"]        = self.streetLabel.text;
@@ -95,17 +84,13 @@
 {
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.titleLabel.text   = delegate.title;
-    self.descTextView.text = delegate.desc;
+    self.descriptionString = delegate.desc;
     self.priceLabel.text   = [NSString stringWithFormat:@"$%@", delegate.price];
     self.campusLabel.text  = delegate.campus;
     self.coverImage.image  = delegate.photo;
     self.streetLabel.text  = delegate.street;
     
     data = UIImagePNGRepresentation(delegate.photo);
-    
-    [secondView setHidden:true];
-    [thirdView setHidden:true];
-    [self.descTextView setEditable:false];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -116,7 +101,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [secondView setHidden:true];
 }
 
 - (void)didReceiveMemoryWarning

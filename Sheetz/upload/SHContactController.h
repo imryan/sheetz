@@ -15,6 +15,7 @@
 
 - (IBAction)back:(id)sender;
 - (IBAction)overview:(id)sender;
+- (void)displayErrorWithString:(NSString *)message;
 - (void)sendDataAndContinue;
 
 @end

@@ -27,9 +27,15 @@
 
 - (void)displayAlert
 {
-    // Begin UIView animation
     UIView *fadeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     fadeView.tag = FADE_TAG;
+    
+    fadeView.alpha = 0.0f;
+    [UIView beginAnimations:@"fadeInView" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    fadeView.alpha = 1.0f;
+    [UIView commitAnimations];
+    
     [self.view addSubview:fadeView];
     
     fadeView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
@@ -42,7 +48,7 @@
         }
     }
     
-    CGRect frame = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2, 190, 210);
+    CGRect frame = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2, 190, 205);
     CGPoint center = CGPointMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0);
     UIView *view = [[UIView alloc] initWithFrame:frame];
     view.tag = MENU_TAG;
@@ -54,17 +60,17 @@
     
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [submitButton addTarget:self action:@selector(submitListing) forControlEvents:UIControlEventTouchUpInside];
-    [submitButton setFrame:CGRectMake(35, 70, 126, 51)];
+    [submitButton setFrame:CGRectMake(35, 14, 125, 51)];
     [submitButton setImage:[UIImage imageNamed:@"submit@2x.png"] forState:UIControlStateNormal];
     
     UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [logoutButton addTarget:self action:@selector(logoutUser) forControlEvents:UIControlEventTouchUpInside];
-    [logoutButton setFrame:CGRectMake(35, 140, 125, 51)];
+    [logoutButton setFrame:CGRectMake(35, 76, 125, 51)];
     [logoutButton setImage:[UIImage imageNamed:@"logout@2x.png"] forState:UIControlStateNormal];
     
     UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [dismissButton addTarget:self action:@selector(handleExit) forControlEvents:UIControlEventTouchUpInside];
-    [dismissButton setFrame:CGRectMake(35, 7, 125, 51)];
+    [dismissButton setFrame:CGRectMake(35, 140, 125, 51)];
     [dismissButton setImage:[UIImage imageNamed:@"dismiss@2x.png"] forState:UIControlStateNormal];
     
     [view addSubview:submitButton];
@@ -76,6 +82,10 @@
 - (void)handleExit
 {
     UIView *view = [self.view viewWithTag:MENU_TAG];
+    [UIView beginAnimations:@"fadeOutView" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    view.alpha = 0.0f;
+    [UIView commitAnimations];
     [view removeFromSuperview];
     
     UIView *fade = [self.view viewWithTag:FADE_TAG];

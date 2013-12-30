@@ -10,20 +10,18 @@
 
 @interface SHOverviewController : UIViewController
 {
-    IBOutlet UIView *secondView;
-    IBOutlet UIView *thirdView;
     NSData *data;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
-@property (nonatomic, retain) IBOutlet UITextView *descTextView;
+@property (nonatomic, retain) NSString *descriptionString;
 @property (nonatomic, retain) IBOutlet UILabel *priceLabel;
 @property (nonatomic, retain) IBOutlet UILabel *streetLabel;
 @property (nonatomic, retain) IBOutlet UILabel *campusLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *coverImage;
 
-- (IBAction)nextView:(id)sender;
 - (IBAction)editListing:(id)sender;
+- (IBAction)description:(id)sender;
 - (IBAction)uploadListing:(id)sender;
 
 @end

@@ -42,54 +42,51 @@
 {
     if ([self isStringEmpty:self.phoneField.text]) {
         if ([self isStringEmpty:self.emailField.text]) {
-            FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please select a contact option."];
-            notifierView.timeOnScreen = 3.0;
-            notifierView.alpha = 0.6f;
-            [notifierView showInWindow:self.view.window];
+            [self displayErrorWithString:@"Please select a contact option."];
             
         } else {
-            
             if ([self.emailField.text rangeOfString:@"@"].location == NSNotFound) {
-                FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid email address."];
-                notifierView.timeOnScreen = 3.0;
-                notifierView.alpha = 0.6f;
-                [notifierView showInWindow:self.view.window];
+                [self displayErrorWithString:@"Please enter a valid email address."];
             } else {
                 [self sendDataAndContinue];
             }
         }
     }
     
-    if ([self isStringEmpty:self.emailField.text]) {
+    else if ([self isStringEmpty:self.emailField.text]) {
         if ([self isStringEmpty:self.phoneField.text]) {
-            FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please select a contact option."];
-            notifierView.timeOnScreen = 3.0;
-            notifierView.alpha = 0.6f;
-            [notifierView showInWindow:self.view.window];
-        } else {
+            [self displayErrorWithString:@"Please select a contact option."];
             
+        } else {
             if (self.phoneField.text.length < 10) {
-                FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid phone number."];
-                notifierView.timeOnScreen = 3.0;
-                notifierView.alpha = 0.6f;
-                [notifierView showInWindow:self.view.window];
+                [self displayErrorWithString:@"Please enter a valid phone number."];
             } else {
                 [self sendDataAndContinue];
             }
         }
     }
     
-    if (![self isStringEmpty:self.emailField.text] && ![self isStringEmpty:self.phoneField.text] &&
-        [self.emailField.text rangeOfString:@"@"].location != NSNotFound && self.phoneField.text.length >= 10) {
-        
-        NSLog(@"Contacting @ phone and email");
-        [self sendDataAndContinue];
-    } else {
-        FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"Please enter a valid phone number & email address."];
-        notifierView.timeOnScreen = 3.0;
-        notifierView.alpha = 0.6f;
-        [notifierView showInWindow:self.view.window];
+    else if (![self isStringEmpty:self.emailField.text]) {
+        if ([self.emailField.text rangeOfString:@"@"].location != NSNotFound) {
+            if (![self isStringEmpty:self.phoneField.text]) {
+                if (self.phoneField.text.length >= 10) {
+                    [self sendDataAndContinue];
+                } else {
+                    [self displayErrorWithString:@"Please enter a valid phone number."];
+                }
+            }
+        } else {
+            [self displayErrorWithString:@"Please enter a valid email address."];
+        }
     }
+}
+
+- (void)displayErrorWithString:(NSString *)message
+{
+    FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:message];
+    notifierView.timeOnScreen = 3.0;
+    notifierView.alpha = 0.6f;
+    [notifierView showInWindow:self.view.window];
 }
 
 - (void)sendDataAndContinue
