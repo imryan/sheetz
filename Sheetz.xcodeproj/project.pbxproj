@@ -30,6 +30,7 @@
 		94A651741864C5D500CDF277 /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A651731864C5D500CDF277 /* tag@2x.png */; };
 		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
 		94CAEC9F1871C7CC00CE8A8A /* SHSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CAEC9E1871C7CC00CE8A8A /* SHSearchController.m */; };
+		94CAECA11871E63500CE8A8A /* noimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CAECA01871E63500CE8A8A /* noimage@2x.png */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
 		94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC54A180CAB3F007236E4 /* UIKit.framework */; };
@@ -100,6 +101,7 @@
 		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
 		94CAEC9D1871C7CC00CE8A8A /* SHSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHSearchController.h; path = search/SHSearchController.h; sourceTree = "<group>"; };
 		94CAEC9E1871C7CC00CE8A8A /* SHSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHSearchController.m; path = search/SHSearchController.m; sourceTree = "<group>"; };
+		94CAECA01871E63500CE8A8A /* noimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noimage@2x.png"; path = "resources/noimage@2x.png"; sourceTree = SOURCE_ROOT; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCC546180CAB3F007236E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DCC548180CAB3F007236E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,6 +218,7 @@
 		948153601863E9DF001F66A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				94CAECA01871E63500CE8A8A /* noimage@2x.png */,
 				942EF6DD1868B7B600656D71 /* home@2x.png */,
 				942EF6DE1868B7B600656D71 /* profile@2x.png */,
 				942EF6D71868A6F200656D71 /* dismiss@2x.png */,
@@ -541,6 +544,7 @@
 				94DCC551180CAB3F007236E4 /* InfoPlist.strings in Resources */,
 				948153631863E9EB001F66A4 /* login@2x.png in Resources */,
 				942EF6DB1868A6F200656D71 /* logout@2x.png in Resources */,
+				94CAECA11871E63500CE8A8A /* noimage@2x.png in Resources */,
 				942EF6DC1868A6F200656D71 /* submit@2x.png in Resources */,
 				948153661863EAEE001F66A4 /* background@2x.png in Resources */,
 				942EF6E01868B7B600656D71 /* profile@2x.png in Resources */,

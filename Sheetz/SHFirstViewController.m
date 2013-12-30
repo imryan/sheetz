@@ -170,6 +170,13 @@
         }
     }];
     
+    /* Compare image data and assign the placeholder image if image view is empty
+    NSData *imageData = UIImagePNGRepresentation(cell.postImageView.image);
+    if ([imageData isEqualToData:nil]) {
+        NSLog(@"Image isn't null");
+    }
+    */
+    
     return cell;
 }
 

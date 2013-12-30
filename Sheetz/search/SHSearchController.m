@@ -39,8 +39,9 @@
             if ([[object objectForKey:@"title"] caseInsensitiveCompare:text] == NSOrderedSame  ||
                 [[object objectForKey:@"campus"] caseInsensitiveCompare:text] == NSOrderedSame ||
                 [[object objectForKey:@"price"] caseInsensitiveCompare:text] == NSOrderedSame) {
-                
                 [results addObject:object];
+            } else {
+                self.noPostsLabel.text = [NSString stringWithFormat:@"No listings found for '%@'", text];
             }
         }
         
