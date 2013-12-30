@@ -843,7 +843,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" placeholder="Search Listings" id="ygu-8D-Ukw">
+                            <searchBar contentMode="redraw" placeholder="Search title, campus, price, etc." id="ygu-8D-Ukw">
                                 <rect key="frame" x="0.0" y="59" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>

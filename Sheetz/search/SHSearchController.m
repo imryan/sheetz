@@ -36,11 +36,11 @@
     [listingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         for (PFObject *object in objects) {
-            if ([[object objectForKey:@"title"] rangeOfString:text].location != NSNotFound ||
-                [[object objectForKey:@"campus"] rangeOfString:text].location != NSNotFound) {
+            if ([[object objectForKey:@"title"] caseInsensitiveCompare:text] == NSOrderedSame  ||
+                [[object objectForKey:@"campus"] caseInsensitiveCompare:text] == NSOrderedSame ||
+                [[object objectForKey:@"price"] caseInsensitiveCompare:text] == NSOrderedSame) {
                 
                 [results addObject:object];
-                
             }
         }
         
