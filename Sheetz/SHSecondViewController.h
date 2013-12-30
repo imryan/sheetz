@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHSecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SHSecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+{
+    NSInteger indexPathRow;
+}
+
 
 @property (nonatomic, retain) NSArray *tableData;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

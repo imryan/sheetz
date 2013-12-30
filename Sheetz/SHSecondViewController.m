@@ -64,6 +64,38 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return true;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                                        message:@"Are you sure you want to delete this listing?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Delete", nil];
+        [alert show];
+        indexPathRow = indexPath.row;
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete"]) {
+        PFObject *object = [tableData objectAtIndex:indexPathRow];
+        [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self loadDatabaseData];
+            [self.tableView reloadData];
+        }];
+        
+    } else {
+        return;
+    }
+}
+
 - (void)loadDatabaseData
 {
     PFQuery *listingQuery = [PFQuery queryWithClassName:@"Listings"];
