@@ -54,6 +54,16 @@
     }
 }
 
+- (IBAction)description:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Description"
+                                                    message:self.descriptionString
+                                                   delegate:self
+                                          cancelButtonTitle:@"Dismiss"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 - (IBAction)done:(id)sender
 {
     [self performSegueWithIdentifier:@"detailDone" sender:self];
@@ -133,6 +143,7 @@
     self.listingPrice.text = [self.information objectForKey:@"price"];
     self.listingCampus.text = [self.information objectForKey:@"campus"];
     self.listingStreet.text = [self.information objectForKey:@"street"];
+    self.descriptionString = [self.information objectForKey:@"description"];
     
     self.contactEmail = [self.information objectForKey:@"email"];
     self.contactPhone = [self.information objectForKey:@"phone"];

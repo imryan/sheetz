@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSDictionary *information;
 @property (nonatomic, strong) PFFile *file;
 
+@property (nonatomic, retain) NSString *descriptionString;
 @property (nonatomic, retain) IBOutlet UILabel *listingTitle;
 @property (nonatomic, retain) IBOutlet UILabel *listingCampus;
 @property (nonatomic, retain) IBOutlet UILabel *listingPrice;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSString *contactPhone;
 
 - (IBAction)done:(id)sender;
+- (IBAction)description:(id)sender;
 - (IBAction)contact:(id)sender;
 
 @end
