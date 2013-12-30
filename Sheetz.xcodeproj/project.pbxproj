@@ -29,6 +29,7 @@
 		94A2B404185CBCC40091256D /* SHBackSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2B403185CBCC40091256D /* SHBackSegue.m */; };
 		94A651741864C5D500CDF277 /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A651731864C5D500CDF277 /* tag@2x.png */; };
 		94C708371819E76600319610 /* SHDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C708361819E76600319610 /* SHDetailController.m */; };
+		94CAEC9F1871C7CC00CE8A8A /* SHSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CAEC9E1871C7CC00CE8A8A /* SHSearchController.m */; };
 		94DCC547180CAB3F007236E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC546180CAB3F007236E4 /* Foundation.framework */; };
 		94DCC549180CAB3F007236E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC548180CAB3F007236E4 /* CoreGraphics.framework */; };
 		94DCC54B180CAB3F007236E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC54A180CAB3F007236E4 /* UIKit.framework */; };
@@ -97,6 +98,8 @@
 		94A651731864C5D500CDF277 /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tag@2x.png"; path = "resources/tag@2x.png"; sourceTree = SOURCE_ROOT; };
 		94C708351819E76600319610 /* SHDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHDetailController.h; path = detail/SHDetailController.h; sourceTree = "<group>"; };
 		94C708361819E76600319610 /* SHDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHDetailController.m; path = detail/SHDetailController.m; sourceTree = "<group>"; };
+		94CAEC9D1871C7CC00CE8A8A /* SHSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHSearchController.h; path = search/SHSearchController.h; sourceTree = "<group>"; };
+		94CAEC9E1871C7CC00CE8A8A /* SHSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHSearchController.m; path = search/SHSearchController.m; sourceTree = "<group>"; };
 		94DCC543180CAB3F007236E4 /* Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCC546180CAB3F007236E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DCC548180CAB3F007236E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -264,6 +267,15 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
+		94CAEC9C1871C7BC00CE8A8A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				94CAEC9D1871C7CC00CE8A8A /* SHSearchController.h */,
+				94CAEC9E1871C7CC00CE8A8A /* SHSearchController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		94DCC53A180CAB3F007236E4 = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +319,7 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
+				94CAEC9C1871C7BC00CE8A8A /* Search */,
 				94DCC57E180CAB46007236E4 /* Delegates */,
 				94994AE8186CAA3700BA8AA8 /* Contact */,
 				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
@@ -568,6 +581,7 @@
 				94A2B401185CBCB80091256D /* SHPushSegue.m in Sources */,
 				94994AEB186CAA5200BA8AA8 /* SHContactController.m in Sources */,
 				94A2B404185CBCC40091256D /* SHBackSegue.m in Sources */,
+				94CAEC9F1871C7CC00CE8A8A /* SHSearchController.m in Sources */,
 				94ECDDA2180CD56400615018 /* SHCustomCell.m in Sources */,
 				942EF6E41868BCF300656D71 /* FDStatusBarNotifierView.m in Sources */,
 				949E92C1184D40C4003BE604 /* MBProgressHUD.m in Sources */,

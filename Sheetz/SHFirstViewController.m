@@ -24,7 +24,6 @@
 {
     [self displayAlert];
 }
-
 - (void)displayAlert
 {
     UIView *fadeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
@@ -94,11 +93,6 @@
     for (UIView *view in [self.view subviews]) {
         view.userInteractionEnabled = true;
     }
-}
-
-- (IBAction)refresh:(id)sender
-{
-    [self loadDatabaseData];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

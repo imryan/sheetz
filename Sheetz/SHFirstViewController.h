@@ -17,6 +17,5 @@
 - (void)loadDatabaseData;
 - (void)logoutUser;
 - (IBAction)displayMenu:(id)sender;
-- (IBAction)refresh:(id)sender;
 
 @end

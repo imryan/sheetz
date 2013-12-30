@@ -44,6 +44,7 @@
     [cell.postTitleLabel setText:[listing objectForKey:@"title"]];
     [cell.postDescLabel setText:[listing objectForKey:@"description"]];
     [cell.postPriceLabel setText:[listing objectForKey:@"price"]];
+    [cell.postCampusLabel setText:[listing objectForKey:@"campus"]];
     
     PFImageView *imageView = [PFImageView new];
     imageView.file = (PFFile *)listing[@"image"];
