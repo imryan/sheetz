@@ -22,6 +22,16 @@
     return self;
 }
 
+- (NSString *)formatPhoneNumber:(NSString *)number
+{
+    NSString *formattedString = [number stringByReplacingOccurrencesOfString:@" " withString:@""];
+    formattedString = [formattedString stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    formattedString = [formattedString stringByReplacingOccurrencesOfString:@")" withString:@""];
+    formattedString = [formattedString stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    
+    return formattedString;
+}
+
 - (IBAction)contact:(id)sender
 {
     if ([self.contactEmail isEqualToString:@""]) {
@@ -30,7 +40,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"Dismiss"
                                              destructiveButtonTitle:nil
-                                                  otherButtonTitles:self.contactPhone, nil];
+                                                  otherButtonTitles:[self formatPhoneNumber:self.contactPhone], nil];
         
         [sheet showInView:self.view];
         
@@ -39,7 +49,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"Dismiss"
                                              destructiveButtonTitle:nil
-                                                  otherButtonTitles:self.contactPhone, self.contactEmail, nil];
+                                                  otherButtonTitles:[self formatPhoneNumber:self.contactPhone], self.contactEmail, nil];
         
         [sheet showInView:self.view];
     
@@ -76,6 +86,7 @@
     if ([option isEqualToString:@"Dismiss"]) {
         return;
     }
+    
     else if ([option rangeOfString:@"@"].location != NSNotFound) {
         
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];

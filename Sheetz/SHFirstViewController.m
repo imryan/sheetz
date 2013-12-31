@@ -26,6 +26,8 @@
 }
 - (void)displayAlert
 {
+    self.tabBarController.tabBar.alpha = 1.0f;
+    
     UIView *fadeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     fadeView.tag = FADE_TAG;
     
@@ -59,17 +61,17 @@
     
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [submitButton addTarget:self action:@selector(submitListing) forControlEvents:UIControlEventTouchUpInside];
-    [submitButton setFrame:CGRectMake(35, 14, 125, 51)];
+    [submitButton setFrame:CGRectMake(30, 14, 133, 51)];
     [submitButton setImage:[UIImage imageNamed:@"submit@2x.png"] forState:UIControlStateNormal];
     
     UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [logoutButton addTarget:self action:@selector(logoutUser) forControlEvents:UIControlEventTouchUpInside];
-    [logoutButton setFrame:CGRectMake(35, 76, 125, 51)];
+    [logoutButton setFrame:CGRectMake(30, 76, 133, 51)];
     [logoutButton setImage:[UIImage imageNamed:@"logout@2x.png"] forState:UIControlStateNormal];
     
     UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [dismissButton addTarget:self action:@selector(handleExit) forControlEvents:UIControlEventTouchUpInside];
-    [dismissButton setFrame:CGRectMake(35, 140, 125, 51)];
+    [dismissButton setFrame:CGRectMake(30, 140, 133, 51)];
     [dismissButton setImage:[UIImage imageNamed:@"dismiss@2x.png"] forState:UIControlStateNormal];
     
     [view addSubview:submitButton];

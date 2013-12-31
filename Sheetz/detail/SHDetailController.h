@@ -28,5 +28,6 @@
 - (IBAction)done:(id)sender;
 - (IBAction)description:(id)sender;
 - (IBAction)contact:(id)sender;
+- (NSString *)formatPhoneNumber:(NSString *)number;
 
 @end

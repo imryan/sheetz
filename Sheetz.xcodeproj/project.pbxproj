@@ -18,6 +18,8 @@
 		942EF6DF1868B7B600656D71 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6DD1868B7B600656D71 /* home@2x.png */; };
 		942EF6E01868B7B600656D71 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 942EF6DE1868B7B600656D71 /* profile@2x.png */; };
 		942EF6E41868BCF300656D71 /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942EF6E31868BCF300656D71 /* FDStatusBarNotifierView.m */; };
+		944FAFE0187249DD009CBEB2 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944FAFDF187249DD009CBEB2 /* splash@2x.png */; };
+		944FAFE218724F4B009CBEB2 /* largesplash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 944FAFE118724F4B009CBEB2 /* largesplash@2x.png */; };
 		945B987418723ED3009A4B3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987318723ED3009A4B3C /* icon@2x.png */; };
 		945B987918724076009A4B3C /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987718724076009A4B3C /* settings@2x.png */; };
 		945B987A18724076009A4B3C /* spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987818724076009A4B3C /* spotlight@2x.png */; };
@@ -86,6 +88,8 @@
 		942EF6DE1868B7B600656D71 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "resources/profile@2x.png"; sourceTree = SOURCE_ROOT; };
 		942EF6E21868BCF300656D71 /* FDStatusBarNotifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStatusBarNotifierView.h; sourceTree = "<group>"; };
 		942EF6E31868BCF300656D71 /* FDStatusBarNotifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStatusBarNotifierView.m; sourceTree = "<group>"; };
+		944FAFDF187249DD009CBEB2 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "resources/splash@2x.png"; sourceTree = SOURCE_ROOT; };
+		944FAFE118724F4B009CBEB2 /* largesplash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "largesplash@2x.png"; path = "resources/largesplash@2x.png"; sourceTree = SOURCE_ROOT; };
 		945B987318723ED3009A4B3C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "resources/icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		945B987718724076009A4B3C /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "resources/settings@2x.png"; sourceTree = SOURCE_ROOT; };
 		945B987818724076009A4B3C /* spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spotlight@2x.png"; path = "resources/spotlight@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -222,6 +226,8 @@
 		948153601863E9DF001F66A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				944FAFE118724F4B009CBEB2 /* largesplash@2x.png */,
+				944FAFDF187249DD009CBEB2 /* splash@2x.png */,
 				945B987718724076009A4B3C /* settings@2x.png */,
 				945B987818724076009A4B3C /* spotlight@2x.png */,
 				945B987318723ED3009A4B3C /* icon@2x.png */,
@@ -544,11 +550,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944FAFE218724F4B009CBEB2 /* largesplash@2x.png in Resources */,
 				942EF68D18688DAE00656D71 /* Main.storyboard in Resources */,
 				948153641863E9EB001F66A4 /* register@2x.png in Resources */,
 				945B987418723ED3009A4B3C /* icon@2x.png in Resources */,
 				94DCC562180CAB3F007236E4 /* Images.xcassets in Resources */,
 				94DCC551180CAB3F007236E4 /* InfoPlist.strings in Resources */,
+				944FAFE0187249DD009CBEB2 /* splash@2x.png in Resources */,
 				948153631863E9EB001F66A4 /* login@2x.png in Resources */,
 				942EF6DB1868A6F200656D71 /* logout@2x.png in Resources */,
 				942EF6DC1868A6F200656D71 /* submit@2x.png in Resources */,

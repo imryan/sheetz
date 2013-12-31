@@ -16,7 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarHidden: false];
+    [[UIApplication sharedApplication] setStatusBarHidden:false];
     
     [Parse setApplicationId:@"OX0M2QMRPmd4cxDU3vWwKKicS22OEL5J3h5bgF1y"
                   clientKey:@"1Lhib7ml1GiL06zNrXgAVVFCXeEhPCGf6FopDNrk"];
