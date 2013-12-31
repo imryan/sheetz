@@ -102,10 +102,8 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    NSLog(@"Canceled");
-    [self dismissViewControllerAnimated:true completion:^{
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; 
-    }];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self dismissViewControllerAnimated:true completion:nil];
     
     [segmentControl setSelectedSegmentIndex:2];
     [thirdView setHidden:false];
