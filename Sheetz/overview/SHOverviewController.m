@@ -90,7 +90,7 @@
     self.coverImage.image  = delegate.photo;
     self.streetLabel.text  = delegate.street;
     
-    data = UIImagePNGRepresentation(delegate.photo);
+    data = UIImagePNGRepresentation(self.coverImage.image);
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

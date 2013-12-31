@@ -16,6 +16,7 @@
 - (void)submitListing;
 - (void)loadDatabaseData;
 - (void)logoutUser;
+- (void)displayAlert;
 - (IBAction)displayMenu:(id)sender;
 
 @end

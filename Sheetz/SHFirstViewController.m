@@ -37,9 +37,8 @@
     fadeView.alpha = 1.0f;
     [UIView commitAnimations];
     
-    [self.view addSubview:fadeView];
-    
     fadeView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
+    [self.view addSubview:fadeView];
     
     for (UIView *view in [self.view subviews]) {
         if (view.tag == MENU_TAG) {

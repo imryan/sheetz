@@ -95,9 +95,12 @@
     [secondView setHidden:true];
     [thirdView setHidden:false];
     [self disableFields];
-
-    self.photo = image;
-    self.imageView.image = image;
+    
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.photo = image;
+    
+    self.imageView.image = delegate.photo;
+    self.photo = self.imageView.image;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -157,6 +160,7 @@
     self.campus = self.campusField.text;
     self.price  = self.priceField.text;
     self.street = self.streetField.text;
+    self.photo  = self.imageView.image;
     
     if ([self isStringEmpty:self.title]  ||
         [self isStringEmpty:self.campus] ||
