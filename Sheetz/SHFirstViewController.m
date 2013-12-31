@@ -83,10 +83,6 @@
 - (void)handleExit
 {
     UIView *view = [self.view viewWithTag:MENU_TAG];
-    [UIView beginAnimations:@"fadeOutView" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    view.alpha = 0.0f;
-    [UIView commitAnimations];
     [view removeFromSuperview];
     
     UIView *fade = [self.view viewWithTag:FADE_TAG];

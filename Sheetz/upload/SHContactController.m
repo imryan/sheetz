@@ -23,6 +23,9 @@
 
 - (IBAction)back:(id)sender
 {
+    SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.contactEmail = self.emailField.text;
+    delegate.contactPhone = self.phoneField.text;
     [self performSegueWithIdentifier:@"backToEdit" sender:self];
 }
 

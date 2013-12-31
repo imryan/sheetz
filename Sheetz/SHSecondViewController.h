@@ -10,6 +10,7 @@
 
 @interface SHSecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
+    IBOutlet UINavigationBar *navBar;
     NSInteger indexPathRow;
 }
 
@@ -17,8 +18,6 @@
 @property (nonatomic, retain) NSArray *tableData;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UILabel *noPostsLabel;
-@property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
-@property (nonatomic, retain) IBOutlet UILabel *memberSinceLabel;
 
 - (IBAction)refresh:(id)sender;
 

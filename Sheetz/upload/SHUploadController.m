@@ -97,7 +97,7 @@
     [self disableFields];
 
     self.photo = image;
-    imageView.image = image;
+    self.imageView.image = image;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -242,7 +242,7 @@
     self.priceField.text = delegate.price;
     self.streetField.text = delegate.street;
     self.descriptionField.text = delegate.desc;
-    imageView.image = delegate.photo;
+    self.imageView.image = delegate.photo;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -11,7 +11,6 @@
 @interface SHUploadController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate> {
     
     IBOutlet UISegmentedControl *segmentControl;
-    IBOutlet UIImageView *imageView;
     IBOutlet UIView *secondView;
     IBOutlet UIView *thirdView;
 }
@@ -30,6 +29,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *priceField;
 @property (nonatomic, retain) IBOutlet UITextField *streetField;
 @property (nonatomic, retain) IBOutlet UITextView *descriptionField;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 - (IBAction)cancelUpload:(id)sender;
 - (IBAction)nextView:(id)sender;

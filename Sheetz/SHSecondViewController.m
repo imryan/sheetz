@@ -130,16 +130,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     PFUser *user = [PFUser currentUser];
-    self.usernameLabel.text = user.username;
-    
-    NSDate *date = user.createdAt;
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateStyle:NSDateFormatterShortStyle];
-    
-    NSString *dateString = [df stringFromDate:date];
-    dateString = [NSString stringWithFormat:@"Joined on %@", dateString];
-    
-    self.memberSinceLabel.text = dateString;
+    navBar.topItem.title = user.username;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
