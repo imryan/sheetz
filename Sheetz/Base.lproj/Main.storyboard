@@ -173,13 +173,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="5D9-zp-iFW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="5D9-zp-iFW" customClass="SHCustomField">
                                 <rect key="frame" x="20" y="157" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="nextField" destination="K1m-vc-V0c" id="Wj2-7U-GBe"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" id="K1m-vc-V0c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" id="K1m-vc-V0c" customClass="SHCustomField">
                                 <rect key="frame" x="20" y="195" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -333,11 +336,11 @@
             <objects>
                 <viewController title="First" id="CZ4-MO-1fc" customClass="SHFirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="82" sectionHeaderHeight="10" sectionFooterHeight="10" id="2dC-OA-XPZ">
-                                <rect key="frame" x="0.0" y="59" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="59" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.95686280729999995" green="0.95686280729999995" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -567,29 +570,11 @@
             <objects>
                 <viewController title="Second" id="QUy-BD-bpt" customClass="SHSecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" id="qIx-90-0zQ">
-                                <rect key="frame" x="0.0" y="-15" width="320" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.14901961389999999" green="0.74901962280000001" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Profile" prompt=" " id="bxu-hs-YT1">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="k2B-MR-n9X">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="refresh:" destination="QUy-BD-bpt" id="nsI-5E-0s9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="82" sectionHeaderHeight="10" sectionFooterHeight="10" id="gzQ-8u-2c5">
-                                <rect key="frame" x="0.0" y="59" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="59" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.95686280729999995" green="0.95686280729999995" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -661,14 +646,39 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" id="mJe-Hr-N80">
+                                <rect key="frame" x="0.0" y="-15" width="320" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.14901961389999999" green="0.74901962280000001" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Profile" prompt=" " id="bPz-Bd-wzK">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="YiN-2n-gaw">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="refresh:" destination="QUy-BD-bpt" id="11t-g6-bbI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="0uv-gj-Fcm">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="logout:" destination="QUy-BD-bpt" id="1p6-sK-w08"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="Z7h-1E-pvt"/>
                     <connections>
-                        <outlet property="navBar" destination="qIx-90-0zQ" id="sWo-se-vpK"/>
+                        <outlet property="navBar" destination="mJe-Hr-N80" id="XWZ-03-UCR"/>
                         <outlet property="noPostsLabel" destination="b4T-Ml-7QS" id="f8d-Fe-7G7"/>
                         <outlet property="tableView" destination="gzQ-8u-2c5" id="gOl-0i-EWd"/>
+                        <segue destination="XZB-bE-kqs" kind="custom" identifier="logoutUser" customClass="SHBackSegue" id="r9B-oz-ovB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
@@ -1023,10 +1033,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q6b-Pg-XmI"/>
-        <segue reference="a2U-vf-N8w"/>
         <segue reference="Ap2-Vp-HmU"/>
         <segue reference="y78-EO-K9a"/>
-        <segue reference="G93-nL-PNd"/>
+        <segue reference="HHr-YQ-sJv"/>
+        <segue reference="Q6b-Pg-XmI"/>
+        <segue reference="bAW-5o-Xsy"/>
     </inferredMetricsTieBreakers>
 </document>

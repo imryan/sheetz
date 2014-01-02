@@ -20,5 +20,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *noPostsLabel;
 
 - (IBAction)refresh:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end

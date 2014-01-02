@@ -19,6 +19,15 @@
     [self loadDatabaseData];
 }
 
+- (IBAction)logout:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logout"
+                                                    message:@"Are you sure you want to logout?"
+                                                   delegate:self cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Logout", nil];
+    [alert show];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableData count] == 0) {
@@ -90,6 +99,14 @@
             [self loadDatabaseData];
             [self.tableView reloadData];
         }];
+    }
+    else if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"No"]) {
+        
+    }
+    
+    else if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Logout"]) {
+        [PFUser logOut];
+        [self performSegueWithIdentifier:@"logoutUser" sender:self];
         
     } else {
         return;
@@ -112,13 +129,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
-    PFObject *object = [tableData objectAtIndex:indexPath.row];
-    PFFile *file = [object objectForKey:@"image"];
-    
-    detailView.information = [tableData objectAtIndex:indexPath.row];
-    detailView.file = file;
+    if (![[segue identifier] isEqualToString:@"logoutUser"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SHDetailController *detailView = (SHDetailController *)segue.destinationViewController;
+        PFObject *object = [tableData objectAtIndex:indexPath.row];
+        PFFile *file = [object objectForKey:@"image"];
+        
+        detailView.information = [tableData objectAtIndex:indexPath.row];
+        detailView.file = file;
+    }
 }
 
 - (void)viewDidLoad

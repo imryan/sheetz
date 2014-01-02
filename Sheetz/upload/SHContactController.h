@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHContactController : UIViewController
+@interface SHContactController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *emailField;
 @property (nonatomic, retain) IBOutlet UITextField *phoneField;

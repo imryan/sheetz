@@ -195,6 +195,16 @@
 			name = "Upload Listing";
 			sourceTree = "<group>";
 		};
+		9424AAB11873486D003D6C67 /* Referenced */ = {
+			isa = PBXGroup;
+			children = (
+				942DEF44182462AE006E32FC /* Reachability */,
+				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
+				949E92BE184D40BC003BE604 /* MBProgressHUD */,
+			);
+			name = Referenced;
+			sourceTree = "<group>";
+		};
 		942DEF44182462AE006E32FC /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,15 +344,13 @@
 		94DCC54C180CAB3F007236E4 /* Sheetz */ = {
 			isa = PBXGroup;
 			children = (
-				94CAEC9C1871C7BC00CE8A8A /* Search */,
-				94DCC57E180CAB46007236E4 /* Delegates */,
-				94994AE8186CAA3700BA8AA8 /* Contact */,
-				942EF6E11868BCF300656D71 /* FDStatusBarNotifierView */,
-				942EF67F186881FF00656D71 /* Image Util */,
 				948153601863E9DF001F66A4 /* Resources */,
+				94DCC57E180CAB46007236E4 /* Delegates */,
+				9424AAB11873486D003D6C67 /* Referenced */,
+				94CAEC9C1871C7BC00CE8A8A /* Search */,
+				94994AE8186CAA3700BA8AA8 /* Contact */,
+				942EF67F186881FF00656D71 /* Image Util */,
 				94A04EC0185A8CDF000E2F54 /* Transition */,
-				949E92BE184D40BC003BE604 /* MBProgressHUD */,
-				942DEF44182462AE006E32FC /* Reachability */,
 				94F688B7181EF93D00476B32 /* Custom Field */,
 				94C708341819E75300319610 /* Detail */,
 				940F3357180F5A81006D9DD3 /* Upload Listing */,

@@ -9,6 +9,7 @@
 #import "SHContactController.h"
 #import "SHAppDelegate.h"
 #import "FDStatusBarNotifierView.h"
+#import "SHCustomField.h"
 
 @implementation SHContactController
 
@@ -84,6 +85,38 @@
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL didResign = [textField resignFirstResponder];
+    if (!didResign) return false;
+    
+    if ([textField isKindOfClass:[SHCustomField class]])
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[(SHCustomField *)textField nextField] becomeFirstResponder];
+            
+        });
+    
+    return true;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.cornerRadius = 5;
+    textField.layer.borderColor = [[UIColor grayColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    textField.layer.masksToBounds = true;
+    textField.layer.borderColor = [[UIColor clearColor]CGColor];
+    textField.layer.borderWidth = 1.0f;
+    return true;
+}
+
 - (void)displayErrorWithString:(NSString *)message
 {
     FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:message];
@@ -103,7 +136,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.emailField.delegate = self;
+    self.phoneField.delegate = self;
+    
     [self.emailField becomeFirstResponder];
+    
+    CGRect emailFrame = self.emailField.frame;
+    emailFrame.size.height = 35;
+    self.emailField.frame = emailFrame;
+    
+    CGRect phoneFrame = self.phoneField.frame;
+    phoneFrame.size.height = 35;
+    self.phoneField.frame = phoneFrame;
     
     SHAppDelegate *delegate = (SHAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.emailField.text = delegate.contactEmail;
