@@ -101,7 +101,7 @@
         
         UIDevice *device = [UIDevice currentDevice];
         if ([[device model] isEqualToString:@"iPhone"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.contactPhone]]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", [self formatPhoneNumber:self.contactPhone]]]];
             
         } else {
             FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"This device cannot make calls."];
