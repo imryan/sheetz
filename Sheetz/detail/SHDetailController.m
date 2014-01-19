@@ -35,7 +35,6 @@
 - (IBAction)contact:(id)sender
 {
     if ([self.contactEmail isEqualToString:@""]) {
-        
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Contact"
                                                            delegate:self
                                                   cancelButtonTitle:@"Dismiss"
@@ -101,7 +100,7 @@
         
         UIDevice *device = [UIDevice currentDevice];
         if ([[device model] isEqualToString:@"iPhone"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", [self formatPhoneNumber:self.contactPhone]]]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [self formatPhoneNumber:self.contactPhone]]]];
             
         } else {
             FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:@"This device cannot make calls."];

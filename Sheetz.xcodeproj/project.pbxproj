@@ -23,6 +23,8 @@
 		945B987418723ED3009A4B3C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987318723ED3009A4B3C /* icon@2x.png */; };
 		945B987918724076009A4B3C /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987718724076009A4B3C /* settings@2x.png */; };
 		945B987A18724076009A4B3C /* spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B987818724076009A4B3C /* spotlight@2x.png */; };
+		947435E8188B5C3E00A68774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947435E7188B5C3E00A68774 /* Parse.framework */; };
+		947435E9188B5C5800A68774 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */; };
 		948153631863E9EB001F66A4 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153611863E9EB001F66A4 /* login@2x.png */; };
 		948153641863E9EB001F66A4 /* register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153621863E9EB001F66A4 /* register@2x.png */; };
 		948153661863EAEE001F66A4 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 948153651863EAEE001F66A4 /* background@2x.png */; };
@@ -93,6 +95,7 @@
 		945B987318723ED3009A4B3C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "resources/icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		945B987718724076009A4B3C /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "resources/settings@2x.png"; sourceTree = SOURCE_ROOT; };
 		945B987818724076009A4B3C /* spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spotlight@2x.png"; path = "resources/spotlight@2x.png"; sourceTree = SOURCE_ROOT; };
+		947435E7188B5C3E00A68774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = frameworks/Parse.framework; sourceTree = "<group>"; };
 		948153611863E9EB001F66A4 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@2x.png"; path = "resources/login@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153621863E9EB001F66A4 /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "register@2x.png"; path = "resources/register@2x.png"; sourceTree = SOURCE_ROOT; };
 		948153651863EAEE001F66A4 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "resources/background@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -158,12 +161,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947435E9188B5C5800A68774 /* libz.1.1.3.dylib in Frameworks */,
 				94994AED186CBDDC00BA8AA8 /* MessageUI.framework in Frameworks */,
 				94A2B3FE185CBC590091256D /* Parse.framework in Frameworks */,
 				941E7074184ECC9A0048FA3E /* QuartzCore.framework in Frameworks */,
 				94DCC5A2180CAE34007236E4 /* Security.framework in Frameworks */,
 				94DCC5A0180CAE2F007236E4 /* SystemConfiguration.framework in Frameworks */,
 				94DCC59E180CAE2A007236E4 /* MobileCoreServices.framework in Frameworks */,
+				947435E8188B5C3E00A68774 /* Parse.framework in Frameworks */,
 				94DCC59C180CAE25007236E4 /* CFNetwork.framework in Frameworks */,
 				94DCC59A180CAE1F007236E4 /* CoreLocation.framework in Frameworks */,
 				94DCC598180CAE17007236E4 /* AudioToolbox.framework in Frameworks */,
@@ -323,8 +328,9 @@
 		94DCC545180CAB3F007236E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94994AEC186CBDDC00BA8AA8 /* MessageUI.framework */,
 				94DCC595180CAE12007236E4 /* libz.1.1.3.dylib */,
+				947435E7188B5C3E00A68774 /* Parse.framework */,
+				94994AEC186CBDDC00BA8AA8 /* MessageUI.framework */,
 				941E7073184ECC9A0048FA3E /* QuartzCore.framework */,
 				94F688B5181EF3E900476B32 /* Parse.framework */,
 				94DCC5A1180CAE34007236E4 /* Security.framework */,
@@ -749,6 +755,7 @@
 					/Users/ryan/Desktop/sheetz/frameworks,
 					"/Users/ryan/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
 					"/Users/ryan/Documents/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
+					"/Users/ryan/Documents/Desktop/Code/Objective-C/Sheetz/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
@@ -771,6 +778,7 @@
 					/Users/ryan/Desktop/sheetz/frameworks,
 					"/Users/ryan/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
 					"/Users/ryan/Documents/Desktop/Code/Projects/Objective-C/Sheetz/frameworks",
+					"/Users/ryan/Documents/Desktop/Code/Objective-C/Sheetz/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sheetz/Sheetz-Prefix.pch";
