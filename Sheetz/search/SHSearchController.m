@@ -113,14 +113,18 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self searchDatabaseWithString:searchBar.text];
+    [self.view endEditing:true];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.searchBar.delegate = self;
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.searchBar.delegate = self;
-    [self.searchBar becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

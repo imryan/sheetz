@@ -51,11 +51,12 @@
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:true];
             hud.mode = MBProgressHUDAnimationFade;
             hud.labelText = @"Signing up";
-            if (!error) {
-                [self pushView];
+            
+            if (succeeded) {
+                [MBProgressHUD hideHUDForView:self.view animated:true];
+                [self performSegueWithIdentifier:@"registerUser" sender:self];
                 
             } else {
-                
                 NSString *errorString = [self translateErrorCode:error];
                 FDStatusBarNotifierView *notifierView = [[FDStatusBarNotifierView alloc] initWithMessage:errorString];
                 notifierView.timeOnScreen = 3.0;
@@ -72,12 +73,6 @@
             
         }];
     }
-}
-
-- (void)pushView
-{
-    [self dismissViewControllerAnimated:true completion:nil];
-    [self.presentingViewController dismissViewControllerAnimated:true completion:nil];
 }
 
 - (NSString *)translateErrorCode:(NSError *)error

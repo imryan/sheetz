@@ -12,17 +12,21 @@
 
 - (void)perform
 {
-    UIViewController *source = [self sourceViewController];
-    UIViewController *dest   = [self destinationViewController];
+    UIView *preV = ((UIViewController *)self.sourceViewController).view;
+    UIView *newV = ((UIViewController *)self.destinationViewController).view;
     
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.30;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush;
-    transition.subtype = kCATransitionFromLeft;
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    newV.center = CGPointMake(preV.center.x - preV.frame.size.width, newV.center.y);
+    [window insertSubview:newV aboveSubview:preV];
     
-    [source.view.window.layer addAnimation:transition forKey:nil];
-    [source presentViewController:dest animated:false completion:nil];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         newV.center = CGPointMake(preV.center.x, newV.center.y);
+                         preV.center = CGPointMake(preV.center.x + preV.frame.size.width, newV.center.y);}
+                     completion:^(BOOL finished){
+                         [preV removeFromSuperview];
+                         window.rootViewController = self.destinationViewController;
+                     }];
 }
 
 @end

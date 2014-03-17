@@ -18,8 +18,8 @@
 {
     [[UIApplication sharedApplication] setStatusBarHidden:false];
     
-    [Parse setApplicationId:@"OX0M2QMRPmd4cxDU3vWwKKicS22OEL5J3h5bgF1y"
-                  clientKey:@"1Lhib7ml1GiL06zNrXgAVVFCXeEhPCGf6FopDNrk"];
+    [Parse setApplicationId:@"8Tl6dTnNQfjkuYKo3ZzpovhKvR8VADFB1LdkTliY"
+                  clientKey:@"1lL9IJ6wdQf8GjikoPe7TEqgoakiaqipUs7A4y72"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
